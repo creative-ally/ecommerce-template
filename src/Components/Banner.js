@@ -59,7 +59,7 @@ const Banner = () => {
                   }}
                 >
                   <Container maxWidth="sm">
-                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mb: 2, textAlign: 'left' }}>{item.title}</Typography>
+                    <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
                     <Box
                       sx={{
                         display: 'flex',
@@ -72,7 +72,7 @@ const Banner = () => {
                       </Button>
                     </Box>
                   </Container>
-                  <img src={item.image} alt="" style={{ width: '100vh', height: '70vh' }} />
+                  <img src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
                 </Box>
               </div>
             </SwiperSlide>
