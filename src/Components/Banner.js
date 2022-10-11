@@ -56,14 +56,13 @@ const Banner = () => {
                   }}
                 >
                   <Container maxWidth="sm">
-
                     <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mb: 2 }}>{item.title}</Typography>
                     <Button variant="contained" disableElevation>
                       Explore More
                       <NavigateNextIcon />
                     </Button>
                   </Container>
-                  <img src={item.image} alt="" style={{width: '100vh', height:'70vh'}}/>
+                  <img src={item.image} alt="" style={{width: '100vh', height:'80vh'}}/>
                 </Box>
               </div>
             </SwiperSlide>
