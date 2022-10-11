@@ -27,15 +27,18 @@ const Banner = () => {
       "image": "https://i.ibb.co/CWK0qkP/image1.jpg"
     },
   ]
+
+
   return (
     <>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 1000,
           disableOnInteraction: false,
         }}
+        speed={2000}
         pagination={{
           clickable: true,
         }}
@@ -56,14 +59,20 @@ const Banner = () => {
                   }}
                 >
                   <Container maxWidth="sm">
-
-                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mb: 2 }}>{item.title}</Typography>
-                    <Button variant="contained" disableElevation>
-                      Explore More
-                      <NavigateNextIcon />
-                    </Button>
+                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mb: 2, textAlign: 'left' }}>{item.title}</Typography>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'left',
+                      }}
+                    >
+                      <Button sx={{ marginLeft: '0px' }} variant="contained" disableElevation>
+                        Explore More
+                        <NavigateNextIcon />
+                      </Button>
+                    </Box>
                   </Container>
-                  <img src={item.image} alt="" style={{width: '100vh', height:'70vh'}}/>
+                  <img src={item.image} alt="" style={{ width: '100vh', height: '70vh' }} />
                 </Box>
               </div>
             </SwiperSlide>
