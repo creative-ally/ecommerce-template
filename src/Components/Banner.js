@@ -44,7 +44,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper mb-24"
       >
         {
           banner.map((item, index) =>
