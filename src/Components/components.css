@@ -1,4 +1,7 @@
-#app { height: 100% }
+#app {
+  height: 100%
+}
+
 html,
 body {
   position: relative;
@@ -12,6 +15,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 .swiper {
