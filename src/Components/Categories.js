@@ -8,10 +8,10 @@ import { Chair, TableBar } from '@mui/icons-material';
 
 const Categories = () => {
     return (
-        <Container maxWidth='lg' sx={{
+        <Container maxWidth='100vw' sx={{
             py: '6rem',
             width: '100%',
-            bgcolor: 'transparent'
+            bgcolor: 'white'
         }}>
             <Box sx={{
                 textAlign: 'center',
