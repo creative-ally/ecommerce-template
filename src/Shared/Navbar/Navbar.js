@@ -58,7 +58,7 @@ const Navbar = () => {
                 <Link to={''} className='px-2 text-zinc-500'>Living Bedroom</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Dining</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Kitchen</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Door</Link>
+                <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Interior</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Office</Link>
             </div>

@@ -10,7 +10,7 @@ const SubCategory = () => {
 
     useEffect(() => {
         (async () => {
-            await axios.get(`http://localhost:3000/category/${id}`)
+            await axios.get(`http://localhost:8000/category/${id}`)
                 .then(res => {
                     console.log(res)
                     setTitle(res.data.name)
@@ -25,11 +25,11 @@ const SubCategory = () => {
             <div className='md:grid grid-cols-3 gap-10 '>
                 {
                     products.map((product, index) =>
-                        <div className='border-2 shadow-md'>
-                            <img className='mx-auto my-5' src={product.image} alt="" />
-                            <h2 className='text-xl py-5 px-5'>{product.name}</h2>
-                            <p className='text-lg font-semibold px-5'>Price:{product.price} Taka</p>
-                            <p className='px-5'>Material: {product.material}</p>
+                        <div className='shadow-md p-5'>
+                            <img className='mx-auto' src={product.image} alt="" />
+                            <h2 className='text-xl py-5'>{product.name}</h2>
+                            <p className='text-lg font-semibold'>Price:{product.price} Taka</p>
+                            <p className=''>Material: {product.material}</p>
                         </div>
                     )
                 }

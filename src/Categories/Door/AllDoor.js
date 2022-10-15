@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const AllDoor = () => {
     const [doors, setDoors] = useState([]);
-    
+
     useEffect(() => {
         (async () => {
-            await axios.get('http://localhost:3000/category')
+            await axios.get('http://localhost:8000/category')
                 .then(res => {
                     console.log(res)
                     setDoors(res.data)
