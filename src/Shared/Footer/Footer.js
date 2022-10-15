@@ -6,10 +6,10 @@ import { FaHouzz, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "reac
 const Footer = () => {
     return (
         <div>
-            <footer class="footer p-10 bg-base-200 text-base-content">
+            <footer class="footer p-10 justify-evenly items-center bg-gray-200 text-zinc-500">
                 {/* logo */}
                 <div>
-                    <FaHouzz className="h-10 w-10" />
+                    <FaHouzz className="h-10 w-10 text-zinc-700" />
                     <p>HATIL Furnitures
                         <br />
                         Providing reliable furnitures</p>
@@ -40,13 +40,18 @@ const Footer = () => {
                     <a class="link link-hover">Billing Terms and Conditions</a>
                 </div>
                 {/* social media icons  */}
-                <div className='flex items-center my-auto'>
-                    <a class="link link-hover"><FaFacebookF className='mx-1 h-5 w-5' /></a>
-                    <a class="link link-hover"><FaInstagram className='mx-1 h-5 w-5' /></a>
-                    <a class="link link-hover"><FaLinkedinIn className='mx-1 h-5 w-5' /></a>
-                    <a class="link link-hover"><FaTwitter className='mx-1 h-5 w-5' /></a>
+                <div className='flex items-center justify-evenly text-zinc-700'>
+                    <a class="link link-hover"><FaFacebookF className='h-5 w-5' /></a>
+                    <a class="link link-hover"><FaInstagram className='h-5 w-5' /></a>
+                    <a class="link link-hover"><FaLinkedinIn className='h-5 w-5' /></a>
+                    <a class="link link-hover"><FaTwitter className='h-5 w-5' /></a>
                 </div>
 
+            </footer>
+            <footer class="footer footer-center p-4 bg-black text-white">
+                <div>
+                    <p>&copy; Copyright 2022 HATIL. All Rights Reserved.</p>
+                </div>
             </footer>
         </div>
     );
