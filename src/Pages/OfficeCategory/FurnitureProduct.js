@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
-const FurnitureProduct = ({cate}) => {
+const FurnitureProduct = ({ cate }) => {
 
 
     const [products, setProducts] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('Office.json')
-        .then(res => res.json())
-        .then(data=> {
-            const filterData = data.filter(item => item !== cate)
-
-            setProducts(filterData);
-
-            return products
-            
-        })
-    } ,[])
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
 
     console.log(products)
 
 
     return (
         <div>
-            <h2>Products</h2>
+            {products.filter(item => item.category !== cate).map(filteredProduct => (
+                <div>
+                    {filteredProduct.image}
+                </div>
+            ))}
         </div>
     );
 };
