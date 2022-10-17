@@ -1,23 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FurnitureDetails = (props) => {
 
-    const { id, image,category } = props.newfurniture
-    return (
-        <div>
+    const FurnitureDetails = (props) => {
+        const { id, image, name, category } = props.newfurniture;
+        return (
+          <div className="w-96 text-center">
             <Link to={`/categorylist/${category}`}>
-                <div>
-                    <img src={image} alt='' />
-                    <p>Explore now</p>
-                </div>
+              <div className="mx-auto">
+                <img src={image} width="400" height="auto" alt="" />
+                <h3 className="text-[18px] mt-2">{name}</h3>
+                <p className="text-[14px]  text-red-500">Explore now</p>
+              </div>
             </Link>
-
-
-
-
-        </div>
-    );
-};
+          </div>
+        );
+      };
 
 export default FurnitureDetails;
