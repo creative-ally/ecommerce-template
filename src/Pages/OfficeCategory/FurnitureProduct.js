@@ -24,6 +24,19 @@ useEffect(()=>{
 
 }, [cate])
 
+//   useEffect(() => {
+//     fetch('office.json')
+//     .then(res => res.json())
+//     .then(data => {
+
+//         const filterproducts = products.filter((item) => item.category === cate);
+
+//         setProducts(filterproducts);
+//         console.log(filterproducts);
+
+//     })
+        
+//       }, [products]);
 
     return (
         <div className="flex justify-center">

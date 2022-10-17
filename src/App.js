@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
+import SignIn from './Components/Auth/SignIn';
 import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
 import CategoryList from './Pages/OfficeCategory/CategoryList';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
@@ -21,7 +21,7 @@ function App() {
         <Route path="/doors" element={<AllDoor />} />
         <Route path="/doors/:id" element={<SubCategory />} />
 
-        <Route path ='/login' element={<Login/>}/>
+        <Route path ='/signin' element={<SignIn/>}/>
       </Routes>
       <Footer />
     </div>
