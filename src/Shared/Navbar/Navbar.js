@@ -13,8 +13,8 @@ const Navbar = () => {
                     <Link to={''} className='px-2 text-zinc-500'>Blog</Link>
                     <Link to={''} className='px-2 text-zinc-500'>Showroom Locator</Link>
                     <Link to={''} className='px-2 text-zinc-500'>Help</Link>
-                    <Link to='/signin' className='px-2 text-zinc-500'>Login</Link>
-                    <Link to='/register' className='px-2 text-zinc-500'>Register</Link>
+                    <Link to='/signin' className='px-2 text-zinc-500'>SignIn</Link>
+                    <Link to='/signup' className='px-2 text-zinc-500'>SignUp</Link>
                 </div>
             </div>
             {/* second nav */}

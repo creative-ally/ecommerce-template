@@ -13,9 +13,9 @@ const SignIn = () => {
   };
   return (
     <div className="flex justify-center py-20 px-20 text-white">
-      <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 to-white ...">
-        <h1 className="text-[40px] font-bold">Signin to Your Account</h1>
-        <p className="mb-4">Signin using social networks</p>
+      <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 ...">
+        <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
+        <p className="mb-4">Sign in using social networks</p>
         <div className="mb-4 text-black">
           <span className="mx-1">
             {" "}
@@ -63,9 +63,9 @@ const SignIn = () => {
           </button>
         </form>
       </div>
-      <div className=" mx-2 w-1/4 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500  ... flex flex-col justify-center text-center">
+      <div className=" mx-2 w-4/12 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500  ... flex flex-col justify-center text-center">
         <h1 className="text-[35px] font-bold mb-5">New Here?</h1>
-        <p>Sing up and discover a great amount of new opportunities!</p>
+        <p>Sign up and discover a great amount of new opportunities!</p>
         <button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
           Sign Up
         </button>

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
 import SignIn from './Components/Auth/SignIn';
+import SignUp from './Components/Auth/SignUp';
 import Home from './Pages/Home/Home';
 import CategoryList from './Pages/OfficeCategory/CategoryList';
 import Footer from './Shared/Footer/Footer';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/doors/:id" element={<SubCategory />} />
 
         <Route path ='/signin' element={<SignIn/>}/>
+        <Route path ='/signup' element={<SignUp/>}/>
       </Routes>
       <Footer />
     </div>
