@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
+import Chat from './Components/ChatBot/Chat';
 import Home from './Pages/Home/Home';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/doors/:id" element={<SubCategory />} />
       </Routes>
       <Footer />
+      <Chat></Chat>
     </div>
   );
 }
