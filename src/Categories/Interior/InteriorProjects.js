@@ -4,7 +4,7 @@ const InteriorProjects = ({interior}) => {
    const {image}=interior
     return (
         <div>
-            <img className='my-5 mx-auto' src={image} alt="" />
+            <img className='mb-5 mx-auto' src={image} alt="" />
         </div>
     );
 };
