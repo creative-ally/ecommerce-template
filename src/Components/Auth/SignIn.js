@@ -12,7 +12,7 @@ const SignIn = () => {
     e.preventDefault();
   };
   return (
-    <div className="flex justify-center py-20 px-20 text-white">
+    <div className="flex lg:justify-center py-20 px-20 text-white ">
       <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 ...">
         <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
         <p className="mb-4">Sign in using social networks</p>

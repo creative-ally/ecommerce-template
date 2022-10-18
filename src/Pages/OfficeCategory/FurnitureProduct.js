@@ -10,7 +10,7 @@ useEffect(()=>{
     const getProduct = async ( ) =>{
         try{
             const response = await axios.get(
-                 `http://localhost:7000/officeproducts?category=${cate}`
+                 `http://localhost:5000/officeproduct?category=${cate}`
             )
             setProducts(response.data)
         }
@@ -39,7 +39,7 @@ useEffect(()=>{
 //       }, [products]);
 
     return (
-        <div className="flex justify-center">
+        <div className="grid grid-cols-3 justify-center">
             {products.map((data) => (
                 <div
                     class="card bg-base-100 shadow-xl mx-3 cursor-pointer"

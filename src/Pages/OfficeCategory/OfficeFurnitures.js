@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FurnitureDetails from './FurnitureDetails';
 
@@ -6,10 +7,28 @@ const OfficeFurnitures = () => {
     const [furnitures, setFurnitures] = useState([])
 
     useEffect(() => {
-        fetch('officeCategory.json')
-            .then(res => res.json())
-            .then(data => setFurnitures(data))
+      const getOfficeProduct = async()=>{
+        try{
+
+          const response = await axios.get(
+            `http://localhost:5000/officecategories`
+          )
+          setFurnitures(response.data)
+
+        }
+
+        catch{
+
+        }
+      }
+
+      getOfficeProduct();
     }, [])
+
+    //     fetch('officeCategory.json')
+    //         .then(res => res.json())
+    //         .then(data => setFurnitures(data))
+    // }, [])
 
     console.log(furnitures)
     return (
