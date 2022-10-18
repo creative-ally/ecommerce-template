@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Executive Table ",
+        "category": "executive",
+        "image": "https://i.ibb.co/h9VQ2vz/Executivetable.jpg"
+    },
+
+    {
+        "id": 2,
+        "name": "Senior Executive Table ",
+        "category": "sr.executive",
+        "image": "https://i.ibb.co/zbRz7N2/Senior-Executive-Table.jpg"
+    },
+
+    {
+        "id": 3,
+        "name": "Side Table ",
+        "category": "side table",
+        "image": "https://i.ibb.co/xhj0Rpn/Side-Table.jpg"
+    },
+
+    {
+        "id": 4,
+        "name": "Conference Table",
+        "category": "conference table",
+        "image": "https://i.ibb.co/VjR63v2/Conference-Table.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Reception Counter  ",
+        "category": "reception",
+        "image": "https://i.ibb.co/PFNFmzr/Reception-Counter.jpg"
+    }
+]
