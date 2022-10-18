@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div>
                     <Link to={''} className='px-2 text-zinc-500'>Blog</Link>
                     <Link to={''} className='px-2 text-zinc-500'>Showroom Locator</Link>
-                    <Link to={''} className='px-2 text-zinc-500'>Help</Link>
+                    <Link to={'/help'} className='px-2 text-zinc-500'>Help</Link>
                     <Link to='/signin' className='px-2 text-zinc-500'>SignIn</Link>
                     <Link to='/signup' className='px-2 text-zinc-500'>SignUp</Link>
                 </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-            <Divider/>
+            <Divider />
             {/* third nav */}
             <div class=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>

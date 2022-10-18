@@ -25,7 +25,8 @@ const Categories = () => {
             </Box>
             <Stack container direction={'row'}
                 sx={{
-                    flexWrap: 'wrap'
+                    flexWrap: 'wrap',
+                    justifyContent: 'center'
                 }}
             >
                 {/* sofa card  */}
