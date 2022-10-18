@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InteriorProjects = ({interior}) => {
-   const {id,image}=interior
+   const {image}=interior
     return (
         <div>
             <img className='my-5 mx-auto' src={image} alt="" />
