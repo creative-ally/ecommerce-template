@@ -1,11 +1,11 @@
-import { AccountCircle } from '@mui/icons-material';
-import { Box, Card, Container, Divider, FormControl, IconButton, Input, InputAdornment, InputBase, InputLabel, List, ListItem, ListItemText, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Box, Container, Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 
 const Help = () => {
     const [helpTopic, setHelpTopic] = useState(null)
+
     return (
         <Container maxWidth='100vw' sx={{
             width: '100%',
