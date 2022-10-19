@@ -2,8 +2,10 @@ import { AccountCircle } from '@mui/icons-material';
 import { Box, Card, Container, Divider, FormControl, IconButton, Input, InputAdornment, InputBase, InputLabel, List, ListItem, ListItemText, Paper, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { useState } from 'react';
 
 const Help = () => {
+    const [helpTopic, setHelpTopic] = useState(null)
     return (
         <Container maxWidth='100vw' sx={{
             width: '100%',
@@ -21,7 +23,13 @@ const Help = () => {
                 }}>
                     <Paper
                         component="form"
-                        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+                        sx={{
+                            p: '2px 4px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            width: 400,
+                            my: '1rem'
+                        }}
                     >
                         <InputBase
                             sx={{ ml: 1, flex: 1 }}
@@ -40,6 +48,7 @@ const Help = () => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'flex-start',
+                    gap: 8,
                     py: '2rem'
                 }}
             >
@@ -53,7 +62,11 @@ const Help = () => {
                     <List component="nav" aria-label="mailbox folders">
                         {
                             helpTopics.map(topic => {
-                                return <ListItem key={topic.id} sx={{ p: 0, }}>
+                                return <ListItem key={topic.id}
+                                    onClick={() => setHelpTopic(topic.text)}
+                                    sx={{
+                                        p: 0, cursor: 'pointer'
+                                    }}>
                                     <ListItemText primary={topic.text} sx={{
                                         '&>span': { fontSize: '0.9rem' }
                                     }} />
@@ -62,28 +75,23 @@ const Help = () => {
                         }
                     </List>
                 </Stack>
-                {/* sofa card  */}
-                <Card sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    bgcolor: 'transparent',
-                    boxShadow: 'none',
-                    mb: '1rem',
-                    p: '1.5rem',
-                    '&:hover': {
-                        color: 'red',
-                        cursor: 'pointer',
-                        boxShadow: 5
-                    }
-                }}>
-                    {/* <Chair sx={{ fontSize: '3rem' }} /> */}
-                    <Typography component={'h3'} sx={{
-                        fontWeight: 'bold'
+
+                {/* Order Queries  */}
+                <Stack sx={{ mr: '5rem' }}>
+                    <Typography component={'h2'} sx={{
+                        fontSize: '1.2rem',
+                        mb: '1rem'
                     }}>
-                        Sofa
+                        My Order Queries
                     </Typography>
-                </Card>
+                    <List component="nav" aria-label="mailbox folders">
+                        <ListItem sx={{ p: 0, }}>
+                            <ListItemText primary={helpTopic || 'My Account'} sx={{
+                                '&>span': { fontSize: '0.9rem' }
+                            }} />
+                        </ListItem>
+                    </List>
+                </Stack>
             </Container>
         </Container>
     );
