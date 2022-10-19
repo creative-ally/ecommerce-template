@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const FurnitureProduct = ({ cate }) => {
 
@@ -35,13 +36,14 @@ useEffect(()=>{
 //         console.log(filterproducts);
 
 //     })
-        
+    
 //       }, [products]);
 
     return (
         <div className="grid grid-cols-3 justify-center">
             {products.map((data) => (
-                <div
+               <Link to={`/furnitureSingleProduct/${data._id}`}>
+                 <div
                     class="card bg-base-100 shadow-xl mx-3 cursor-pointer"
                     key={data._id}
                 >
@@ -60,6 +62,7 @@ useEffect(()=>{
                         </div>
                     </div>
                 </div>
+               </Link>
             ))}
         </div>
     );
