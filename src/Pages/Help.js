@@ -1,12 +1,11 @@
 import { AccountCircle } from '@mui/icons-material';
-import { Box, Card, Container, FormControl, IconButton, Input, InputAdornment, InputBase, InputLabel, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Box, Card, Container, Divider, FormControl, IconButton, Input, InputAdornment, InputBase, InputLabel, List, ListItem, ListItemText, Paper, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Help = () => {
     return (
         <Container maxWidth='100vw' sx={{
-            pb: '6rem',
             width: '100%',
             bgcolor: 'white'
         }}>
@@ -35,16 +34,36 @@ const Help = () => {
                     </Paper>
                 </Stack>
             </Box>
-            <Stack container direction={'row'}
+            <Divider />
+            <Container
                 sx={{
+                    display: 'flex',
                     flexWrap: 'wrap',
-                    justifyContent: 'center'
+                    justifyContent: 'flex-start',
+                    py: '2rem'
                 }}
             >
+                <Stack sx={{ mr: '5rem' }}>
+                    <Typography component={'h2'} sx={{
+                        fontSize: '1.2rem',
+                        mb: '1rem'
+                    }}>
+                        Help Topics
+                    </Typography>
+                    <List component="nav" aria-label="mailbox folders">
+                        {
+                            helpTopics.map(topic => {
+                                return <ListItem key={topic.id} sx={{ p: 0, }}>
+                                    <ListItemText primary={topic.text} sx={{
+                                        '&>span': { fontSize: '0.9rem' }
+                                    }} />
+                                </ListItem>
+                            })
+                        }
+                    </List>
+                </Stack>
                 {/* sofa card  */}
                 <Card sx={{
-                    maxWidth: '8.87rem',
-                    minWidth: '8.5rem',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -65,9 +84,32 @@ const Help = () => {
                         Sofa
                     </Typography>
                 </Card>
-            </Stack>
+            </Container>
         </Container>
     );
 };
 
 export default Help;
+
+const helpTopics = [
+    {
+        id: 1,
+        text: 'My Account'
+    },
+    {
+        id: 2,
+        text: 'Before I buy'
+    },
+    {
+        id: 3,
+        text: 'Payments'
+    },
+    {
+        id: 4,
+        text: 'Warranty Services'
+    },
+    {
+        id: 5,
+        text: 'Interior Solutions'
+    },
+]
