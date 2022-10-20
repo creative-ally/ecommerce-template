@@ -2,43 +2,36 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Divider,
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import StoreBanner from '../assets/Store_banner.png'
 
 const ShowroomLocator = () => {
     return (
-        <Container maxWidth='100vw' sx={{
+        <Box maxWidth='100vw' sx={{
             width: '100%',
             bgcolor: 'white'
         }}>
             <Box sx={{
                 textAlign: 'center',
-                my: '2rem'
+                my: '2rem',
+                color: 'white',
+                p: '2rem',
+                height: '25rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                backgroundImage: `url("${StoreBanner}")`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
             }}>
-                <Typography component={'h2'} sx={{
-                    fontSize: '2rem'
-                }} >Help Center</Typography>
-                <Stack sx={{
-                    alignItems: 'center'
+                <Container sx={{
+                    textAlign: 'start'
                 }}>
-                    <Paper
-                        component="form"
-                        sx={{
-                            p: '2px 4px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            width: 400,
-                            my: '1rem'
-                        }}
-                    >
-                        <InputBase
-                            sx={{ ml: 1, flex: 1 }}
-                            placeholder="Type your queries here.."
-                            inputProps={{ 'aria-label': 'search google maps' }}
-                        />
-                        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                            <SearchIcon />
-                        </IconButton>
-                    </Paper>
-                </Stack>
+                    <Typography component={'h2'} sx={{
+                        fontSize: '2rem',
+                    }} >Showroom Locator</Typography>
+                    <Typography component={'span'}>Do find your nearest HATIL showroom conveniently.</Typography>
+                </Container>
             </Box>
             <Divider />
             <Container
@@ -101,7 +94,7 @@ const ShowroomLocator = () => {
                     </Accordion>
                 </Stack>
             </Container>
-        </Container>
+        </Box>
     );
 };
 
