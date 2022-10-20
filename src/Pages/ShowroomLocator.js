@@ -1,7 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const ShowroomLocator = () => {

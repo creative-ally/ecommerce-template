@@ -92,12 +92,12 @@ const Help = () => {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <Typography>{helpTopic.text || 'My Account'}</Typography>
+                            <Typography>{helpTopic?.text || 'My Account'}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
                                 {
-                                    helpTopic.description || 'Once I sign-in and be a regular follower, I won’t be missing out on all the new arrivals and exciting promotions.'
+                                    helpTopic?.description || 'Once I sign-in and be a regular follower, I won’t be missing out on all the new arrivals and exciting promotions.'
                                 }
                             </Typography>
                         </AccordionDetails>
