@@ -1,0 +1,427 @@
+{
+    "category": [
+        {
+            "id": 1,
+            "name": "Dining",
+            "image": "https://i.ibb.co/5hkTZ3L/all-dinning.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Fairbanks-109-and-Carp-109",
+                    "image": "https://i.ibb.co/26CLLRt/Fairbanks-109-and-Carp-109.jpg",
+                    "imageH": "https://i.ibb.co/XVL0Dyg/Fairbanks-109-and-Carp-109.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "87,660",
+                    "color": "Antique"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Gordon-128 and Lime-128",
+                    "image": "https://i.ibb.co/LxGcFJ0/1-0.jpg",
+                    "imageH": "https://i.ibb.co/ynTnNbK/5-1.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "91,980",
+                    "color": "Antique"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Halley-143 and Lisbon-14",
+                    "image": "https://i.ibb.co/YBTytnC/1-13.jpg",
+                    "imageH": "https://i.ibb.co/2jDqpBJ/5-5.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "86,085",
+                    "color": "Antique"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Irving-155 and Sofia-155",
+                    "image": "https://i.ibb.co/wcXs7zx/Irving-155-and-Sofia-155-0.jpg",
+                    "imageH": "https://i.ibb.co/R6CLmtC/Irving-155-and-Sofia-155-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "83,078",
+                    "color": "Antique"
+                },
+                {
+                    "id": 5,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Rockfish-157 and Pancake-148",
+                    "image": "https://i.ibb.co/fq9Jt8v/1-14.jpg",
+                    "imageH": "https://i.ibb.co/8sT6NjQ/5-3.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "83,655",
+                    "color": "Antique"
+                },
+                {
+                    "id": 6,
+                    "category": "Dining",
+                    "subcategory": "Dining Set",
+                    "name": "Cumin-179 and Marmot-179",
+                    "image": "https://i.ibb.co/YBTytnC/1-13.jpg",
+                    "imageH": "https://i.ibb.co/2jDqpBJ/5-5.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "138,795",
+                    "color": "Antique"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Dining Chair",
+            "image": "https://i.ibb.co/RY2qJwX/All-Chair.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Savory-151",
+                    "image": "https://i.ibb.co/b5MvyY0/Savory-151.jpg",
+                    "imageH": "https://i.ibb.co/5jx38mK/Savory-151.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "8,170",
+                    "color": "Antique"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Joel-177",
+                    "image": "https://i.ibb.co/f08f62Y/Joel-177-0.jpg",
+                    "imageH": "https://i.ibb.co/N17LtdH/Joel-177.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "11,400",
+                    "color": "Antique"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Rafael-184",
+                    "image": "https://i.ibb.co/kmZHRD3/Rafael-184.jpg",
+                    "imageH": "https://i.ibb.co/q5GTncL/Rafael-184.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "11,400",
+                    "color": "Antique"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Seasame-101",
+                    "image": "https://i.ibb.co/8Y16pwq/Seasame-101.jpg",
+                    "imageH": "https://i.ibb.co/gmGvJ57/Seasame-101.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "8,910",
+                    "color": "Antique"
+                },
+                {
+                    "id": 5,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Acadia-197",
+                    "image": "https://i.ibb.co/ZB7nmj3/Acadia-197-0.jpg",
+                    "imageH": "https://i.ibb.co/2YgDdhX/Acadia-197.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "14,108",
+                    "color": "Antique"
+                },
+                {
+                    "id": 6,
+                    "category": "Dining",
+                    "subcategory": "Dining Chair",
+                    "name": "Cumin-179",
+                    "image": "https://i.ibb.co/6WcdDy3/Cumin-179.jpg",
+                    "imageH": "https://i.ibb.co/V3r4p27/Cumin-179.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "16,554",
+                    "color": "Antique"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Dinner Wagon",
+            "image": "https://i.ibb.co/nrh4xdb/Meatloaf-102.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Dinner Wagon",
+                    "name": "Meatloaf-102",
+                    "image": "https://i.ibb.co/nrh4xdb/Meatloaf-102.jpg",
+                    "imageH": "https://i.ibb.co/cXrsNzr/Meatloaf-102-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "86,545",
+                    "color": "Antique+Natural Texture+Antique(MFC)"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Dinner Wagon",
+                    "name": "Fajita-108",
+                    "image": "https://i.ibb.co/q09tfpG/Fajita-108.jpg",
+                    "imageH": "https://i.ibb.co/mvX1myR/Fajita-108-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "110,295",
+                    "color": "Antique+Natural and Natural Texture"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Dinner Wagon",
+                    "name": "Cave-116",
+                    "image": "https://i.ibb.co/ggnFVRt/Cave-116.jpg",
+                    "imageH": "https://i.ibb.co/xgSpTf1/Cave-116-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "75,195",
+                    "color": "Antique+Natural and Natural Texture"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Dinner Wagon",
+                    "name": "Broccoli-105",
+                    "image": "https://i.ibb.co/FKyDn2y/Broccoli-105.jpg",
+                    "imageH": "https://i.ibb.co/FXDfZdn/Broccoli-105-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "74,385",
+                    "color": "Antique+Natural Texture+Antique(MFC)"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Tea Trolley",
+            "image": "https://i.ibb.co/Y2MnCdn/Assam-101.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Tea Trolley",
+                    "name": "Assam-101",
+                    "image": "https://i.ibb.co/Y2MnCdn/Assam-101.jpg",
+                    "imageH": "https://i.ibb.co/yhDKmqK/Assam-101.jpg",
+                    "material": "Kiln-dried imported Beech wood, veneered engineered wood and Stainless Steel",
+                    "price": "19,095",
+                    "color": "Antique"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Tea Trolley",
+                    "name": "Formosa-107",
+                    "image": "https://i.ibb.co/wNLsW6X/Formosa-107.jpg",
+                    "imageH": "https://i.ibb.co/Jsp9NzZ/Formosa-107.jpg",
+                    "material": "Kiln-dried imported Beech wood, veneered engineered wood and Stainless Steel",
+                    "price": "18,193",
+                    "color": "Antique"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Tea Trolley",
+                    "name": "Fuji-102",
+                    "image": "https://i.ibb.co/99GmDYx/Fuji-102.jpg",
+                    "imageH": "https://i.ibb.co/PgmfK0c/Fuji-102.jpg",
+                    "material": "Kiln-dried imported Beech wood, veneered engineered wood and Stainless Steel",
+                    "price": "17,148",
+                    "color": "Antique"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Tea Trolley",
+                    "name": "Yunnan-104",
+                    "image": "https://i.ibb.co/gD0J8Dw/Yunnan-104-0.jpg",
+                    "imageH": "https://i.ibb.co/gg0tqZ2/Yunnan-104.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "11,700",
+                    "color": "Antique"
+                },
+                {
+                    "id": 5,
+                    "category": "Dining",
+                    "subcategory": "Tea Trolley",
+                    "name": "York-106",
+                    "image": "https://i.ibb.co/yk5LDdL/York-106-0.jpg",
+                    "imageH": "https://i.ibb.co/bRb20jh/York-106.jpg",
+                    "material": "Kiln-dried imported Beech wood, veneered engineered wood and Stainless Steel",
+                    "price": "18,098",
+                    "color": "Antique"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Showcase",
+            "image": "https://i.ibb.co/nzYRCCm/Stash-103.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Showcase",
+                    "name": "Stash-103",
+                    "image": "https://i.ibb.co/nzYRCCm/Stash-103.jpg",
+                    "imageH": "https://i.ibb.co/xsj4GjJ/Stash-103-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "49,500",
+                    "color": "Antique+Natural Texture+Antique(MFC)"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Showcase",
+                    "name": "Fairfax-119",
+                    "image": "https://i.ibb.co/jyhw86L/Fairfax-119.jpg",
+                    "imageH": "https://i.ibb.co/f8GzjCG/Fairfax-119.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "44,033",
+                    "color": "Antique+Natural Texture+Antique(MFC)"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Showcase",
+                    "name": "Heritage-101",
+                    "image": "https://i.ibb.co/sVcy1pt/Heritage-101.jpg",
+                    "imageH": "https://i.ibb.co/djvBp5C/Heritage-101-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "45,695",
+                    "color": "Antique"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Showcase",
+                    "name": "Cinnamon-103",
+                    "image": "https://i.ibb.co/KxPPMfZ/Cinnamon-103-0.jpg",
+                    "imageH": "https://i.ibb.co/tLwpNV6/Cinnamon-103.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "24,653",
+                    "color": "Ebony, White Texture, American Teak"
+                },
+                {
+                    "id": 5,
+                    "category": "Dining",
+                    "subcategory": "Showcase",
+                    "name": "Legacy-102",
+                    "image": "https://i.ibb.co/jW0L6mH/Legacy-102.jpg",
+                    "imageH": "https://i.ibb.co/NtkvQSz/Legacy-102-0.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "45,540",
+                    "color": "Antique+Natural Texture+Antique(MFC)"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Mini Cabinet",
+            "image": "https://i.ibb.co/LxWhYtG/Elgar-102.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Mini Cabinet",
+                    "name": "Elgar-102",
+                    "image": "https://i.ibb.co/LxWhYtG/Elgar-102.jpg",
+                    "imageH": "https://i.ibb.co/Rv7ktM8/Elger-102.jpg",
+                    "material": "Block Beech Veneer",
+                    "price": "37,145",
+                    "color": "Antique+Natural and Natural Texture"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Mini Cabinet",
+                    "name": "Lace-106",
+                    "image": "https://i.ibb.co/w67xBT0/Lace-106.jpg",
+                    "imageH": "https://i.ibb.co/jkkyJhK/Lace-106-0.jpg",
+                    "material": "Block Beech Veneer",
+                    "price": "33,750",
+                    "color": "Antique+Natural and Natural Texture"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Mini Cabinet",
+                    "name": "Linen-104 And Glass-216-111",
+                    "image": "https://i.ibb.co/5sbmQDp/Linen-104-Mini-Cabinet-2-0.jpg",
+                    "imageH": "https://i.ibb.co/bBhQ4R4/Linen-104-Mini-Cabinet-1-0.jpg",
+                    "material": "Block Beech Veneer",
+                    "price": "45,505",
+                    "color": "Antique+Natural and Natural Texture"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Cafeteria Set",
+            "image": "https://i.ibb.co/W2zQNPQ/Fairmont-117-and-Mandolin-103.jpg",
+            "products": [
+                {
+                    "id": 1,
+                    "category": "Dining",
+                    "subcategory": "Cafeteria Set",
+                    "name": "Artemis-113 and Mandolin-103",
+                    "image": "https://i.ibb.co/TtjFkRX/Artemis-113-and-Mandolin-103.jpg",
+                    "imageH": "https://i.ibb.co/0MfRh45/Artemis-113-and-Mandolin-103.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "51,870",
+                    "color": "Antique+Black Texture"
+                },
+                {
+                    "id": 2,
+                    "category": "Dining",
+                    "subcategory": "Cafeteria Set",
+                    "name": "Buchanon-103 and Sparse-101",
+                    "image": "https://i.ibb.co/gJLKqYC/Buchanon-103-and-Sparse-101-1.jpg",
+                    "imageH": "https://i.ibb.co/zX1TTDV/Buchanon-103-and-Sparse-101.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "36,860",
+                    "color": "Antique and Natural+Black Texture"
+                },
+                {
+                    "id": 3,
+                    "category": "Dining",
+                    "subcategory": "Cafeteria Set",
+                    "name": "Riverton-114 and Morn-108",
+                    "image": "https://i.ibb.co/Z2sYm5r/Riverton-114-and-Morn-108.jpg",
+                    "imageH": "https://i.ibb.co/w6S4F7z/Riverton-114-and-Morn-108.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "33,203",
+                    "color": "Antique and Natural"
+                },
+                {
+                    "id": 4,
+                    "category": "Dining",
+                    "subcategory": "Cafeteria Set",
+                    "name": "Riverton-114 and Melodic-102",
+                    "image": "https://i.ibb.co/LvSBtfH/Riverton-114-and-Melodic-102.jpg",
+                    "imageH": "https://i.ibb.co/rZvDX4Z/Riverton-114-and-Melodic-102.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "24,130",
+                    "color": "Antique and Black Texture"
+                },
+                {
+                    "id": 5,
+                    "category": "Dining",
+                    "subcategory": "Cafeteria Set",
+                    "name": "Fairmont-117 and Mandolin-103",
+                    "image": "https://i.ibb.co/W2zQNPQ/Fairmont-117-and-Mandolin-103.jpg",
+                    "imageH": "https://i.ibb.co/m5kZGGN/Fairmont-117-and-Mandolin-103.jpg",
+                    "material": "Kiln-dried imported Beech wood and veneered engineered wood",
+                    "price": "60,610",
+                    "color": "Antique"
+                }
+            ]
+        }
+    ]
+}

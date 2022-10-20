@@ -5,6 +5,8 @@ import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp'
 import Chat from './Components/ChatBot/Chat';
+import AllDinning from './Pages/DinningCategories/AllDinning';
+import DinningCategories from './Pages/DinningCategories/DinningCategories';
 import Help from './Pages/Help';
 import Home from './Pages/Home/Home';
 import CategoryList from './Pages/OfficeCategory/CategoryList';
@@ -28,8 +30,9 @@ function App() {
           element={<FsingleProduct />}
         />
         <Route path="/doors" element={<AllDoor />} />
+        <Route path="/dinning" element={<AllDinning />} />
         <Route path="/interior" element={<Interior />} />
-        <Route path="/doors/:id" element={<SubCategory />} />
+        <Route path="/dinning/:id" element={<DinningCategories />} />
 
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
