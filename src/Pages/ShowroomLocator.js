@@ -36,11 +36,11 @@ const ShowroomLocator = () => {
             <Divider />
             <Container
                 sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
+                    display: 'grid',
+                    gridTemplateColumns: '4fr 8fr',
                     justifyContent: 'flex-start',
-                    gap: 8,
-                    py: '2rem'
+                    py: '2rem',
+                    height: '35.1rem'
                 }}
             >
                 <Stack sx={{ mr: '5rem' }}>
