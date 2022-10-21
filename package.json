@@ -15,7 +15,11 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.2",
     "daisyui": "^2.31.0",
+<<<<<<< HEAD
     "google-map-react": "^2.2.0",
+=======
+    "json-server": "^0.17.0",
+>>>>>>> 01557c9f53b8f895532e9cf90e446d8037d3777c
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -31,7 +35,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+<<<<<<< HEAD
     "json-serve": "json-server --watch doors.json --port 8000"
+=======
+    "json-serve": "json-server --watch doors.json --port 8000",
+    "json-served": "json-server --watch dining.json --port 8001"
+>>>>>>> 01557c9f53b8f895532e9cf90e446d8037d3777c
   },
   "eslintConfig": {
     "extends": [
