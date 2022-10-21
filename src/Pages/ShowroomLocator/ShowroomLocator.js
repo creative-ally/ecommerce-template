@@ -1,8 +1,8 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Checkbox, Container, Divider, FormControlLabel, IconButton, InputBase, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Checkbox, Container, FormControlLabel, IconButton, InputBase, Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import StoreBanner from '../assets/Store_banner.png'
+import StoreBanner from '../../assets/Store_banner.png'
+import ShowroomMap from './ShowroomMap';
 
 const ShowroomLocator = () => {
     return (
@@ -96,31 +96,10 @@ const ShowroomLocator = () => {
                     }}>Hello</Stack>
                 </Stack>
 
-                {/* Order Queries  */}
+                {/* Shoroom map area  */}
                 <Stack>
-                    <Typography component={'h2'} sx={{
-                        fontSize: '1.2rem',
-                        mb: '1rem',
-                        flexDirection: 'row'
-                    }}>
-                        My Order Queries
-                    </Typography>
-                    <Accordion disableSpacing={true} sx={{ maxWidth: 800, boxShadow: 'none' }}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            {/* <Typography>{helpTopic.text || 'My Account'}</Typography> */}
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                {/* {
-                                    helpTopic.description || 'Once I sign-in and be a regular follower, I won’t be missing out on all the new arrivals and exciting promotions.'
-                                } */}
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
+                    {/* shoowroom map  */}
+                    <ShowroomMap />
                 </Stack>
             </Container>
         </Box>

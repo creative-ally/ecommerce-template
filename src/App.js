@@ -11,7 +11,7 @@ import CategoryList from './Pages/OfficeCategory/CategoryList';
 import FsingleProduct from './Pages/OfficeCategory/FsingleProduct';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
-import ShowroomLocator from './Pages/ShowroomLocator'
+import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator'
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
