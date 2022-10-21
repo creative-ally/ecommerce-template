@@ -31,7 +31,7 @@ const Banner = () => {
 
   return (
     <>
-      <Swiper
+      <Swiper 
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -48,7 +48,7 @@ const Banner = () => {
       >
         {
           banner.map((item, index) =>
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index}> 
               <div style={{ width: '100%' }}>
                 <Box
                   sx={{
@@ -58,9 +58,9 @@ const Banner = () => {
                     alignItems: 'center'
                   }}
                 >
-                  <Container maxWidth="sm">
-                    <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
-                    <Box
+                  <Container maxWidth="sm " >
+                    <Typography  sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
+                    <Box 
                       sx={{
                         display: 'flex',
                         justifyContent: 'left',

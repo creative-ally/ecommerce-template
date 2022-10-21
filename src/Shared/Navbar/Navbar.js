@@ -1,67 +1,68 @@
-import { Divider } from '@mui/material';
+import { Search } from '@material-ui/icons';
+import { IconButton, InputBase, Paper } from '@mui/material';
 import React from 'react';
-import { HiMail, HiPhone, HiOutlineSearch, HiOutlineShoppingCart } from "react-icons/hi";
+import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
 const Navbar = () => {
     return (
         <div>
-            {/* first nav */}
-            <div class=" bg-gray-200 px-14 text-end py-1">
-                <div>
-                    <Link to={''} className='px-2 text-zinc-500'>Blog</Link>
-                    <Link to={'/showroomLocator'} className='px-2 text-zinc-500'>Showroom Locator</Link>
-                    <Link to={'/help'} className='px-2 text-zinc-500'>Help</Link>
-                    <Link to='/signin' className='px-2 text-zinc-500'>SignIn</Link>
-                    <Link to='/signup' className='px-2 text-zinc-500'>SignUp</Link>
+            <div class="flex flex-row justify-between px-12  py-3 items-center bg-grey-100">
+                <div className='flex flex-col'>
+                    <div className='flex items-center'>
+                        <HiPhone />
+                        <p className='px-2'>+880 1000000000</p>
+                    </div>
+                    <div className='flex items-center'>
+                        <HiMail />
+                        <p className='px-2'>furniture@gmail.com</p>
+                    </div>
+
                 </div>
+
+                <div>
+                    <Paper component="form"
+                        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}>
+                        <InputBase
+                            sx={{ ml: 1, flex: 1 }}
+                            placeholder="Search any product"
+                            inputProps={{ 'aria-label': 'search google maps' }}
+                        />
+                        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                            <Search />
+                        </IconButton>
+                    </Paper>
+                </div>
+
+
+
             </div>
             {/* second nav */}
-            <div class="navbar bg-gray-50 px-14 py-5">
+            <div class="navbar px-14 bg-teal-600 py-5 text-white">
                 {/* phone and mail */}
-                <div class="navbar-start text-zinc-600">
-                    <div>
-                        <div className='flex items-center'>
-                            <HiPhone />
-                            <p className='px-2'>+880 1000000000</p>
-                        </div>
-                        <div className='flex items-center'>
-                            <HiMail />
-                            <p className='px-2'>hatilfurniture@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                {/* name and logo */}
-                <div class="navbar-center">
+                <div class="navbar-start ">
                     <Link to={'/'}>
                         <img src={Logo} alt="" />
                     </Link>
                 </div>
-                {/* search and cart */}
+                <div class="navbar-center">
+                    <Link to={''} className='px-2 '>New</Link>
+                    <Link to={''} className='px-2 '>Living Bedroom</Link>
+                    <Link to={'/dining'} className='px-2 '>Dining</Link>
+                    <Link to={''} className='px-2 '>Kitchen</Link>
+                    <Link to='/doors' className='px-2 '>Door</Link>
+                    <Link to="/interior" className='px-2 '>Interior</Link>
+                    <Link to={''} className='px-2 '>Office</Link>
+                </div>
                 <div class="navbar-end">
-                    <button class="btn btn-ghost btn-circle">
-                        <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
-                    </button>
-                    <button class="btn btn-ghost btn-circle">
-                        <div class="indicator">
-                            <HiOutlineShoppingCart className='h-6 w-6 text-zinc-600' />
-                            <span class="badge badge-xs badge-error indicator-item"></span>
-                        </div>
-                    </button>
+
+                    <HiOutlineShoppingCart className='h-6 w-6 ' />
+                    <span class="badge badge-xs badge-error indicator-item"></span>
+                    <Link to="/signin" className='px-2 '>SignIn</Link>
                 </div>
             </div>
-            <Divider />
-            {/* third nav */}
-            <div class=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
-                <Link to={''} className='px-2 text-zinc-500'>New</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Living Bedroom</Link>
-                <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Kitchen</Link>
-                <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
-                <Link to="/interior" className='px-2 text-zinc-500'>Interior</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Office</Link>
-            </div>
+
         </div>
     );
 };
