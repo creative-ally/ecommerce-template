@@ -31,5 +31,16 @@
         "name": "Reception Counter  ",
         "category": "reception",
         "image": "https://i.ibb.co/PFNFmzr/Reception-Counter.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Waiting Chair",
+        "product code":  973432,
+        "category": "chair",
+        "image":"https://i.ibb.co/JRTMHLN/csc-234ee.jpg"
+
+
     }
+
+
 ]

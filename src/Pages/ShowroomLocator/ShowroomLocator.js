@@ -38,10 +38,16 @@ const ShowroomLocator = () => {
             <Container
                 sx={{
                     display: 'grid',
-                    gridTemplateColumns: '4fr 8fr',
+                    gridTemplateColumns: {
+                        sm: '4fr 8fr',
+                        xs: '1fr'
+                    },
                     justifyContent: 'flex-start',
                     my: '5rem',
+                    px: '1rem',
                     height: '35.1rem',
+                    width: '100%',
+                    overflow: 'hidden',
                     border: '1px solid #e2e2e2',
                     '&.MuiContainer-root': {
                         p: '0'
