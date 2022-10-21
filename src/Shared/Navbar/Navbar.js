@@ -11,8 +11,8 @@ const Navbar = () => {
             <div class=" bg-gray-200 px-14 text-end py-1">
                 <div>
                     <Link to={''} className='px-2 text-zinc-500'>Blog</Link>
-                    <Link to={''} className='px-2 text-zinc-500'>Showroom Locator</Link>
-                    <Link to={''} className='px-2 text-zinc-500'>Help</Link>
+                    <Link to={'/showroomLocator'} className='px-2 text-zinc-500'>Showroom Locator</Link>
+                    <Link to={'/help'} className='px-2 text-zinc-500'>Help</Link>
                     <Link to='/signin' className='px-2 text-zinc-500'>SignIn</Link>
                     <Link to='/signup' className='px-2 text-zinc-500'>SignUp</Link>
                 </div>
@@ -51,12 +51,12 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-            <Divider/>
+            <Divider />
             {/* third nav */}
             <div class=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Living Bedroom</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Dining</Link>
+                <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Kitchen</Link>
                 <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
                 <Link to="/interior" className='px-2 text-zinc-500'>Interior</Link>
