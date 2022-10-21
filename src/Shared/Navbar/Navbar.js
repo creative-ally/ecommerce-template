@@ -56,7 +56,7 @@ const Navbar = () => {
             <div class=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Living Bedroom</Link>
-                <Link to={'/dinning'} className='px-2 text-zinc-500'>Dining</Link>
+                <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Kitchen</Link>
                 <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
                 <Link to="/interior" className='px-2 text-zinc-500'>Interior</Link>
