@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Checkbox, Container, Divider, FormControlLabel, IconButton, InputBase, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -33,38 +33,67 @@ const ShowroomLocator = () => {
                     <Typography component={'span'}>Do find your nearest HATIL showroom conveniently.</Typography>
                 </Container>
             </Box>
-            <Divider />
+
+            {/* map and search area  */}
             <Container
                 sx={{
                     display: 'grid',
                     gridTemplateColumns: '4fr 8fr',
                     justifyContent: 'flex-start',
-                    py: '2rem',
-                    height: '35.1rem'
+                    my: '5rem',
+                    height: '35.1rem',
+                    border: '1px solid #e2e2e2',
+                    '&.MuiContainer-root': {
+                        p: '0'
+                    }
                 }}
             >
-                <Stack sx={{ mr: '5rem' }}>
-                    <Typography component={'h2'} sx={{
-                        fontSize: '1.2rem',
-                        mb: '1rem'
+                <Stack>
+                    <Stack sx={{
+                        p: '2rem',
+                        background: '#f6f6f6'
                     }}>
-                        Help Topics
-                    </Typography>
-                    <List component="nav" aria-label="mailbox folders">
-                        {/* {
-                            helpTopics.map(topic => {
-                                return <ListItem key={topic.id}
-                                    onClick={() => setHelpTopic(topic)}
-                                    sx={{
-                                        p: 0, cursor: 'pointer'
-                                    }}>
-                                    <ListItemText primary={topic.text} sx={{
-                                        '&>span': { fontSize: '0.9rem' }
-                                    }} />
-                                </ListItem>
-                            })
-                        } */}
-                    </List>
+                        <Typography component={'h2'} sx={{
+                            fontSize: '1.2rem',
+                        }}>
+                            Find Your Nearest Store
+                        </Typography>
+                        <Paper
+                            component="form"
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                width: 300,
+                                my: '0.5rem'
+                            }}
+                        >
+                            <InputBase
+                                sx={{ ml: 1, flex: 1 }}
+                                placeholder="Type your queries here.."
+                                inputProps={{ 'aria-label': 'search google maps' }}
+                            />
+                            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                                <SearchIcon />
+                            </IconButton>
+                        </Paper>
+                        <Box sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}>
+                            <FormControlLabel control={<Checkbox defaultChecked />} label="Corporate office" />
+                            <Button variant='text' color='warning' sx={{
+                                textTransform: 'inherit',
+
+                            }}>Reset</Button>
+                        </Box>
+                    </Stack>
+
+                    {/* search result area  */}
+                    <Stack sx={{
+                        p: '1.5rem',
+                        pt: '2rem',
+                        height: '100%',
+                    }}>Hello</Stack>
                 </Stack>
 
                 {/* Order Queries  */}
