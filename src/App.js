@@ -3,6 +3,7 @@ import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
 import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
+import SignUp from './Components/Auth/SignUp';
 
 import Chat from './Components/ChatBot/Chat';
 import Home from './Pages/Home/Home';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/doors/:id" element={<SubCategory />} />
 
         <Route path ='/signin' element={<SignIn/>}/>
+        <Route path ='/signup' element={<SignUp/>}/>
       </Routes>
       <Footer />
       <Chat></Chat>
