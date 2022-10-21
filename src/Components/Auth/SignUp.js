@@ -7,6 +7,7 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import HttpsIcon from "@mui/icons-material/Https";
 import { PermIdentity } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
     const handleSubmit = (e) => {
@@ -18,9 +19,9 @@ const SignUp = () => {
             <div className=" mx-2 w-4/12 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500   flex flex-col justify-center text-center">
                 <h1 className="text-[35px] font-bold mb-5">Welcome Back!</h1>
                 <p>To keep connected with us please sign in with your personal info</p>
-                <button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
+               <Link to='/signin'> <button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
                     Sign In
-                </button>
+                </button></Link>
             </div>
 
             <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 ...">

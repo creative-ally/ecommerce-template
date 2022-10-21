@@ -6,6 +6,7 @@ import { Divider } from "@mui/material";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import HttpsIcon from "@mui/icons-material/Https";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const handleSubmit = (e) => {
@@ -66,9 +67,9 @@ const SignIn = () => {
       <div className=" mx-2 w-4/12 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500  ... flex flex-col justify-center text-center">
         <h1 className="text-[35px] font-bold mb-5">New Here?</h1>
         <p>Sign up and discover a great amount of new opportunities!</p>
-        <button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
+        <Link to ='/signup'><button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
           Sign Up
-        </button>
+        </button></Link>
       </div>
     </div>
   );
