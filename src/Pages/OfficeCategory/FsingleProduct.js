@@ -42,7 +42,7 @@ const FsingleProduct = () => {
 
     return (
         <div>
-            <section class="text-gray-600 body-font overflow-hidden">
+            <section class="text-gray-600 body-font overflow-hidden bg-white">
                 <div class="container px-5 mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap items-center">
                         <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">

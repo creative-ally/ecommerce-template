@@ -3,6 +3,7 @@ import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
 import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
+import SignUp from './Components/Auth/SignUp';
 
 import Chat from './Components/ChatBot/Chat';
 import AllDining from './Pages/DiningCategories/AllDining';
@@ -18,7 +19,7 @@ import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator'
 
 function App() {
   return (
-    <div>
+    <div className='bg-white'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -38,7 +39,6 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
 
-        <Route path ='/signin' element={<SignIn/>}/>
       </Routes>
       <Footer />
       <Chat></Chat>

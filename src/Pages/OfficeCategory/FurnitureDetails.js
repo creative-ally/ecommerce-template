@@ -15,7 +15,7 @@ const FurnitureDetails = (props) => {
 
     // </div>
 
-    <div className="card card-compact w-11/12 mx-2 my-5 bg-base-100 shadow-xl">
+    <div className="card card-compact w-11/12 mx-2 my-5 bg-white shadow-xl">
       <Link to={`/categorylist/${category}`}>
         <figure><img src={image} alt="" className=" w-full h-80 rounded-sm p-3" /></figure>
         <div className=" py-3 text-lg font-bold text-black w-full flex flex-row justify-evenly">

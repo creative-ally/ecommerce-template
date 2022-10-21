@@ -40,17 +40,17 @@ useEffect(()=>{
 //       }, [products]);
 
     return (
-        <div className="grid grid-cols-4 justify-center">
+        <div className="grid grid-cols-4 bg-white">
             {products.map((data) => (
                <Link to={`/furnitureSingleProduct/${data._id}`}>
                  <div
-                    class="card bg-base-100 shadow-xl mx-3 my-3 cursor-pointer"
+                    class="card bg-base-100 shadow-xl m-3 cursor-pointer"
                     key={data._id}
                 >
                     <figure>
                         <img src={data.image} alt="furniture" />
                     </figure>
-                    <div class="card-body">
+                    <div class="card-body bg-white">
                         <h2 class="card-title">
                             {data.name}
                             <div class="badge badge-secondary">NEW</div>
