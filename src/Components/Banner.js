@@ -13,6 +13,17 @@ import { Container, Typography } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Banner = () => {
+  const swiperRef = React.useRef();
+  const onInit = (Swiper) => {
+    swiperRef.current = Swiper;
+  };
+  const handleMouseEnter = () => {
+    if (swiperRef.current) swiperRef.current.autoplay.stop();
+  };
+  const handleMouseLeave = () => {
+    if (swiperRef.current) swiperRef.current.autoplay.start();
+  };
+
   const banner = [
     {
       "title": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia hic est cupiditate necessitatibus incidunt, minima tempore doloribus! Ducimus, libero sapiente!",
@@ -30,8 +41,9 @@ const Banner = () => {
 
 
   return (
-    <>
+    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Swiper
+        onInit={onInit}
         loop={true}
         centeredSlides={true}
         autoplay={{
@@ -79,7 +91,7 @@ const Banner = () => {
           )
         }
       </Swiper>
-    </>
+    </div>
   );
 };
 
