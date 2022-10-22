@@ -9,7 +9,7 @@ import "./components.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Box from '@mui/material/Box';
-import { Button, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Banner = () => {
@@ -32,7 +32,7 @@ const Banner = () => {
   return (
     <>
       <Swiper
-        spaceBetween={30}
+        loop={true}
         centeredSlides={true}
         autoplay={{
           delay: 1000,
@@ -66,10 +66,10 @@ const Banner = () => {
                         justifyContent: 'left',
                       }}
                     >
-                      <Button sx={{ marginLeft: '0px' }} variant="contained" disableElevation>
+                      <button className="btn bg-[#ED1C24] border-0 rounded-full">
                         Explore More
                         <NavigateNextIcon />
-                      </Button>
+                      </button>
                     </Box>
                   </Container>
                   <img src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
