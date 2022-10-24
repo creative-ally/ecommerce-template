@@ -31,6 +31,7 @@ function App() {
         <Route path="/doors" element={<AllDoor />} />
         <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} />
+        <Route path="/blog" element={<Interior />} />
         <Route path="/dining/:id" element={<DiningCategories />} />
 
         <Route path='/signin' element={<SignIn />} />
