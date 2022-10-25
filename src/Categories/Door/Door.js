@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Door = ({ door }) => {
     const [mouseEnter, setMouseEnter] = useState(false);
     const { id, name, image } = door;
+    console.log(id)
     return (
         <Link to={`/doors/${id}`}>
             <div onMouseEnter={() => setMouseEnter(true && id)}
