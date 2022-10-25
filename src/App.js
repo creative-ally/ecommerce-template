@@ -18,7 +18,7 @@ import SignUp from './Components/Auth/SignUp';
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -40,7 +40,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
 
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
       <Chat></Chat>
     </div>
   );
