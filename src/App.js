@@ -33,6 +33,7 @@ function App() {
         <Route path="/doors/:id" element={<SubCategory />} />
         <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} />
+        <Route path="/blog" element={<Interior />} />
         <Route path="/dining/:id" element={<DiningCategories />} />
 
         <Route path='/signin' element={<SignIn />} />
