@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import Blog from './Blog/Blog';
+import Blog from '../Blog/Blog';
 import InteriorProjects from './InteriorProjects';
 
 const Interior = () => {
