@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 const Blog = () => {
     const [blogs,setIBlogs]=useState([])
     const [currentPage,setCurrentPage]=useState(1)
-    const [postPerPage,setPostPerPage]=useState(2)
+    const [postPerPage,setPostPerPage]=useState(6)
 
     useEffect(()=>{
         fetch("blog.json")
