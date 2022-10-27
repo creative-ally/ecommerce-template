@@ -60,34 +60,30 @@ const Banner = () => {
       >
         {
           banner.map((item, index) =>
-            <SwiperSlide key={index}> 
-              <div style={{ width: '100%' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    bgcolor: 'background.paper',
-                    alignItems: 'center'
-                  }}
-                >
-                  <Container maxWidth="sm " >
-                    <Typography  sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
-                    <Box 
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'left',
-                      }}
-                    >
-                      <button className="btn bg-[#ED1C24] border-0 rounded-full">
-                        Explore More
-                        <NavigateNextIcon />
-                      </button>
-                    </Box>
-                  </Container>
-                  <img src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
-                </Box>
-              </div>
-            </SwiperSlide>
+            <div>
+              <SwiperSlide key={index}>
+                <div style={{ width: '100%' }}>
+                  <div className="lg:flex lg:flex-row-reverse mb-5 items-center"
+                  >
+                    <img className="mb-5 lg:mb-0" src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
+                    <Container maxWidth="sm " >
+                      <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          justifyContent: 'left',
+                        }}
+                      >
+                        <button className="btn bg-[#ED1C24] border-0 rounded-full">
+                          Explore More
+                          <NavigateNextIcon />
+                        </button>
+                      </Box>
+                    </Container>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </div>
           )
         }
       </Swiper>
