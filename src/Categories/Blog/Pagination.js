@@ -9,7 +9,7 @@ const Pagination = ({totalPosts,postPerPage,setCurrentPage,currentPage}) => {
         pages.push(i)
     }
     return (
-        <div>
+        <div className='pagination'>
             {
                 pages.map((page,index)=>{
                     return <button className={page===currentPage? 'active' : ""} onClick={()=>{
