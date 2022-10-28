@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import AllDoor from './Categories/Door/AllDoor';
+import SubCategory from './Categories/Door/SubCategory';
 import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
 
@@ -12,6 +13,7 @@ import FsingleProduct from './Pages/OfficeCategory/FsingleProduct';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
 import SignUp from './Components/Auth/SignUp';
+import Blog from './Categories/Blog/Blog';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -29,8 +31,10 @@ function App() {
           element={<FsingleProduct />}
         />
         <Route path="/doors" element={<AllDoor />} />
+        <Route path="/doors/:id" element={<SubCategory />} />
         <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/dining/:id" element={<DiningCategories />} />
 
         <Route path='/signin' element={<SignIn />} />

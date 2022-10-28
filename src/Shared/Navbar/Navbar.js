@@ -49,11 +49,12 @@ const Navbar = () => {
                 <div class="navbar-center">
                     <Link to={''} className='px-2 '>New</Link>
                     <Link to={''} className='px-2 '>Living Bedroom</Link>
-                    <Link to={'/dining'} className='px-2 '>Dining</Link>
-                    <Link to={''} className='px-2 '>Kitchen</Link>
+                    <Link to='/dining' className='px-2 '>Dining</Link>
+                    <Link to='/kitchen' className='px-2 '>Kitchen</Link>
                     <Link to='/doors' className='px-2 '>Door</Link>
                     <Link to="/interior" className='px-2 '>Interior</Link>
-                    <Link to={''} className='px-2 '>Office</Link>
+                    <Link to='/office' className='px-2 '>Office</Link>
+                    <Link to='/blog' className='px-2 '>Blog</Link>
                 </div>
                 <div class="navbar-end">
 
