@@ -13,6 +13,8 @@ import FsingleProduct from './Pages/OfficeCategory/FsingleProduct';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
 import SignUp from './Components/Auth/SignUp';
+import InteriorCategoryList from './Pages/InteriorCategory/InteriorCategoryList';
+import SingleInterior from './Pages/InteriorCategory/SingleInterior';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -29,6 +31,15 @@ function App() {
           path="/furnitureSingleProduct/:id"
           element={<FsingleProduct />}
         />
+
+
+
+        <Route path='/interiorcategorylist/:category'
+          element={<InteriorCategoryList />} />
+
+        <Route path="/singleinterior/:id"
+        element={<SingleInterior />} />
+
         <Route path="/doors" element={<AllDoor />} />
         <Route path="/doors/:id" element={<SubCategory />} />
         <Route path="/dining" element={<AllDining />} />
