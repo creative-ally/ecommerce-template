@@ -8,7 +8,7 @@ const Blog = () => {
     const [postPerPage,setPostPerPage]=useState(6)
 
     useEffect(()=>{
-        fetch("blog.json")
+        fetch("http://localhost:5000/blogs")
         .then(res=>res.json())
         .then(data=>setIBlogs(data))
     },[])

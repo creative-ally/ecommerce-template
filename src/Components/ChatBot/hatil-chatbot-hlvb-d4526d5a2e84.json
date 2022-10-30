@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hatil-chatbot-hlvb",
+  "private_key_id": "d4526d5a2e8425f23300e9360376f02d73f41997",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC9HyThfB1UF/52\nwSNyL8lWBuXWzHmio+tAkBoFq3GF1m/I03bV8qGnqZZq5yJfjgOgQlEH8pcHXmeB\n6+TMk7UnPI1n9fDdQhlkPEywQBOTdOOqM2IpxiAsKSIwhRmTquxiRLkFuPWrWvZB\niVrWWdDm3NDWYXBoKlsQZZ05vBEfdgjRSmMpkhoOY+QIk8gsSyMs8qSW9JMTmEKi\ngEU2vuth1lHPG5syIFUyh/hmrxqId1L5DrOaPiowhnl+5JgMIW9GEylrtnh+2eno\nzGzIG2QiVM3aaOAf3nlXZ+PQfBG4OqTFhioyzXN2VF6id7UnuTxvx0NxS/7VHgQb\nyhWLyK7hAgMBAAECggEAA9uzy+nVS1bl+RQ9neG9sMSZQcWQIbJIZVvLPBxgR4O1\nahpuTTUS+TGrgOjQObTS/Bz+PDRFwn+5itv+IfJNesxwchOBY3IqxHG6esoD3DlB\nP8KmmQWSuHPqX6UHfYy6H9MZFzXLxUAoz/N2Z/MTIPKWTBlWyrk6fF4mU/wzOToN\nPeCKMWHgB5vzu1JvNJ76GBb1iaIUwk9lcpZqpGz1IdxZBq6csjZvwjAG6A/gKMyw\niMJ0udZrcZBi9fPb13y0CjeA8c1CavDuz7px7/D8M/gKvq0p1zUmES7jWHsoLyEr\n7HkWjb0thFkPvWBMVUl/dYtYyooeEaUXo4rk/OjwdQKBgQDk5sfqOcE/FsTgsrvO\nI0Dv6W1qOvVguo0dDKjmklMLw3crHZhJfFsv5O56evKDVSoaPohr3T938msPlLCG\noXSeyo9kDX5NoKqOVrP9/q1VhGhflr6HKSJ/sp9mcLaoosYKmZwZtuINvV9bc5ze\nwVHxWGg+eQB+bpVJV/fOei7Q8wKBgQDTgsXbj33eUjEKwBRhnKGE0ZViEotHt8sM\nsmWXKDtS66KSS7fm5sMLhrMhnRUzUD45BoqXVcNJIHYSWLfXVYI01HIf4GHd22/u\nfuYjp77UzPqnkZzYagDaXrZj1mNwsBkRVglE+xv7i6iZBd9MC0tjBHPTZmjfObLM\npFFQfQgV2wKBgQCsdn01quJBCIS5z7DUtZcdq8B2g4mRobzkoD85yhGsEU/eOmQd\nKgcCZPiRa8UA0s/wCiF7M624T/v+N0dxiIB3i6LR/aCmGGGo8QaYXqR2hFanfsp6\nx7FoiUq0QkQ9drbEEcydSz+ynnYUT11oMDvvHW8dcsm+eM8d/ZuGBGT1pQKBgQCU\n0CehaP3oE/AJXkd4vhkuN79gtydjmD62ejXb+iRzHPLO95M2VBna3DTga4LlDYoZ\n2S5dd6vkoYAxPFZsnO71eJurLdXtoFzKcmI9p+IuGuIoT90IrtxWx9iPueFRAbVB\na0UuUXbIruQ6ddU7zZ6G1jUgAae7lv7j2KCVfsLXjQKBgQCjfe1FE5mj/Za6BC9+\nFiDwKgTo8ns3iN1Tbi+mh+CNsbsuOPSVq4oHw8pdInsJIZ4pD6s7DvArKUf5XTxD\nnXTFaHcqoTJGcepdGR83sEqjnKwTYQ/IXXAWoddHCOjb55ZdxuL5qpEpEMdsBqNA\nhaa3P9GNiQSo6kClo58R2TOxfQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "hatilservice@hatil-chatbot-hlvb.iam.gserviceaccount.com",
+  "client_id": "106703120598888925550",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hatilservice%40hatil-chatbot-hlvb.iam.gserviceaccount.com"
+}
