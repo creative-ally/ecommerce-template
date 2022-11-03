@@ -15,7 +15,7 @@ const AddBlogs = () => {
           image,
         };
         // sending data to the server
-        fetch("http://localhost:5000/blogs", {
+        fetch("http://localhost:5000/api/blog", {
           method: "POST",
           headers: {
             "content-type": "application/json",

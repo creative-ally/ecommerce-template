@@ -8,14 +8,15 @@ const Blog = () => {
     const [postPerPage,setPostPerPage]=useState(6)
 
     useEffect(()=>{
-        fetch("http://localhost:5000/blogs")
+        fetch("http://localhost:5000/api/blog")
         .then(res=>res.json())
-        .then(data=>setIBlogs(data))
+        .then(data=>setIBlogs(data?.result))
     },[])
-
+   
 const lastPostIndex = currentPage* postPerPage;
 const firstPostIndex= lastPostIndex-postPerPage;
 const currentPosts = blogs.slice(firstPostIndex,lastPostIndex)
+console.log(currentPosts)
     return (
         <div className='bg-white mx-32'>
             {/* <h1 className='text-2xl text-center'>Blogs : {currentPosts.length}</h1> */}
