@@ -14,6 +14,7 @@ import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
 import SignUp from './Components/Auth/SignUp';
 import Blog from './Categories/Blog/Blog';
+import AddBlogs from './Categories/Blog/AddBlogs';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/addBlogs" element={<AddBlogs />} />
         <Route path="/dining/:id" element={<DiningCategories />} />
 
         <Route path='/signin' element={<SignIn />} />
