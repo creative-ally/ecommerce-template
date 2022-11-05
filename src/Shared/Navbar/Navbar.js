@@ -1,6 +1,7 @@
-import { Divider } from '@mui/material';
+import { Search } from '@material-ui/icons';
+import { Divider, IconButton, InputBase, Paper } from '@mui/material';
 import React from 'react';
-import { HiMail, HiPhone, HiOutlineSearch, HiOutlineShoppingCart } from "react-icons/hi";
+import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
@@ -8,9 +9,9 @@ const Navbar = () => {
     return (
         <div>
             {/* first nav */}
-            <div class=" bg-gray-200 px-14 text-end py-1">
+            <div className=" bg-gray-200 px-14 text-end py-1">
                 <div>
-                    <Link to={''} className='px-2 text-zinc-500'>Blog</Link>
+                    <Link to={'/blog'} className='px-2 text-zinc-500'>Blog</Link>
                     <Link to={'/showroomLocator'} className='px-2 text-zinc-500'>Showroom Locator</Link>
                     <Link to={'/help'} className='px-2 text-zinc-500'>Help</Link>
                     <Link to='/signin' className='px-2 text-zinc-500'>SignIn</Link>
@@ -18,9 +19,9 @@ const Navbar = () => {
                 </div>
             </div>
             {/* second nav */}
-            <div class="navbar bg-gray-50 px-14 py-5">
+            <div className="navbar bg-gray-50 px-14 py-0">
                 {/* phone and mail */}
-                <div class="navbar-start text-zinc-600">
+                <div className="navbar-start text-zinc-600">
                     <div>
                         <div className='flex items-center'>
                             <HiPhone />
@@ -28,32 +29,32 @@ const Navbar = () => {
                         </div>
                         <div className='flex items-center'>
                             <HiMail />
-                            <p className='px-2'>hatilfurniture@gmail.com</p>
+                            <p className='px-2'>allyfurniture@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 {/* name and logo */}
-                <div class="navbar-center">
+                <div className="navbar-center">
                     <Link to={'/'}>
-                        <img src={Logo} alt="" />
+                        <img className='w-1/5 mx-auto' src={Logo} alt="" />
                     </Link>
                 </div>
                 {/* search and cart */}
-                <div class="navbar-end">
-                    <button class="btn btn-ghost btn-circle">
+                <div className="navbar-end">
+                    <button className="btn btn-ghost btn-circle">
                         <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
                     </button>
-                    <button class="btn btn-ghost btn-circle">
-                        <div class="indicator">
+                    <button className="btn btn-ghost btn-circle">
+                        <div className="indicator">
                             <HiOutlineShoppingCart className='h-6 w-6 text-zinc-600' />
-                            <span class="badge badge-xs badge-error indicator-item"></span>
+                            <span className="badge badge-xs badge-error indicator-item"></span>
                         </div>
                     </button>
                 </div>
             </div>
             <Divider />
             {/* third nav */}
-            <div class=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
+            <div className=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>
                 <Link to={'/bedroom'} className='px-2 text-zinc-500'>Bedroom</Link>
                 <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>

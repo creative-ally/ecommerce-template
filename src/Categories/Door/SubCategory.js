@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 const SubCategory = () => {
     const { id } = useParams();
     const [products, setProducts] = useState([]);
-    const [title, setTitle] = useState('')
-    console.log(id)
+    const [title, setTitle] = useState('');
+
 
     useEffect(() => {
         (async () => {
@@ -18,11 +18,11 @@ const SubCategory = () => {
                 })
         })()
     }, [id])
-    console.log(products)
+
     return (
-        <div className='bg-white px-20'> 
+        <div className='bg-white lg:px-20 md:mx-10 px-5'> 
             <h2 className='text-2xl font-bold text-center my-10'>{title}</h2>
-            <div className='md:grid grid-cols-3 gap-10 '>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5'>
                 {
                     products.map((product, index) =>
                         <div className='shadow-md p-5'>

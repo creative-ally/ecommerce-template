@@ -7,7 +7,7 @@ const Newsletter = () => {
     e.target.value.reset();
   };
   return (
-    <div className="mt-7 sm:mt-10 bg-gray-500">
+    <div className="mt-7 sm:mt-10 bg-teal-500">
       <div
         
         className="h-[300px]  sm:h-[400px] text-center bg-center bg-cover  w-full px-2 rounded-md sm:rounded-none sm:px-0  flex justify-center items-center text-white Container"
@@ -36,7 +36,7 @@ const Newsletter = () => {
               onSubmit={handleSubmit}
             >
               <input
-                className="h-10 w-7/12 outline-none sm:h-12  sm:w-6/12 px-5 mx-auto border-2 bg-inherit rounded-lg block my-3"
+                className="h-10 w-7/12 outline-none sm:h-12  sm:w-6/12 px-5 mx-auto border-2 bg-white rounded-lg block my-3"
                 type="email"
                 name="email"
                 id=""
@@ -49,7 +49,7 @@ const Newsletter = () => {
                   fontFamily: "Open Sans, sans-serif",
                   letterSpacing: "2px",
                 }}
-                className=" transition w-32 sm:w-40 mx-auto text-center bg-sky-400 text-white  hover:bg-sky-500 hover:text-white rounded-full  border-2 border-sky-500 py-1.5 sm:py-2.5"
+                className=" transition w-32 sm:w-40 mx-auto text-center bg-orange-500 text-white  hover:bg-orange-600 hover:text-white rounded-full  border-2 border--500 py-1.5 sm:py-2.5"
               >
                 Subscribe
               </button>
