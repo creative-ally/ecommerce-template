@@ -1,7 +1,8 @@
 import { Search } from '@material-ui/icons';
 import { Divider, IconButton, InputBase, Paper } from '@mui/material';
 import React from 'react';
-import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
+import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch} from "react-icons/hi";
+import { HiOutlineBellAlert } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
@@ -41,20 +42,26 @@ const Navbar = () => {
                 </div>
                 {/* search and cart */}
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
+                    <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                         <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
                     </button>
-                    <button className="btn btn-ghost btn-circle">
+                    <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                         <div className="indicator">
                             <HiOutlineShoppingCart className='h-6 w-6 text-zinc-600' />
-                            <span className="badge badge-xs badge-error indicator-item"></span>
+                            <span className="badge badge-xs badge-warning indicator-item"></span>
+                        </div>
+                    </button>
+                    <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+                        <div className="indicator">
+                            <HiOutlineBellAlert className='h-6 w-6 text-zinc-600' />
+                            <span className="badge badge-xs badge-warning indicator-item"></span>
                         </div>
                     </button>
                 </div>
             </div>
             <Divider />
             {/* third nav */}
-            <div className=" bg-gray-50 px-14 text-end py-1 flex justify-evenly">
+            <div className=" bg-gray-50 px-14 text-end py-2 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>
                 <Link to={'/bedroom'} className='px-2 text-zinc-500'>Bedroom</Link>
                 <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>

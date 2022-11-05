@@ -63,7 +63,7 @@ const AddBlogs = () => {
             placeholder="Image url"
             required
           />
-          <button className="btn p-2 m-2 text-white " type="submit">
+          <button className="btn button" type="submit">
             Add Blogs
           </button>
         </div>
