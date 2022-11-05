@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import './css/styles.css';
 import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/Door/SubCategory';
 import Interior from './Categories/Interior/Interior';

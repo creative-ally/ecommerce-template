@@ -7,7 +7,7 @@ const Newsletter = () => {
     e.target.value.reset();
   };
   return (
-    <div className="mt-7 sm:mt-10 bg-teal-500">
+    <div className="mt-7 sm:mt-10 newsletter">
       <div
         
         className="h-[300px]  sm:h-[400px] text-center bg-center bg-cover  w-full px-2 rounded-md sm:rounded-none sm:px-0  flex justify-center items-center text-white Container"
@@ -49,7 +49,7 @@ const Newsletter = () => {
                   fontFamily: "Open Sans, sans-serif",
                   letterSpacing: "2px",
                 }}
-                className=" transition w-32 sm:w-40 mx-auto text-center bg-orange-500 text-white  hover:bg-orange-600 hover:text-white rounded-full  border-2 border--500 py-1.5 sm:py-2.5"
+                className="btn bg-primary text-white font-semibold hover:bg-black rounded-full border-0 mt-4"
               >
                 Subscribe
               </button>

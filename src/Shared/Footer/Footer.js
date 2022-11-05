@@ -27,7 +27,7 @@ const Footer = () => {
                     </div>
                     <div className='flex items-center'>
                         <HiMail />
-                        <p className='px-2'>hatilfurniture@gmail.com</p>
+                        <p className='px-2'>allyfurniture@gmail.com</p>
                     </div>
                 </div>
                 {/* more informations */}
@@ -50,7 +50,7 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4 bg-black text-white">
                 <div>
-                    <p>&copy; Copyright 2022 HATIL. All Rights Reserved.</p>
+                    <p>&copy; Copyright 2022 ALLY Furniture. All Rights Reserved.</p>
                 </div>
             </footer>
         </div>

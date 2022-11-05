@@ -1,0 +1,25 @@
+.newsletter {
+    background-image: url('../assets/brown-wooden-textured-flooring-background.jpg');
+    width: 100%;
+    opacity: 90%;
+}
+
+.authentication {
+    background-image: url(../assets/3d-contemporary-living-room-interior-modern-furniture.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.button {
+    background-color: #5d3d28;
+    color: white;
+    border-radius: 9999px;
+    text-align: center;
+    border: 0;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: #230a00;
+}

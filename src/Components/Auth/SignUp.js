@@ -14,19 +14,10 @@ const SignUp = () => {
         e.preventDefault();
     };
     return (
-        <div className="flex justify-center py-20 px-20 text-white">
-
-            <div className=" mx-2 w-4/12 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500   flex flex-col justify-center text-center">
-                <h1 className="text-[35px] font-bold mb-5">Welcome Back!</h1>
-                <p>To keep connected with us please sign in with your personal info</p>
-               <Link to='/signin'> <button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
-                    Sign In
-                </button></Link>
-            </div>
-
-            <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 ...">
+        <div className="flex justify-center py-20 px-20 text-white authentication">
+            <div className="w-2/4 p-10 text-center shadow-2xl shadow-black">
                 <h1 className="text-[40px] font-bold">Create Account</h1>
-                
+
                 <div className="my-4 text-black">
                     <span className="mx-1">
                         {" "}
@@ -44,7 +35,7 @@ const SignUp = () => {
                 <p className="mb-4">or use your email for registration</p>
                 <Divider />
                 <form onSubmit={handleSubmit} className="mt-5 ">
-                <div className="flex  w-3/4 py-2 rounded-2xl px-2 mb-5 bg-slate-100 mx-auto ">
+                    <div className="flex  w-3/4 py-2 rounded-2xl px-2 mb-5 bg-slate-100 mx-auto ">
                         <span className="mr-2 text-gray-500">
                             {" "}
                             <PermIdentity />
@@ -80,10 +71,17 @@ const SignUp = () => {
                             <RemoveRedEyeOutlinedIcon />
                         </span>
                     </div>
-                    <button className="w-1/3 bg-yellow-500 text-white py-2 rounded-2xl mt-5 font-semibold">
+                    <button className="btn w-1/3 my-4 button">
                         Sign Up
                     </button>
                 </form>
+                <div className="mt-6">
+                    <h1 className="text-[35px] font-bold">Welcome Back!</h1>
+                    <p>To keep connected with us please sign in with your personal info</p>
+                    <Link to='/signin'> <button className="btn w-1/3 my-4 button">
+                        Sign In
+                    </button></Link>
+                </div>
             </div>
 
         </div>
