@@ -18,9 +18,7 @@ const Navbar = () => {
                         <HiMail />
                         <p className='px-2'>furniture@gmail.com</p>
                     </div>
-
                 </div>
-
                 <div>
                     <Paper component="form"
                         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}>
@@ -34,8 +32,6 @@ const Navbar = () => {
                         </IconButton>
                     </Paper>
                 </div>
-
-
 
             </div>
             {/* second nav */}

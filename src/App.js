@@ -31,7 +31,7 @@ function App() {
           element={<FsingleProduct />}
         />
         <Route path="/doors" element={<AllDoor />} />
-        <Route path="/doors/:id" element={<SubCategory />} />
+        <Route path="/doors/:subcategory" element={<SubCategory />} />
         <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} />
         <Route path="/blog" element={<Blog />} />

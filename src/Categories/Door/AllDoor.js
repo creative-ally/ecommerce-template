@@ -7,14 +7,14 @@ const AllDoor = () => {
 
     useEffect(() => {
         (async () => {
-            await axios.get('http://localhost:8000/category')
+          const {data} =  await axios.get('http://localhost:5000/api/product/Office')
                 .then(res => {
                     console.log(res)
-                    setDoors(res.data)
+                    setDoors(res.data.data)
                 })
         })()
     }, [])
-
+console.log(doors)
     return (
         <div>
             <h2 className='text-4xl font-bold text-center py-10'>Door</h2>
