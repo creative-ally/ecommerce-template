@@ -13,8 +13,8 @@ const SignIn = () => {
     e.preventDefault();
   };
   return (
-    <div className="flex lg:justify-center py-20 px-20 text-white ">
-      <div className="w-2/4 px-10 py-10 text-center bg-gradient-to-r from-orange-600 to-orange-400 ...">
+    <div className="flex lg:justify-center py-20 px-20 text-white authentication">
+      <div className="w-2/4 px-10 py-10 text-center shadow-2xl shadow-black">
         <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
         <p className="mb-4">Sign in using social networks</p>
         <div className="mb-4 text-black">
@@ -40,7 +40,7 @@ const SignIn = () => {
             </span>
 
             <input type="text" placeholder="Email"
-            className="formEmailField bg-transparent "/>
+              className="formEmailField bg-transparent " />
           </div>
 
           <div className="flex justify-between w-3/4 py-2 rounded-2xl px-2 mx-auto bg-slate-100 ">
@@ -59,17 +59,17 @@ const SignIn = () => {
               <RemoveRedEyeOutlinedIcon />
             </span>
           </div>
-          <button className="w-1/3 bg-yellow-500 text-white py-2 rounded-2xl mt-5 font-semibold">
+          <button className="btn w-1/3 my-4 button">
             Sign In
           </button>
         </form>
-      </div>
-      <div className=" mx-2 w-4/12 px-10 py-10 bg-gradient-to-r from-amber-600 to-amber-500  ... flex flex-col justify-center text-center">
-        <h1 className="text-[35px] font-bold mb-5">New Here?</h1>
-        <p>Sign up and discover a great amount of new opportunities!</p>
-        <Link to ='/signup'><button className="w-full bg-white text-black py-2 rounded-2xl mt-5 font-semibold">
-          Sign Up
-        </button></Link>
+        <div className="mt-6">
+          <h1 className="text-[35px] font-bold">New Here?</h1>
+          <p>Sign up and discover a great amount of new opportunities!</p>
+          <Link to='/signup'><button className="btn w-1/3 mt-4 button">
+            Sign Up
+          </button></Link>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { FaHouzz, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "reac
 const Footer = () => {
     return (
         <div>
-            <footer class="footer p-10 justify-evenly items-center bg-gray-200 text-zinc-500">
+            <footer className="footer p-10 justify-evenly items-center bg-gray-200 text-zinc-500">
                 {/* logo */}
                 <div>
                     <FaHouzz className="h-10 w-10 text-zinc-700" />
@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
                 {/* contact us */}
                 <div>
-                    <span class="footer-title">Contact Us</span>
+                    <span className="footer-title">Contact Us</span>
                     <div className='flex items-center'>
                         <ImLocation2 />
                         <p className='px-2'>Dhaka, Bangladesh</p>
@@ -27,30 +27,30 @@ const Footer = () => {
                     </div>
                     <div className='flex items-center'>
                         <HiMail />
-                        <p className='px-2'>hatilfurniture@gmail.com</p>
+                        <p className='px-2'>allyfurniture@gmail.com</p>
                     </div>
                 </div>
                 {/* more informations */}
                 <div>
-                    <span class="footer-title">More Information</span>
-                    <a class="link link-hover">FAQ</a>
-                    <a class="link link-hover">Feedback</a>
-                    <a class="link link-hover">Privacy Policy</a>
-                    <a class="link link-hover">Return Policy</a>
-                    <a class="link link-hover">Billing Terms and Conditions</a>
+                    <span className="footer-title">More Information</span>
+                    <a className="link link-hover">FAQ</a>
+                    <a className="link link-hover">Feedback</a>
+                    <a className="link link-hover">Privacy Policy</a>
+                    <a className="link link-hover">Return Policy</a>
+                    <a className="link link-hover">Billing Terms and Conditions</a>
                 </div>
                 {/* social media icons  */}
                 <div className='flex items-center justify-evenly text-zinc-700'>
-                    <a class="link link-hover"><FaFacebookF className='h-5 w-5' /></a>
-                    <a class="link link-hover"><FaInstagram className='h-5 w-5' /></a>
-                    <a class="link link-hover"><FaLinkedinIn className='h-5 w-5' /></a>
-                    <a class="link link-hover"><FaTwitter className='h-5 w-5' /></a>
+                    <a className="link link-hover"><FaFacebookF className='h-5 w-5' /></a>
+                    <a className="link link-hover"><FaInstagram className='h-5 w-5' /></a>
+                    <a className="link link-hover"><FaLinkedinIn className='h-5 w-5' /></a>
+                    <a className="link link-hover"><FaTwitter className='h-5 w-5' /></a>
                 </div>
 
             </footer>
-            <footer class="footer footer-center p-4 bg-black text-white">
+            <footer className="footer footer-center p-4 bg-black text-white">
                 <div>
-                    <p>&copy; Copyright 2022 HATIL. All Rights Reserved.</p>
+                    <p>&copy; Copyright 2022 ALLY Furniture. All Rights Reserved.</p>
                 </div>
             </footer>
         </div>
