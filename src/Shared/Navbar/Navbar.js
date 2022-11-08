@@ -1,12 +1,28 @@
 import { Search } from '@material-ui/icons';
 import { Divider, IconButton, InputBase, Paper } from '@mui/material';
 import React from 'react';
+import { useState } from 'react';
 import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch} from "react-icons/hi";
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
+import SearchProducts from '../../SearchProducts/SearchProducts';
 
 const Navbar = () => {
+
+    const [searchProducts,setSearchProducts]=useState([]);
+    const handleSearch = event =>{
+        event.preventDefault();
+        const searchText= event.target.search.value;
+       
+        
+
+        const url=`http://localhost:5000/api/product/search/${searchText}`
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setSearchProducts(data.data))
+    }
+    console.log(searchProducts)
     return (
         <div>
             {/* first nav */}
@@ -40,11 +56,22 @@ const Navbar = () => {
                         <img className='w-1/5 mx-auto' src={Logo} alt="" />
                     </Link>
                 </div>
+
+                {/* Search form */}
+                <form onSubmit={handleSearch}>
+                    {/* Search Input Start */}
+
+                 <input required type="text" name="search" className='shadow-md text-black p-3 ml-5  rounded-full' on placeholder='serach'></input>
+
+                {/* Search Input End */}
+
                 {/* search and cart */}
+                <button type="submit" className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral" >
+                <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
+                </button>   
+                </form>
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
-                        <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
-                    </button>
+                    
                     <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                         <div className="indicator">
                             <HiOutlineShoppingCart className='h-6 w-6 text-zinc-600' />
@@ -69,6 +96,14 @@ const Navbar = () => {
                 <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
                 <Link to="/interior" className='px-2 text-zinc-500'>Interior</Link>
                 <Link to={''} className='px-2 text-zinc-500'>Office</Link>
+            </div>
+            <div>
+               Search Products: {searchProducts.length}
+
+              
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>{
+                searchProducts.map(searchProduct=><SearchProducts key={searchProduct._id} searchProduct={searchProduct} ></SearchProducts>)
+              }</div>
             </div>
         </div>
     );

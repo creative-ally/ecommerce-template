@@ -10,9 +10,9 @@ const Blog = () => {
     useEffect(()=>{
         fetch("http://localhost:5000/api/blog")
         .then(res=>res.json())
-        .then(data=>setIBlogs(data?.result))
+        .then(data=>setIBlogs(data.data))
     },[])
-   
+   console.log(blogs)
 const lastPostIndex = currentPage* postPerPage;
 const firstPostIndex= lastPostIndex-postPerPage;
 const currentPosts = blogs.slice(firstPostIndex,lastPostIndex)
