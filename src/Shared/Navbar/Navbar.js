@@ -1,12 +1,26 @@
 import { Search } from '@material-ui/icons';
-import { Divider, IconButton, InputBase, Paper } from '@mui/material';
+import { IconButton, InputBase, Paper } from '@mui/material';
+import axios from 'axios';
 import React from 'react';
-import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch} from "react-icons/hi";
+import { useEffect } from 'react';
+import { useState } from 'react';
+// import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
+import { Divider } from '@mui/material';
+// import React from 'react';
+import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
 const Navbar = () => {
+    const categories = [
+        { "name": "Bedroom" },
+        { "name": "Dining" },
+        { "name": "Office" },
+        { "name": "Door" },
+        { "name": "Interior" }
+    ]
+
     return (
         <div>
             {/* first nav */}
@@ -63,12 +77,11 @@ const Navbar = () => {
             {/* third nav */}
             <div className=" bg-gray-50 px-14 text-end py-2 flex justify-evenly">
                 <Link to={''} className='px-2 text-zinc-500'>New</Link>
-                <Link to={'/bedroom'} className='px-2 text-zinc-500'>Bedroom</Link>
-                <Link to={'/dining'} className='px-2 text-zinc-500'>Dining</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Kitchen</Link>
-                <Link to='/doors' className='px-2 text-zinc-500'>Door</Link>
-                <Link to="/interior" className='px-2 text-zinc-500'>Interior</Link>
-                <Link to={''} className='px-2 text-zinc-500'>Office</Link>
+                {
+                    categories.map((category, index) =>
+                        <Link key={index} to={`/${category.name}`} className='px-2 text-zinc-500'>{category.name}</Link>
+                    )
+                }
             </div>
         </div>
     );
