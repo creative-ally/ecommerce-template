@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Door = ({ door }) => {
     const [mouseEnter, setMouseEnter] = useState(false);
     const {name, image, subcategory } = door;
-    console.log(subcategory)
+
     return (
         <Link to={`/doors/${subcategory}`}>
             <div onMouseEnter={() => setMouseEnter(true && subcategory)}

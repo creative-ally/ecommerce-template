@@ -1,11 +1,22 @@
 import { Search } from '@material-ui/icons';
 import { IconButton, InputBase, Paper } from '@mui/material';
+import axios from 'axios';
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
 const Navbar = () => {
+    const categories = [
+        {"name" : "Bedroom"},
+        {"name" : "Dining"},
+        {"name" : "Office"},
+        {"name" : "Door"},
+        {"name" : "Interior"}
+    ]
+
     return (
         <div>
             <div class="flex flex-row justify-between px-12  py-3 items-center bg-grey-100">
@@ -43,14 +54,18 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div class="navbar-center">
-                    <Link to={''} className='px-2 '>New</Link>
-                    <Link to={''} className='px-2 '>Living Bedroom</Link>
+                    {
+                        categories.map((category, index) => 
+                        <Link key={index} to={`/${category.name}`} className='px-2 '>{category.name}</Link>
+                        )
+                    }
+                    {/* <Link to={''} className='px-2 '>Living Bedroom</Link>
                     <Link to='/dining' className='px-2 '>Dining</Link>
                     <Link to='/kitchen' className='px-2 '>Kitchen</Link>
                     <Link to='/doors' className='px-2 '>Door</Link>
                     <Link to="/interior" className='px-2 '>Interior</Link>
                     <Link to='/office' className='px-2 '>Office</Link>
-                    <Link to='/blog' className='px-2 '>Blog</Link>
+                    <Link to='/blog' className='px-2 '>Blog</Link> */}
                 </div>
                 <div class="navbar-end">
 

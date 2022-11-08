@@ -14,7 +14,7 @@ const AllDoor = () => {
                 })
         })()
     }, [])
-console.log(doors)
+
     return (
         <div>
             <h2 className='text-4xl font-bold text-center py-10'>Door</h2>
