@@ -67,7 +67,7 @@ const Banner = () => {
                   >
                     <img className="mb-5 lg:mb-0" src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
                     <Container maxWidth="sm" sx={{padding: '0 20vw'}}>
-                      <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
+                      <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left', color: '#000000' }}>{item.title}</Typography>
                       <Box
                         sx={{
                           display: 'flex',
