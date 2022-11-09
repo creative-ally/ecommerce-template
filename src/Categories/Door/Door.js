@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Door = ({ door }) => {
     const [mouseEnter, setMouseEnter] = useState(false);
-    const { id, name, image } = door;
-    console.log(id)
+    const {name, image, subcategory } = door;
+
     return (
-        <Link to={`/doors/${id}`}>
-            <div onMouseEnter={() => setMouseEnter(true && id)}
-                onMouseLeave={() => setMouseEnter(false && id)}
+        <Link to={`/doors/${subcategory}`}>
+            <div onMouseEnter={() => setMouseEnter(true && subcategory)}
+                onMouseLeave={() => setMouseEnter(false && subcategory)}
             >
                 {
                     mouseEnter ? <img src='https://i.ibb.co/xY2btD9/Solid-Engineered-Wooden-Door.png' alt="" /> : <img src={image} alt="" />

@@ -7,10 +7,10 @@ const AllDoor = () => {
 
     useEffect(() => {
         (async () => {
-            await axios.get('http://localhost:8000/category')
+          const {data} =  await axios.get('http://localhost:5000/api/product/Office')
                 .then(res => {
                     console.log(res)
-                    setDoors(res.data)
+                    setDoors(res.data.data)
                 })
         })()
     }, [])
