@@ -217,17 +217,29 @@ function EnhancedTableToolbar(props) {
                     {numSelected} selected
                 </Typography>
             ) : (
-                <Box sx={{
-                    flex: '1 1 100%',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    gap: 1,
-                    my: 3
-                }}>
-                    {
-                        sortItems.map(item => <TableSorting key={item.lable} item={item} />)
-                    }
+                <Box>
+                    <Typography sx={{
+                        fontWeight: '700',
+                        fontSize: '1.2rem',
+                        mt: 3,
+                        color: '#403e57',
+                        textTransform: 'capitalize'
+                    }}>
+                        Best Selling Products
+                    </Typography>
+                    <Box sx={{
+                        flex: '1 1 100%',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        gap: 1,
+                        mb: 3,
+                        mt: 1
+                    }}>
+                        {
+                            sortItems.map(item => <TableSorting key={item.lable} item={item} />)
+                        }
+                    </Box>
                 </Box>
             )}
 
@@ -392,10 +404,6 @@ export default function EnhancedTable() {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
             </Paper>
-            {/* <FormControlLabel
-                control={<Switch checked={dense} onChange={handleChangeDense} />}
-                label="Dense padding"
-            /> */}
         </Box>
     );
 }
