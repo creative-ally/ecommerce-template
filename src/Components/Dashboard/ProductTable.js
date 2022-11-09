@@ -19,6 +19,7 @@ import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import TableSorting from '../../Components/Dashboard/TableSorting'
 
 function createData(name, calories, fat, carbs, protein) {
     return {
@@ -123,12 +124,14 @@ function EnhancedTableHead(props) {
             <TableRow>
                 <TableCell padding="checkbox">
                     <Checkbox
-                        color="primary"
                         indeterminate={numSelected > 0 && numSelected < rowCount}
                         checked={rowCount > 0 && numSelected === rowCount}
                         onChange={onSelectAllClick}
                         inputProps={{
                             'aria-label': 'select all desserts',
+                        }}
+                        sx={{
+                            color: "white"
                         }}
                     />
                 </TableCell>
@@ -138,11 +141,17 @@ function EnhancedTableHead(props) {
                         align={headCell.numeric ? 'right' : 'left'}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        sx={{
+                            color: 'white'
+                        }}
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
                             direction={orderBy === headCell.id ? order : 'asc'}
                             onClick={createSortHandler(headCell.id)}
+                            sx={{
+                                color: "white !important"
+                            }}
                         >
                             {headCell.label}
                             {orderBy === headCell.id ? (
@@ -169,11 +178,28 @@ EnhancedTableHead.propTypes = {
 
 function EnhancedTableToolbar(props) {
     const { numSelected } = props;
-
+    const sortItems = [
+        {
+            lable: 'Show by',
+            items: ['12 Row', '24 Row', '36 Row']
+        },
+        {
+            lable: 'rating by',
+            items: ["1 Star", "2 Star", "3 Star", "4 Star", "5 Star"]
+        },
+        {
+            lable: 'CATEGORY by',
+            items: ['Mens', 'Womens', 'Kids']
+        },
+        {
+            lable: 'Brand by',
+            items: ['Lotto', 'RFL', 'Akij']
+        },
+    ]
     return (
         <Toolbar
             sx={{
-                pl: { sm: 2 },
+                pl: { sm: 0 },
                 pr: { xs: 1, sm: 1 },
                 ...(numSelected > 0 && {
                     bgcolor: (theme) =>
@@ -191,14 +217,18 @@ function EnhancedTableToolbar(props) {
                     {numSelected} selected
                 </Typography>
             ) : (
-                <Typography
-                    sx={{ flex: '1 1 100%' }}
-                    variant="h6"
-                    id="tableTitle"
-                    component="div"
-                >
-                    Nutrition
-                </Typography>
+                <Box sx={{
+                    flex: '1 1 100%',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    gap: 1,
+                    my: 3
+                }}>
+                    {
+                        sortItems.map(item => <TableSorting key={item.lable} item={item} />)
+                    }
+                </Box>
             )}
 
             {numSelected > 0 ? (
@@ -281,7 +311,7 @@ export default function EnhancedTable() {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Paper sx={{ width: '100%', mb: 2 }}>
+            <Paper sx={{ width: '100%', mb: 2, px: 3 }}>
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
