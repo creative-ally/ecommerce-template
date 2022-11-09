@@ -1,6 +1,7 @@
-import { Copyright } from '@mui/icons-material';
-import { Box, Container, Grid, Paper, Toolbar } from '@mui/material';
+import { Box, Container, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
+import ProductCard from '../../Components/Dashboard/ProductCard';
+import ProductTable from '../../Components/Dashboard/ProductTable'
 
 const Products = () => {
     return (
@@ -17,21 +18,55 @@ const Products = () => {
                 width: '100%'
             }}
         >
-            <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                    {/* Recent Orders */}
+            <Container maxWidth="xl" sx={{ m: 0, mt: 3, mb: 4 }}>
+                <Grid container spacing={3} sx={{ mb: 2 }}>
                     <Grid item xs={12}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            {/* <Orders /> */}
-                            Products
+                        <Paper sx={{ p: 2, pl: 3, display: 'flex', flexDirection: 'column' }}>
+                            <Typography component={'h3'} sx={{
+                                fontSize: '1.5rem',
+                                fontWeight: '700'
+                            }}>
+                                Product List
+                            </Typography>
                         </Paper>
                     </Grid>
                 </Grid>
-                <Copyright sx={{ pt: 4 }} />
+                <Grid container spacing={2} sx={{ m: 0 }}>
+                    <Grid container spacing={2} xs={12} md={12} lg={12} >
+                        {
+                            dashboardCardItem.map(card => <ProductCard key={card} card={card} />)
+                        }
+                    </Grid>
+                </Grid>
+                <Box sx={{ my: 2, P: 2 }}>
+                    <Grid container spacing={2} xs={12} md={12} lg={12} sx={{ m: 0 }} >
+                        <ProductTable />
+                    </Grid>
+                </Box>
             </Container>
         </Box>
     );
 };
 
 export default Products;
+
+const dashboardCardItem = [
+    {
+        title: 'Total Users',
+        user: 222,
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(#64b3f6, #2b77e5)',
+    },
+    {
+        title: 'Total Orders',
+        user: 338,
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(#4eda89, #1a9f53)',
+    },
+    {
+        title: 'Total Orders',
+        user: 338,
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(to left, #ed68ff, #be0ee1)',
+    }
+]

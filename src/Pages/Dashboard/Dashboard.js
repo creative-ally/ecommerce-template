@@ -1,4 +1,4 @@
-import { Grid, Paper } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import React from 'react';
 import { DashboardCard, SalesCard } from '../../Components/Dashboard/DashboardCard';
@@ -21,8 +21,13 @@ const Dashboard = () => {
             <Container maxWidth="xl" sx={{ m: 0, mt: 3, mb: 4 }}>
                 <Grid container spacing={3} sx={{ mb: 2 }}>
                     <Grid item xs={12}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            Dashboard
+                        <Paper sx={{ p: 2, pl: 3, display: 'flex', flexDirection: 'column' }}>
+                            <Typography component={'h3'} sx={{
+                                fontSize: '1.5rem',
+                                fontWeight: '700'
+                            }}>
+                                Dashboard
+                            </Typography>
                         </Paper>
                     </Grid>
                 </Grid>
