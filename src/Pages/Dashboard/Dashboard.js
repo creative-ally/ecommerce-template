@@ -1,6 +1,7 @@
 import { Grid, Paper } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import React from 'react';
+import DashboardCard from '../../Components/Dashboard/DashboardCard';
 
 const Dashboard = () => {
     return (
@@ -27,30 +28,9 @@ const Dashboard = () => {
                 </Grid>
                 <Grid container spacing={2} sx={{ m: 0 }}>
                     <Grid container spacing={2} xs={12} md={6} lg={8} >
-                        <Grid item xs={12} md={8} lg={6}>
-                            <Paper
-                                sx={{
-                                    p: 2,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    height: 240,
-                                }}
-                            >
-                                Add Products
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={12} md={4} lg={6}>
-                            <Paper
-                                sx={{
-                                    p: 2,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    height: 240,
-                                }}
-                            >
-                                Deposite
-                            </Paper>
-                        </Grid>
+                        {
+                            dashboardCardItem.map(card => <DashboardCard key={card} card={card} />)
+                        }
                     </Grid>
                     <Grid item xs={12} md={6} lg={4} sx={{ pt: "0 !important" }}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
@@ -64,3 +44,42 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+const dashboardCardItem = [
+    {
+        title: 'Total Users',
+        user: 222,
+        time: "Last Month",
+        percentage: '+95%',
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(to left, #4eda89, #1a9f53)',
+        iconButtonColor: "#187d44"
+    },
+    {
+        title: 'Total Orders',
+        user: 338,
+        time: "Last Month",
+        percentage: '+95%',
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(to left, #ed68ff, #be0ee1)',
+        iconButtonColor: "##a808c3"
+    },
+    {
+        title: 'Total Products',
+        user: 222,
+        time: "Last Month",
+        percentage: '+95%',
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(to left, #64b3f6, #2b77e5)',
+        iconButtonColor: "##2262d3"
+    },
+    {
+        title: 'Total Reviews',
+        user: 222,
+        time: "Last Month",
+        percentage: '+95%',
+        icon: "<FaUserCircle />",
+        background: 'linear-gradient(to left, #f4d02b, #e1940e)',
+        iconButtonColor: "##ae640f"
+    },
+]
