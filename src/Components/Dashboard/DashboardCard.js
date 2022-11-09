@@ -61,22 +61,54 @@ export const DashboardCard = ({ card }) => {
 export const SalesCard = ({ item }) => {
     const { title, amount, percentage, timeAmount, time } = item;
     return (
-        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-            <Stack>
-                <Typography sx={{
-                    textTransform: 'capitalize'
-                }}>{title}</Typography>
-            </Stack>
-            <Box>
+        <Paper sx={{
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            background: 'linear-gradient(to bottom, #0858f7, #2262d3)',
+            color: 'white',
+            height: 380
+        }}>
+            <Stack sx={{
+                gap: 2
+            }}>
                 <Stack>
-                    <Typography>${amount}</Typography>
-                    <Typography>{percentage}%</Typography>
+                    <Typography sx={{
+                        textTransform: 'capitalize',
+                        fontSize: '1.1rem',
+                        fontWeight: "600"
+                    }}>{title}</Typography>
                 </Stack>
-                <Stack>
-                    <Typography>${timeAmount}</Typography>
-                    <Typography>{time}</Typography>
-                </Stack>
-            </Box>
-        </Paper>
+                <Box>
+                    <Stack sx={{
+                        flexDirection: 'row',
+                        gap: 1,
+                        alignItems: 'center'
+                    }}>
+                        <Typography sx={{
+                            fontSize: '1.625rem',
+                            fontWeight: '700',
+                            fontFamily: '"Inter",sans-serif'
+                        }}>${amount}</Typography>
+                        <Typography sx={{
+                            color: '#89ecb3',
+                            fontweight: '600'
+                        }}>{percentage}%</Typography>
+                    </Stack>
+                    <Stack sx={{
+                        flexDirection: 'row',
+                        gap: 1,
+                        color: "#c1e1fc"
+                    }}>
+                        <Typography sx={{
+                            fontSize: "0.8125rem",
+                        }}>${timeAmount}</Typography>
+                        <Typography sx={{
+                            fontSize: "0.8125rem",
+                        }}>{time}</Typography>
+                    </Stack>
+                </Box>
+            </Stack >
+        </Paper >
     )
 }
