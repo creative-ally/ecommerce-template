@@ -23,19 +23,19 @@ export const ListItems = () => (
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
-            <Link to={'/dashboard/allpost'} style={{ textDecoration: 'none', color: 'black' }}>All Posts</Link>
+            <Link to={'/dashboard/products'} style={{ textDecoration: 'none', color: 'black' }}>Products</Link>
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>
-            <Link to={'/dashboard/admins'} style={{ textDecoration: 'none', color: 'black' }}>Admins</Link>
+            <Link to={'/dashboard/addproducts'} style={{ textDecoration: 'none', color: 'black' }}>Add Product</Link>
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
                 <BarChartIcon />
             </ListItemIcon>
-            <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}>Reports</Link>
+            <Link to={'/dashboard/orders'} style={{ textDecoration: 'none', color: 'black' }}>Orders</Link>
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>

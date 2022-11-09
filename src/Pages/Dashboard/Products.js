@@ -2,7 +2,7 @@ import { Copyright } from '@mui/icons-material';
 import { Box, Container, Grid, Paper, Toolbar } from '@mui/material';
 import React from 'react';
 
-const Admins = () => {
+const Products = () => {
     return (
         <Box
             component="main"
@@ -24,7 +24,7 @@ const Admins = () => {
                     <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                             {/* <Orders /> */}
-                            Orders
+                            Products
                         </Paper>
                     </Grid>
                 </Grid>
@@ -34,4 +34,4 @@ const Admins = () => {
     );
 };
 
-export default Admins;
+export default Products;

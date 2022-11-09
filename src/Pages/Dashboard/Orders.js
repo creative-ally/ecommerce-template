@@ -2,7 +2,7 @@ import { Copyright } from '@mui/icons-material';
 import { Box, Container, Grid, Paper, Toolbar } from '@mui/material';
 import React from 'react';
 
-const AllPost = () => {
+const Orders = () => {
     return (
         <Box
             component="main"
@@ -20,28 +20,13 @@ const AllPost = () => {
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
-                    {/* Chart */}
-
-                    {/* Recent Deposits */}
-                    <Grid item xs={12} md={4} lg={3}>
-                        <Paper
-                            sx={{
-                                p: 2,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: 240,
-                            }}
-                        >
-                            {/* <Deposits /> */}
-                            Deposite
+                    {/* Recent Orders */}
+                    <Grid item xs={12}>
+                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                            {/* <Orders /> */}
+                            Orders
                         </Paper>
                     </Grid>
-                    {/* Recent Orders */}
-                    {/* <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                        <Orders />Orders
-                    </Paper>
-                </Grid> */}
                 </Grid>
                 <Copyright sx={{ pt: 4 }} />
             </Container>
@@ -49,4 +34,4 @@ const AllPost = () => {
     );
 };
 
-export default AllPost;
+export default Orders;

@@ -3,7 +3,7 @@ import { Grid, Paper, Toolbar } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import React from 'react'
 
-function AddPost() {
+function AddProduct() {
     return (
         <Box
             component="main"
@@ -32,7 +32,7 @@ function AddPost() {
                             }}
                         >
                             {/* <Chart /> */}
-                            Chart
+                            Add Products
                         </Paper>
                     </Grid>
                     {/* Recent Deposits */}
@@ -61,4 +61,4 @@ function AddPost() {
     )
 }
 
-export default AddPost
+export default AddProduct

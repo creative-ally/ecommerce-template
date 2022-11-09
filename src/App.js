@@ -25,9 +25,10 @@ import AddBlogs from './Categories/Blog/AddBlogs';
 import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator';
 import Help from './Pages/Help';
 import DashboardHome from './Pages/Dashboard/DashboardHome';
-import AddPost from './Pages/Dashboard/AddPost';
-import AllPost from './Pages/Dashboard/AllPost';
-import Admins from './Pages/Dashboard/Admins';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import Orders from './Pages/Dashboard/Orders';
+import Products from './Pages/Dashboard/Products';
+import Dashboard from './Pages/Dashboard/Dashboard';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -76,10 +77,10 @@ function App() {
 
             {/* dashboard routes  */}
             <Route path='/dashboard' element={<DashboardHome />}>
-              <Route index element={<AddPost />}></Route>
-              <Route path='allpost' element={<AllPost />}></Route>
-              <Route path='admins' element={<Admins />}></Route>
-              {/* <Route path='payment/:id' element={<Payment />}></Route> */}
+              <Route index element={<Dashboard />}></Route>
+              <Route path='products' element={<Products />}></Route>
+              <Route path='addproducts' element={<AddProduct />}></Route>
+              <Route path='orders' element={<Orders />}></Route>
             </Route>
 
           </Routes>
