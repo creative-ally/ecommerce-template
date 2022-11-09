@@ -1,7 +1,7 @@
 import { Grid, Paper } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import React from 'react';
-import DashboardCard from '../../Components/Dashboard/DashboardCard';
+import { DashboardCard, SalesCard } from '../../Components/Dashboard/DashboardCard';
 
 const Dashboard = () => {
     return (
@@ -33,9 +33,7 @@ const Dashboard = () => {
                         }
                     </Grid>
                     <Grid item xs={12} md={6} lg={4} sx={{ pt: "0 !important" }}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            Orders
-                        </Paper>
+                        <SalesCard item={salesCardItem} />
                     </Grid>
                 </Grid>
             </Container>
@@ -83,3 +81,11 @@ const dashboardCardItem = [
         iconButtonColor: "##ae640f"
     },
 ]
+
+const salesCardItem = {
+    title: 'Total Sales',
+    amount: "3, 787, 681.00",
+    percentage: '40.65',
+    timeAmount: '3,578.90',
+    time: 'in last month'
+}

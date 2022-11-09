@@ -3,7 +3,7 @@ import { Box, Stack } from '@mui/system';
 import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 
-const DashboardCard = ({ card }) => {
+export const DashboardCard = ({ card }) => {
     const { title, user, percentage, time, icon, background, iconButtonColor } = card;
     // const iconfung = () => {
     //     return { __html: icon };
@@ -58,4 +58,25 @@ const DashboardCard = ({ card }) => {
     );
 };
 
-export default DashboardCard;
+export const SalesCard = ({ item }) => {
+    const { title, amount, percentage, timeAmount, time } = item;
+    return (
+        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+            <Stack>
+                <Typography sx={{
+                    textTransform: 'capitalize'
+                }}>{title}</Typography>
+            </Stack>
+            <Box>
+                <Stack>
+                    <Typography>${amount}</Typography>
+                    <Typography>{percentage}%</Typography>
+                </Stack>
+                <Stack>
+                    <Typography>${timeAmount}</Typography>
+                    <Typography>{time}</Typography>
+                </Stack>
+            </Box>
+        </Paper>
+    )
+}
