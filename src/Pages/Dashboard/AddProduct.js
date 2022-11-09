@@ -37,23 +37,23 @@ function AddProduct() {
                     </Grid>
                     {/* Recent Deposits */}
                     {/* <Grid item xs={12} md={4} lg={3}>
-                    <Paper
-                        sx={{
-                            p: 2,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            height: 240,
-                        }}
-                    >
-                        <Deposits />Deposite
-                    </Paper>
-                </Grid> */}
+                        <Paper
+                            sx={{
+                                p: 2,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                height: 240,
+                            }}
+                        >
+                            Deposite
+                        </Paper>
+                    </Grid> */}
                     {/* Recent Orders */}
                     {/* <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                        <Orders />Orders
-                    </Paper>
-                </Grid> */}
+                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                            Orders
+                        </Paper>
+                    </Grid> */}
                 </Grid>
                 <Copyright sx={{ pt: 4 }} />
             </Container>
