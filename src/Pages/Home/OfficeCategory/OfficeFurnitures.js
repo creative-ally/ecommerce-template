@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FurnitureDetails from './FurnitureDetails';
-
 const OfficeFurnitures = () => {
 
     const [furnitures, setFurnitures] = useState([])
@@ -11,7 +10,7 @@ const OfficeFurnitures = () => {
         try{
 
           const response = await axios.get(
-            `http://localhost:5000/officecategories`
+            `http://localhost:5000/api/product/office`
           )
           setFurnitures(response.data)
 
@@ -23,7 +22,7 @@ const OfficeFurnitures = () => {
       }
 
       getOfficeProduct();
-    }, [])
+    }, [furnitures])
 
     //     fetch('officeCategory.json')
     //         .then(res => res.json())
@@ -32,7 +31,7 @@ const OfficeFurnitures = () => {
 
     console.log(furnitures)
     return (
-        <div className=" text-center my-24 mx-16 bg-white">
+        <div className=" text-center my-24 mx-16">
           <h2 className="text-[27px] font-semibold mb-2">Office Furniture</h2>
           <p className="mb-5">Every Space has its unique needs.</p>
           <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 justify-items-center">
