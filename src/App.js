@@ -24,6 +24,10 @@ import Cart from './Components/ShoppingCart/Cart';
 import AddBlogs from './Categories/Blog/AddBlogs';
 import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator';
 import Help from './Pages/Help';
+import DashboardHome from './Pages/Dashboard/DashboardHome';
+import AddPost from './Pages/Dashboard/AddPost';
+import AllPost from './Pages/Dashboard/AllPost';
+import Admins from './Pages/Dashboard/Admins';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -31,51 +35,59 @@ function App() {
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
-        setLoading(false)
+      setLoading(false)
     }, [2000])
-}, []);
+  }, []);
 
   return (
     <>
-    {loading ? <Loader></Loader> :
-    <div className='bg-white'>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/categorylist/:category"
-          element={<CategoryList />}
-        />
-        <Route
-          path="/furnitureSingleProduct/:id"
-          element={<FsingleProduct />}
-        />
-        {/* <Route path="/doors" element={<AllDoor />} /> */}
-        <Route path="/:category" element={<Category />} />
-        <Route path="/category/:category/:code" element={<SubCategory />} />
-        <Route path="/product/:id" element={<Product />} />
-        {/* <Route path="/dining" element={<AllDining />} />
+      {loading ? <Loader></Loader> :
+        <div className='bg-white'>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/categorylist/:category"
+              element={<CategoryList />}
+            />
+            <Route
+              path="/furnitureSingleProduct/:id"
+              element={<FsingleProduct />}
+            />
+            {/* <Route path="/doors" element={<AllDoor />} /> */}
+            <Route path="/:category" element={<Category />} />
+            <Route path="/category/:category/:code" element={<SubCategory />} />
+            <Route path="/product/:id" element={<Product />} />
+            {/* <Route path="/dining" element={<AllDining />} />
         <Route path="/interior" element={<Interior />} /> */}
-        <Route path="/doors" element={<AllDoor />} />
-        <Route path="/doors/:id" element={<SubCategory />} />
-        <Route path="/dining" element={<AllDining />} />
-        <Route path="/interior" element={<Interior />} />
-        <Route path="/showroomLocator" element={<ShowroomLocator />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/help" element={<Help />} />
-        <Route path="/addBlogs" element={<AddBlogs />} />
-        <Route path="/dining/:id" element={<DiningCategories />} />
+            <Route path="/doors" element={<AllDoor />} />
+            <Route path="/doors/:id" element={<SubCategory />} />
+            <Route path="/dining" element={<AllDining />} />
+            <Route path="/interior" element={<Interior />} />
+            <Route path="/showroomLocator" element={<ShowroomLocator />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/help" element={<Help />} />
+            <Route path="/addBlogs" element={<AddBlogs />} />
+            <Route path="/dining/:id" element={<DiningCategories />} />
 
-        <Route path='/signin' element={<SignIn />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='/cart' element={<Cart />} />
+            <Route path='/signin' element={<SignIn />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/cart' element={<Cart />} />
 
-      </Routes>
-      <Footer />
-      {/* <BacktoTop/> */}
-      <Chat></Chat>
-    </div>
-    }
+            {/* dashboard routes  */}
+            <Route path='/dashboard' element={<DashboardHome />}>
+              <Route index element={<AddPost />}></Route>
+              <Route path='allpost' element={<AllPost />}></Route>
+              <Route path='admins' element={<Admins />}></Route>
+              {/* <Route path='payment/:id' element={<Payment />}></Route> */}
+            </Route>
+
+          </Routes>
+          <Footer />
+          {/* <BacktoTop/> */}
+          <Chat></Chat>
+        </div>
+      }
     </>
   );
 }
