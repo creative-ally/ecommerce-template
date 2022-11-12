@@ -1,20 +1,11 @@
-#app {
-  height: 100%
-}
 
-html,
-body {
-  position: relative;
-  height: 100%;
-}
 
 body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px; */
+  /* color: #000; */
   margin: 0;
   padding: 0;
-  background-color: transparent;
 }
 
 .swiper {
@@ -25,9 +16,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
+  /* background: #fff; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -48,8 +37,14 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
-  bottom: 30px !important;
+  bottom: 50px !important;
 }
 
 /* Product slider */
@@ -74,9 +69,10 @@ body {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
+  cursor: pointer;
 }
 
-.mySwiper .swiper-slide {
+.Thumbnail .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
@@ -84,5 +80,5 @@ body {
 
 .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
+  border: 5px solid #240A00;
 }
-

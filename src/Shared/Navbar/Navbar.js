@@ -1,13 +1,7 @@
-import { Search } from '@material-ui/icons';
-import { IconButton, InputBase, Paper } from '@mui/material';
-import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
-import { useEffect } from 'react';
-// import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
+import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch} from "react-icons/hi";
 import { Divider } from '@mui/material';
-// import React from 'react';
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { Link } from 'react-router-dom';
