@@ -12,7 +12,16 @@ const Product = () => {
     
     const { id } = useParams();
     const [product, setProduct] = useState('');
+    const [quantity, setQuantity] = useState(1)
     const [value, setValue] = React.useState(5);
+
+    const handleDecrement = () => {
+        if (quantity > 1 ) {
+            setQuantity(quantity - 1)
+        }else {
+            alert('Product must be at least one.')
+        }
+    }
 
     useEffect(() => {
         (async () => {
@@ -45,13 +54,13 @@ const Product = () => {
                     <p className='text-lg text-accent py-2'>Material: {product.material}</p>
                     <p className='text-accent py-5'>{product.description}</p>
                     <div className='flex justify-start items-center bg-[#F5F7FA] w-32 my-5'>
-                        <p className='text-md text-[#252525] p-2 '>Qty <span className='mx-5'>1</span></p>
+                        <p className='text-md text-[#252525] p-2 '>Qty <span className='mx-5'>{quantity}</span></p>
                         <ul>
-                            <li className='cursor-pointer'><ArrowDropUpIcon /></li>
-                            <li className='cursor-pointer'><ArrowDropDownIcon /></li>
+                            <li onClick={() => setQuantity(quantity + 1)} className='cursor-pointer'><ArrowDropUpIcon /></li>
+                            <li onClick={() => handleDecrement()} className='cursor-pointer'><ArrowDropDownIcon /></li>
                         </ul>
                     </div>
-                    <Link to='#' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Add To Cart</Link>
+                    <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Add To Cart</Link>
                 </div>
             </div>
         </div>
