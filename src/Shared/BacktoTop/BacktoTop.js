@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
+import { TiArrowUpOutline } from "react-icons/ti";
+// import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 
 const BacktoTop = () => {
     const [backtoTop, setBacktoTop] = useState(false);
@@ -23,7 +24,7 @@ const BacktoTop = () => {
     return (
         <div>
             {
-              backtoTop &&  <button  className='fixed bottom-20 right-10 bg-primary z-10 rounded-full p-2 text-white' onClick={scrollUp}><VerticalAlignTopIcon /></button>
+              backtoTop &&  <button  className='m-1 text-4xl fixed bottom-20 right-10 text-red-600 opacity-80' onClick={scrollUp}><TiArrowUpOutline/></button>
             }
             
         </div>
