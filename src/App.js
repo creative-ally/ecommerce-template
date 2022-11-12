@@ -81,12 +81,12 @@ function App() {
               <Route path='orders' element={<Orders />}></Route>
             </Route>
 
-      </Routes>
-      <Footer />
-      <BacktoTop/>
-      {/* <Chat></Chat> */}
-    </div>
-    }
+          </Routes>
+          <Footer />
+          <BacktoTop/>
+          {/* <Chat></Chat> */}
+        </div>
+      }
     </>
   );
 }

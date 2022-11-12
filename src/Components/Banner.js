@@ -74,7 +74,7 @@ const Banner = () => {
                           justifyContent: 'left',
                         }}
                       >
-                        <button className="btn btn-primary border-0 rounded-full text-base-100">
+                        <button className="btn button">
                           Explore More
                           <NavigateNextIcon />
                         </button>

@@ -14,8 +14,8 @@ const SignUp = () => {
         e.preventDefault();
     };
     return (
-        <div className="flex justify-center py-20 px-20 text-white authentication">
-            <div className="w-2/4 p-10 text-center shadow-2xl shadow-black">
+        <div className=" text-white authentication">
+            <div className="authentication-content">
                 <h1 className="text-[40px] font-bold">Create Account</h1>
 
                 <div className="my-4 text-black">

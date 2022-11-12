@@ -48,9 +48,9 @@ const Footer = () => {
                 </div>
 
             </footer>
-            <footer className="footer footer-center p-4 bg-black text-white">
+            <footer className="footer footer-center bg-black">
                 <div>
-                    <p>&copy; Copyright 2022 ALLY Furniture. All Rights Reserved.</p>
+                    <p className='footer-text'>&copy; Copyright 2022 ALLY Furniture. All Rights Reserved by CreativeAlly.</p>
                 </div>
             </footer>
         </div>
