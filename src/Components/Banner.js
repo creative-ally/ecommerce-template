@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./components.css";
+// import "./components.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Box from '@mui/material/Box';

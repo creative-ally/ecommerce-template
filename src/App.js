@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       {loading ? <Loader></Loader> :
-        <div className='bg-white'>
+        <div className=''>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -73,8 +73,7 @@ function App() {
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/cart' element={<Cart />} />
-
-            {/* dashboard routes  */}
+            {/* dashboard routes */}
             <Route path='/dashboard' element={<DashboardHome />}>
               <Route index element={<Dashboard />}></Route>
               <Route path='products' element={<Products />}></Route>
@@ -85,7 +84,7 @@ function App() {
           </Routes>
           <Footer />
           <BacktoTop/>
-          <Chat></Chat>
+          {/* <Chat></Chat> */}
         </div>
       }
     </>
