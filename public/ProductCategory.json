@@ -952,6 +952,33 @@
             "image": "",
             "material": "",
             "description": ""
+          },
+          {
+            "id": 1,
+            "name": "Product Name",
+            "code": "",
+            "price": "",
+            "color": "",
+            "image": "",
+            "material": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Sub Category Name",
+        "image": "",
+        "products": [
+          {
+            "id": 1,
+            "name": "Product Name",
+            "code": "",
+            "price": "",
+            "color": "",
+            "image": "",
+            "material": "",
+            "description": ""
           }
         ]
       }

@@ -66,15 +66,15 @@ const Banner = () => {
                   <div className="lg:flex lg:flex-row-reverse mb-5 items-center"
                   >
                     <img className="mb-5 lg:mb-0" src={item.image} alt="" style={{ width: '100vh', height: '80vh' }} />
-                    <Container maxWidth="sm " >
-                      <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left' }}>{item.title}</Typography>
+                    <Container maxWidth="sm" sx={{padding: '0 20vw'}}>
+                      <Typography sx={{ fontSize: '20px', fontWeight: '500', mb: 4, textAlign: 'left', color: '#000000' }}>{item.title}</Typography>
                       <Box
                         sx={{
                           display: 'flex',
                           justifyContent: 'left',
                         }}
                       >
-                        <button className="btn button">
+                        <button className="btn btn-primary border-0 rounded-full text-base-100">
                           Explore More
                           <NavigateNextIcon />
                         </button>
