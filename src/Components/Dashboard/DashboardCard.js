@@ -1,7 +1,7 @@
 import { Button, Grid, Icon, Paper, Typography } from '@mui/material';
 import { Box, Stack } from '@mui/system';
 import React from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+// import { FaUserCircle } from 'react-icons/fa';
 
 export const DashboardCard = ({ card }) => {
     const { title, user, percentage, time, icon, background, iconButtonColor } = card;

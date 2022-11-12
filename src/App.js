@@ -5,7 +5,6 @@ import SubCategory from './Categories/SubCategory';
 import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
-
 import Chat from './Components/ChatBot/Chat';
 import AllDining from './Pages/DiningCategories/AllDining';
 import DiningCategories from './Pages/DiningCategories/DiningCategories';
