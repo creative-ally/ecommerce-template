@@ -38,7 +38,7 @@ function App() {
   return (
     <>
     {loading ? <Loader></Loader> :
-    <div className='bg-white'>
+    <div className='app'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -26,12 +26,12 @@ const Product = () => {
 
     return (
         <div>
-            <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:10 p-5'>
+            <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
                 <div className=' w-full'><ProductCarousel/></div>
                 <div className=''>
-                    <p className='text-primary text-lg font-semibold py-2'>{product.price} Taka</p>
-                    <h2 className='text-accent text-2xl font-semibold'>{product.name}</h2>
-                    <div className='flex justify-between py-2'>
+                    <p>{product.price} Taka</p>
+                    <h2>{product.name}</h2>
+                    <div className='flex justify-between'>
                         <Box
                             sx={{
                                 '& > legend': { mt: 5 },
@@ -39,19 +39,19 @@ const Product = () => {
                         >
                             <Rating sx={{fontSize: '20px'}} name="read-only" value={value} readOnly />
                         </Box>
-                        <button className='btn bg-transparent btn-sm border-0 text-accent hover:bg-primary hover:rounded-none hover:text-white'>Write Review</button>
+                        <button className='btn button'>Write Review</button>
                     </div>
                     <p> <span className='text-sm text-success'><CircleIcon style={{fontSize: '15px'}}/></span> In Stack</p>
-                    <p className='text-lg text-accent py-2'>Material: {product.material}</p>
-                    <p className='text-accent py-5'>{product.description}</p>
+                    <p>Material: {product.material}</p>
+                    <p>{product.description}</p>
                     <div className='flex justify-start items-center bg-[#F5F7FA] w-32 my-5'>
-                        <p className='text-md text-[#252525] p-2 '>Qty <span className='mx-5'>1</span></p>
+                        <p className='text-md'>Qty 1</p>
                         <ul>
                             <li className='cursor-pointer'><ArrowDropUpIcon /></li>
                             <li className='cursor-pointer'><ArrowDropDownIcon /></li>
                         </ul>
                     </div>
-                    <Link to='#' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Add To Cart</Link>
+                    <Link to='#' className='btn button'>Add To Cart</Link>
                 </div>
             </div>
         </div>

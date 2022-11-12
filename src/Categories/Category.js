@@ -27,11 +27,11 @@ const Category = () => {
     }, [])
 
     return (
-        <div>
-            <h2 className='text-4xl font-bold text-center py-10'>{category}</h2>
+        <div className='container'>
+            <h1>{category}</h1>
             {
                 loading ? <LoaderTop /> :
-                    <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5 px-5 md:px-10 lg:px-20'>
+                    <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 lg:gap-9'>
                         {
                             categories.map((c) =>
                                 <InCategory key={c._id} c={c}></InCategory>

@@ -4,11 +4,11 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-// import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
 import { Divider } from '@mui/material';
 // import React from 'react';
 import { HiMail, HiPhone, HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
 import { HiOutlineBellAlert } from "react-icons/hi2";
+import { BsBookmarkHeart } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 
@@ -57,17 +57,23 @@ const Navbar = () => {
                 {/* search and cart */}
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
-                        <HiOutlineSearch className='h-6 w-6 text-zinc-600' />
+                        <HiOutlineSearch className='icon' />
                     </button>
                     <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                         <div className="indicator">
-                            <HiOutlineShoppingCart className='h-6 w-6 text-zinc-600' />
+                            <HiOutlineShoppingCart className='icon' />
                             <span className="badge badge-xs badge-warning indicator-item"></span>
                         </div>
                     </button>
                     <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                         <div className="indicator">
-                            <HiOutlineBellAlert className='h-6 w-6 text-zinc-600' />
+                            <HiOutlineBellAlert className='icon' />
+                            <span className="badge badge-xs badge-warning indicator-item"></span>
+                        </div>
+                    </button>
+                    <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+                        <div className="indicator">
+                            <BsBookmarkHeart className='icon' />
                             <span className="badge badge-xs badge-warning indicator-item"></span>
                         </div>
                     </button>
