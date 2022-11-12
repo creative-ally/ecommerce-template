@@ -21,8 +21,8 @@ import Cart from './Components/ShoppingCart/Cart';
 import AddBlogs from './Categories/Blog/AddBlogs';
 import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator';
 import Help from './Pages/Help';
-import CategoryList from './Pages/Home/OfficeCategory/CategoryList';
-import FsingleProduct from './Pages/Home/OfficeCategory/FsingleProduct';
+// import CategoryList from './Pages/Home/OfficeCategory/CategoryList';
+// import FsingleProduct from './Pages/Home/OfficeCategory/FsingleProduct';
 
 
 <link href="/dist/output.css" rel="stylesheet"></link>
@@ -43,14 +43,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
+        { /*<Route
           path="/categorylist/:category"
           element={<CategoryList/>}
         />
         <Route
           path="/furnitureSingleProduct/:id"
           element={<FsingleProduct/>}
-        />
+        /> */}
         {/* <Route path="/doors" element={<AllDoor />} /> */}
         <Route path="/:category" element={<Category />} />
         <Route path="/category/:category/:code" element={<SubCategory />} />
