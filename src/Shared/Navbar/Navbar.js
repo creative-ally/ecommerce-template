@@ -124,14 +124,14 @@ const Navbar = () => {
                     }
                 </div>
             </div>
-            {/* <div>
+            <div>
                Search Products: {searchProducts.length}
 
               
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>{
                 searchProducts.map(searchProduct=><SearchProducts key={searchProduct._id} searchProduct={searchProduct} ></SearchProducts>)
               }</div>
-            </div> */}
+            </div>
         </div>
     );
 };
