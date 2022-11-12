@@ -1,9 +1,4 @@
-import { Search } from '@material-ui/icons';
-import { IconButton, InputBase, Paper } from '@mui/material';
-import axios from 'axios';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 // import { HiMail, HiPhone, HiOutlineShoppingCart } from "react-icons/hi";
 import { Divider } from '@mui/material';
 // import React from 'react';

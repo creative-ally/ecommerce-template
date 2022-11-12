@@ -13,7 +13,6 @@ const Category = () => {
         (async () => {
             const { data } = await axios.get(`http://localhost:5000/api/product/category/${category}`)
                 .then(res => {
-                    console.log(res)
                     setCategory(res.data.data)
                 })
         })()

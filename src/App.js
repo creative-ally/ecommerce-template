@@ -72,7 +72,7 @@ function App() {
 
       </Routes>
       <Footer />
-      {/* <BacktoTop/> */}
+      <BacktoTop/>
       <Chat></Chat>
     </div>
     }
