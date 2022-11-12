@@ -18,17 +18,17 @@ const SubCategory = () => {
         })()
     }, [category, code])
     return (
-        <div className='bg-white lg:px-20 md:px-10 px-5 pb-10'> 
-            <h2 className='text-2xl font-bold text-center my-10'>{}</h2>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5'>
+        <div className='container'> 
+            <h2>{}</h2>
+            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 lg:gap-9'>
                 {
                     products.map(product =>
-                        <div key={product._id} className='shadow-md p-5'>
+                        <div key={product._id} className='product-card'>
                             <img className='mx-auto' src={product.image} alt="" />
-                            <h2 className='text-xl py-5'>{product.name}</h2>
-                            <p className='text-lg font-semibold'>Price:{product.price} Taka</p>
-                            <p className=''>Material: {product.material}</p>
-                            <Link className='btn btn-primary btn-sm text-white rounded-full' to={`/product/${product._id}`}>Details</Link>
+                            <h2>{product.name}</h2>
+                            <p>Price:{product.price} Taka</p>
+                            <p>Material: {product.material}</p>
+                            <Link className='btn button' to={`/product/${product._id}`}>Details</Link>
                         </div>
                     )
                 }
