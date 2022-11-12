@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@material-ui/core';
+import { Box, Grid, Paper, TextField, Typography } from '@material-ui/core';
 import React from 'react';
 
 const AddProductForm = () => {
@@ -7,15 +7,32 @@ const AddProductForm = () => {
             <Grid item xs={7} md={7} sm={12} >
                 <Paper>
                     <Box sx={{
-                        p: 2
+                        p: 3
                     }}>
-                        <Typography component={'p'} sx={{
-                            fontSize: '24px'
+                        <Typography component={'p'} style={{
+                            lineHeight: "27px",
+                            fontSize: "17px",
+                            fontWeight: 600,
+                            textTransform: "capitalize"
                         }}>
                             Basic Information
                         </Typography>
                         <Box component={'form'}>
-                            hello
+                            <Box
+                                sx={{
+                                    width: '100%',
+                                    my: 2
+                                }}>
+                                <TextField
+                                    id="outlined"
+                                    label="TITLE"
+                                    placeholder='Type Here...'
+                                    variant="outlined"
+                                    style={{
+                                        width: '100%'
+                                    }}
+                                />
+                            </Box>
                         </Box>
                     </Box>
                 </Paper>
