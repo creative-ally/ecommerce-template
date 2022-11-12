@@ -26,7 +26,7 @@ function AddProduct() {
                                 fontSize: '1.5rem',
                                 fontWeight: '700'
                             }}>
-                                Product List
+                                Add Product
                             </Typography>
                         </Paper>
                     </Grid>
