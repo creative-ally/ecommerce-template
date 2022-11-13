@@ -28,6 +28,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Orders from './Pages/Dashboard/Orders';
 import Products from './Pages/Dashboard/Products';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import SearchProducts from './SearchProducts/SearchProducts';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
             <Route path="/help" element={<Help />} />
             <Route path="/addBlogs" element={<AddBlogs />} />
             <Route path="/dining/:id" element={<DiningCategories />} />
-
+            <Route path="/searchProducts" element={<SearchProducts/>} />
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/cart' element={<Cart />} />
@@ -84,7 +85,7 @@ function App() {
           </Routes>
           <Footer />
           <BacktoTop/>
-          {/* <Chat></Chat> */}
+          <Chat></Chat>
         </div>
       }
     </>
