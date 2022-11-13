@@ -158,23 +158,6 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        {/* Search Products: {searchProducts.length} */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {searchProducts.map((searchProduct) => (
-            <SearchProducts
-              key={searchProduct._id}
-              searchProduct={searchProduct}
-            ></SearchProducts>
-          ))}
-        </div> */}
-        {/*  */}
-
-        {/* The button to open modal */}
-        {/* <label htmlFor="my-modal-5" className="btn">
-          open modal
-        </label> */}
-
-        {/* Put this part before </body> tag */}
         <input type="checkbox" id="my-modal-5" className="modal-toggle" />
         <div className="modal">
           <div className="modal-box w-11/12 max-w-5xl">
@@ -191,13 +174,15 @@ const Navbar = () => {
               )}
             </div>
             <div className="modal-action">
-              <label htmlFor="my-modal-5" className="btn">
+              <label
+                htmlFor="my-modal-5"
+                className="btn bg-[#ff0000] border-none text-white font-bold"
+              >
                 Exit
               </label>
             </div>
           </div>
         </div>
-        {/*  */}
       </div>
     </div>
   );
