@@ -113,7 +113,6 @@ const Navbar = () => {
                     >
                       {" "}
                       <HiOutlineSearch className="icon" />
-                      Search
                     </label>
                   </button>
                 </div>
@@ -171,9 +170,9 @@ const Navbar = () => {
         {/*  */}
 
         {/* The button to open modal */}
-        <label htmlFor="my-modal-5" className="btn">
+        {/* <label htmlFor="my-modal-5" className="btn">
           open modal
-        </label>
+        </label> */}
 
         {/* Put this part before </body> tag */}
         <input type="checkbox" id="my-modal-5" className="modal-toggle" />
