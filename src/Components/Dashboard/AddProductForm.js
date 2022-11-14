@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, TextField, Typography } from '@material-ui/core';
+import { Box, Grid, Paper, TextareaAutosize, TextField, Typography } from '@material-ui/core';
 import React from 'react';
 
 const AddProductForm = () => {
@@ -31,6 +31,13 @@ const AddProductForm = () => {
                                     style={{
                                         width: '100%'
                                     }}
+                                />
+                                <TextareaAutosize
+                                    variant='outlined'
+                                    aria-label="minimum height"
+                                    minRows={3}
+                                    placeholder="Minimum 3 rows"
+                                    style={{ width: 200, border: '1px solid black', width: '100%' }}
                                 />
                             </Box>
                         </Box>
