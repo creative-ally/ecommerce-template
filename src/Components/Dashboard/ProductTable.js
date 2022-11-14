@@ -103,6 +103,12 @@ const headCells = [
         label: 'Carbs (g)',
     },
     {
+        id: 'carbs',
+        numeric: true,
+        disablePadding: false,
+        label: 'Carbs (g)',
+    },
+    {
         id: 'protein',
         numeric: true,
         disablePadding: false,
@@ -378,6 +384,7 @@ export default function EnhancedTable() {
                                             <TableCell align="right">{row.calories}</TableCell>
                                             <TableCell align="right">{row.fat}</TableCell>
                                             <TableCell align="right">{row.carbs}</TableCell>
+                                            <TableCell align="right">{row.fat}</TableCell>
                                             <TableCell align="right">{row.protein}</TableCell>
                                         </TableRow>
                                     );

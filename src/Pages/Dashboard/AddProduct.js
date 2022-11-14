@@ -1,7 +1,7 @@
-import { Copyright } from '@mui/icons-material'
-import { Grid, Paper, Toolbar } from '@mui/material'
+import { Grid, Paper, Typography } from '@mui/material'
 import { Box, Container } from '@mui/system'
 import React from 'react'
+import AddProductForm from '../../Components/Dashboard/AddProductForm'
 
 function AddProduct() {
     return (
@@ -18,44 +18,22 @@ function AddProduct() {
                 width: '100%'
             }}
         >
-            <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                    {/* Chart */}
-                    <Grid item xs={12} md={8} lg={9}>
-                        <Paper
-                            sx={{
-                                p: 2,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: 240,
-                            }}
-                        >
-                            {/* <Chart /> */}
-                            Add Products
+            <Container maxWidth="xl" sx={{ m: 0, mt: 3, mb: 4 }}>
+                <Grid container spacing={3} sx={{ mb: 2 }}>
+                    <Grid item xs={12}>
+                        <Paper sx={{ p: 2, pl: 3, display: 'flex', flexDirection: 'column' }}>
+                            <Typography component={'h3'} sx={{
+                                fontSize: '1.5rem',
+                                fontWeight: '700'
+                            }}>
+                                Add Product
+                            </Typography>
                         </Paper>
                     </Grid>
-                    {/* Recent Deposits */}
-                    {/* <Grid item xs={12} md={4} lg={3}>
-                        <Paper
-                            sx={{
-                                p: 2,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: 240,
-                            }}
-                        >
-                            Deposite
-                        </Paper>
-                    </Grid> */}
-                    {/* Recent Orders */}
-                    {/* <Grid item xs={12}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            Orders
-                        </Paper>
-                    </Grid> */}
                 </Grid>
-                <Copyright sx={{ pt: 4 }} />
+                <Box sx={{ my: 2, P: 2 }}>
+                    <AddProductForm />
+                </Box>
             </Container>
         </Box>
     )

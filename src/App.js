@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './css/styles.css';
 import AllDoor from './Categories/Door/AllDoor';
 import SubCategory from './Categories/SubCategory';
@@ -39,11 +39,22 @@ function App() {
     }, [2000])
   }, []);
 
+  const location = useLocation();
+
   return (
     <>
       {loading ? <Loader></Loader> :
-        <div className=''>
-          <Navbar />
+        <div className='bg-white'>
+
+          {/* dynamically load navbar. when user goes /dashboard will see only dashboard navbar  */}
+          {
+            location.pathname.includes('/dashboard') 
+            ?
+            null
+            : 
+            <Navbar />
+          }
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
