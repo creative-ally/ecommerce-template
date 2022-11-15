@@ -163,7 +163,13 @@ const Navbar = () => {
           <div className="modal-box w-11/12 max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {inputValue === "" ? (
-                <p>Empty</p>
+                <p>
+                  Empty!
+                  <br></br>
+                  <span className="text-[#fc2525]">
+                    please write something to search
+                  </span>
+                </p>
               ) : (
                 searchProducts.map((searchProduct) => (
                   <SearchProducts
