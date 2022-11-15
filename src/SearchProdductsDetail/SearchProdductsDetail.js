@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../Shared/Loader/Loader";
 
 const SearchProdductsDetail = () => {
   const { id } = useParams();
@@ -11,12 +12,15 @@ const SearchProdductsDetail = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data.data[0]));
-  }, []);
+  }, [id]);
   console.log(products);
+  // if (!id) {
+  //   return <Loader></Loader>;
+  // }
 
   return (
     <div>
-      welcome to detals:{id}
+      welcome to Details of: {id}
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img
