@@ -19,7 +19,11 @@ function AddProduct() {
       }}
     >
       <Container maxWidth="xl" sx={{ m: 0, mt: 13, mb: 4 }}>
-        <Grid container spacing={3} sx={{ mb: 2, m: "0 !important" }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{ mb: 2, m: "0 !important", width: "100% !important" }}
+        >
           <Grid item xs={12}>
             <Paper
               sx={{ p: 2, pl: 3, display: "flex", flexDirection: "column" }}

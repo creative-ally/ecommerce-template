@@ -5,7 +5,12 @@ import OrganizationInfoForm from "./OrganizationInfoForm";
 
 const AddProductForm = () => {
   return (
-    <Grid container spacing={3} gap={3}>
+    <Grid
+      container
+      spacing={2}
+      gap={3}
+      style={{ margin: "0.1rem !important", width: "100%" }}
+    >
       <Grid item xs={12} md={7}>
         <BasicInfoForm />
       </Grid>

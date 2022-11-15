@@ -21,9 +21,21 @@ const Dashboard = () => {
         width: "100%",
       }}
     >
-      <Container maxWidth="xl" sx={{ m: 0, mt: 3, mb: 4 }}>
-        <Grid container spacing={3} sx={{ mb: 2 }}>
-          <Grid item xs={12}>
+      <Container maxWidth="xl" sx={{ m: 0, mt: 13, mb: 4 }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            boxSizing: "border-box",
+            mb: "1.5rem !important",
+            mx: "0 !important",
+            mt: "0 !important",
+          }}
+          style={{
+            width: "100%",
+          }}
+        >
+          <Grid item xs={12} sx={{ p: "0 !important" }}>
             <Paper
               sx={{ p: 2, pl: 3, display: "flex", flexDirection: "column" }}
             >
@@ -34,12 +46,12 @@ const Dashboard = () => {
                   fontWeight: "700",
                 }}
               >
-                Dashboard
+                Dashboard2
               </Typography>
             </Paper>
           </Grid>
         </Grid>
-        <Grid container spacing={2} sx={{ m: 0 }}>
+        <Grid container spacing={2} sx={{ m: "0 !important" }}>
           <Grid container spacing={2} xs={12} md={6} lg={8}>
             {dashboardCardItem.map((card) => (
               <DashboardCard key={card} card={card} />
