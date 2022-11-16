@@ -36,9 +36,9 @@ const SearchProdductsDetail = () => {
               <span className="font-bold">Material:</span> {products.material}
             </p>
             <p className="py-6">{products.description}</p>
-            <button className="btn btn-primary">
+            {/* <button className="btn btn-primary">
               <Link to={`/dashboard/payment/${id}`}>Pay</Link>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
