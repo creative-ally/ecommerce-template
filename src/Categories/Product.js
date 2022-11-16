@@ -10,19 +10,9 @@ import ProductCarousel from './ProductCarousel';
 import Cart from '../Components/ShoppingCart/Cart';
 
 const Product = () => {
-
     const { id } = useParams();
     const [product, setProduct] = useState([]);
-    const [quantity, setQuantity] = useState(1)
     const [value, setValue] = React.useState(5);
-
-    const handleDecrement = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
 
     useEffect(() => {
         (async () => {
@@ -32,26 +22,35 @@ const Product = () => {
                 })
         })()
     }, [id]);
-
-    const [fieldValue, setFieldValue] = React.useState('');
-
-
-
-    const handleBlur = (e) => setFieldValue(e.target.value);
-    const price = product.price * fieldValue;
-    const cartData = {
-        category : product.category,
-        subcategory: product.subcategory,
-        code: product.code,
-        image: product.image,
-        name: product.name,
-        price: product.price,
-        totalPrice: price,
-        quantity: fieldValue,
-        email: "mahbub4noyon96@gmail.com"
+ 
+    console.log(product)
+    
+    const handleAddCart = (e) => {
+        e.preventDefault();
+        if(!product){
+            console.log('Product did not match')
+        }else{
+            const price = product?.price * e.target.count.value;
+            const cartData = {
+                category: product?.category,
+                subcategory: product?.subcategory,
+                code: product?.code,
+                image: product?.image,
+                name: product?.name,
+                price: product?.price,
+                totalPrice: price,
+                quantity: e.target.count.value,
+                email: "mahbub4noyon96@gmail.com"
+            }
+            console.log(cartData)
+        //     axios.post('http://localhost:5000/api/cart', cartData)
+        //     .then(function (response) {
+        //      if (response.status === 200) {
+        //        console.log('Product updated to cart Successfully ');
+        //      }
+        //    });
+        }
     }
-    console.log(cartData)
-    axios.post('', cartData)
 
     return (
         <div>
@@ -73,14 +72,13 @@ const Product = () => {
                     <p> <span className='text-sm text-success'><CircleIcon style={{ fontSize: '15px' }} /></span> In Stack</p>
                     <p>Material: {product.material}</p>
                     <p>{product.description}</p>
-                    <div className='flex justify-start items-center w-32 my-5'>
-                            <input type="number" className='bg-[#E4E8EB] border text-black p-3 w-full' onBlur={handleBlur} placeholder="Quantity 1" />
-                        {/* <ul>
-                            <li onClick={() => setQuantity(quantity + 1)} className='cursor-pointer'><ArrowDropUpIcon /></li>
-                            <li onClick={() => handleDecrement()} className='cursor-pointer'><ArrowDropDownIcon /></li>
-                        </ul> */}
-                    </div>
-                    <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Add To Cart</Link>
+                    <form onSubmit={handleAddCart} action="">
+                        <div className='flex justify-between items-center w-32 my-5'>
+                           <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' defaultValue='1'/>
+                           <input className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
+                        </div>
+                    </form>
+                    <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Go to Cart</Link>
                 </div>
             </div>
 

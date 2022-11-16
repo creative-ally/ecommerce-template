@@ -28,7 +28,7 @@ const Cart = () => {
         )()
     }, [])
 
-    axios.patch('')
+
 
     const handleDecrement = () => {
         if (quantity1 > 1) {

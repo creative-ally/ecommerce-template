@@ -1,11 +1,9 @@
 import { List, ListItem, ListItemText } from '@mui/material';
 import axios from 'axios';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import paymentImage from '../../assets/payment2.png'
 const Checkout = () => {
 
-    // const [inputValue, setInputValue] = useState('');
 
     const handleInput = (e) => {
         e.preventDefault();
@@ -22,15 +20,14 @@ const Checkout = () => {
             totalCost: '115000',
             paymentMethod: e.target.value,
         }
-       axios.post('', inputValue)
-       .then( res => {
-        console.log(res)
-       })
+       axios.post('http://localhost:5000/api/orders', inputValue)
+       .then(function (response) {
+        if (response.status === 200) {
+          console.log('Product updated to orders Successfully ');
+        }
+      });
        
     }
-
-
-
 
 
     return (
@@ -40,8 +37,8 @@ const Checkout = () => {
                 <div className='lg:grid grid-cols-3 gap-5'>
                     <div className='col-span-2'>
                         <div className='lg:flex mb-5'>
-                            <input onBlur={handleInput} className='p-3 bg-slate-100 mr-5 w-full' type="text" name="firstname" id="" placeholder='*First Name' required/>
-                            <input onBlur={handleInput} className='p-3 bg-slate-100 w-full' type="text" name="lastname" id="" placeholder='Last Name' />
+                            <input className='p-3 bg-slate-100 mr-5 w-full' type="text" name="firstname" id="" placeholder='*First Name' required/>
+                            <input className='p-3 bg-slate-100 w-full' type="text" name="lastname" id="" placeholder='Last Name' />
                         </div>
                         <input className='p-3 bg-slate-100 w-full mb-5' type="email" name="email" id="" placeholder='*Email' required/>
                         <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="country" id="" placeholder='*Country' required/>
