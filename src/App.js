@@ -30,6 +30,7 @@ import Products from "./Pages/Dashboard/Products";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import SearchProdductsDetail from "./SearchProdductsDetail/SearchProdductsDetail";
+import Payment from "./Pages/Dashboard/Payment";
 <link href="/dist/output.css" rel="stylesheet"></link>;
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
               path="/searchPrducts/:id"
               element={<SearchProdductsDetail />}
             />
+
             <Route path="/dining" element={<AllDining />} />
             <Route path="/interior" element={<Interior />} />
             <Route path="/showroomLocator" element={<ShowroomLocator />} />
@@ -88,6 +90,7 @@ function App() {
               <Route path="products" element={<Products />}></Route>
               <Route path="addproducts" element={<AddProduct />}></Route>
               <Route path="orders" element={<Orders />}></Route>
+              <Route path="payment/:id" element={<Payment />} />
             </Route>
           </Routes>
           <Footer />

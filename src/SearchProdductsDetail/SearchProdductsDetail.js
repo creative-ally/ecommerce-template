@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import Loader from "../Shared/Loader/Loader";
+import { Link, useParams } from "react-router-dom";
 
 const SearchProdductsDetail = () => {
   const { id } = useParams();
@@ -13,10 +12,6 @@ const SearchProdductsDetail = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data.data[0]));
   }, [id]);
-  console.log(products);
-  // if (!id) {
-  //   return <Loader></Loader>;
-  // }
 
   return (
     <div>
@@ -41,7 +36,9 @@ const SearchProdductsDetail = () => {
               <span className="font-bold">Material:</span> {products.material}
             </p>
             <p className="py-6">{products.description}</p>
-            {/* <button className="btn btn-primary ">Get Started</button> */}
+            <button className="btn btn-primary">
+              <Link to={`/dashboard/payment/${id}`}>Pay</Link>
+            </button>
           </div>
         </div>
       </div>
