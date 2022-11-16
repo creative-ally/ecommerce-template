@@ -28,6 +28,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Orders from './Pages/Dashboard/Orders';
 import Products from './Pages/Dashboard/Products';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Checkout from './Components/ShoppingCart/Checkout';
 <link href="/dist/output.css" rel="stylesheet"></link>
 
 function App() {
@@ -84,6 +85,7 @@ function App() {
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
             {/* dashboard routes */}
             <Route path='/dashboard' element={<DashboardHome />}>
               <Route index element={<Dashboard />}></Route>
