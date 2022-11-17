@@ -79,6 +79,8 @@ function DashboardContent() {
           open={open}
           sx={{
             bgcolor: "success.light",
+            backdropFilter: "blur(0.1rem) !important",
+            // opacity: 0.5,
           }}
         >
           <Toolbar
