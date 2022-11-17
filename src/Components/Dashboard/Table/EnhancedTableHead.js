@@ -50,6 +50,8 @@ export default function EnhancedTableHead(props) {
             sortDirection={orderBy === headCell.id ? order : false}
             sx={{
               color: "white",
+              fontWeight: "700",
+              fontSize: "1rem",
             }}
           >
             <TableSortLabel
@@ -86,7 +88,7 @@ const headCells = [
     id: "name",
     numeric: false,
     disablePadding: true,
-    label: "Dessert (100g serving)",
+    label: "Product",
   },
   {
     id: "calories",
