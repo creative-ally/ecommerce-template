@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import EnhancedTableHead from "./EnhancedTableHead";
 import EnhancedTableToolbar from "./EnhancedTableToolbar";
+import { Button } from "@mui/material";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -41,7 +42,7 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function EnhancedTable({ rows, headCells }) {
+export default function EnhancedTable({ rows, headCells, component }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -53,6 +54,7 @@ export default function EnhancedTable({ rows, headCells }) {
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
+  console.log(component);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -101,7 +103,10 @@ export default function EnhancedTable({ rows, headCells }) {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2, px: 3 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar
+          numSelected={selected.length}
+          component={component}
+        />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -157,7 +162,29 @@ export default function EnhancedTable({ rows, headCells }) {
                       <TableCell align="right">{row.fat}</TableCell>
                       <TableCell align="right">{row.carbs}</TableCell>
                       <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
+                      {/* <TableCell align="right">{row.protein} hello</TableCell> */}
+                      <TableCell align="right">
+                        {component === "orders" ? (
+                          <>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="success"
+                            >
+                              ship
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="error"
+                            >
+                              cancel
+                            </Button>
+                          </>
+                        ) : (
+                          "products"
+                        )}
+                      </TableCell>
                     </TableRow>
                   );
                 })}

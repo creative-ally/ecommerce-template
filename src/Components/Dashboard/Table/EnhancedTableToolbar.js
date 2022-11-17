@@ -6,7 +6,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import TableSorting from "../../../Components/Dashboard/TableSorting";
 
 export default function EnhancedTableToolbar(props) {
-  const { numSelected } = props;
+  const { numSelected, component } = props;
   const sortItems = [
     {
       lable: "Show by",
@@ -59,7 +59,7 @@ export default function EnhancedTableToolbar(props) {
               textTransform: "capitalize",
             }}
           >
-            Best Selling Products
+            {component === "orders" ? "All Orders" : "Best Selling Products"}
           </Typography>
           <Box
             sx={{
