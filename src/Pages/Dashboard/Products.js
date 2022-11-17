@@ -64,7 +64,7 @@ const Products = () => {
             lg={12}
             sx={{ m: "0 !important" }}
           >
-            <ProductTable rows={rows2} />
+            <ProductTable rows={rows} headCells={headCells} />
           </Grid>
         </Box>
       </Container>
@@ -84,7 +84,7 @@ function createData(name, calories, fat, carbs, protein) {
   };
 }
 
-const rows2 = [
+const rows = [
   createData("products", 305, 3.7, 67, 4.3),
   createData("Donut", 452, 25.0, 51, 4.9),
   createData("Eclair", 262, 16.0, 24, 6.0),
@@ -118,5 +118,44 @@ const dashboardCardItem = [
     user: 338,
     icon: "<FaUserCircle />",
     background: "linear-gradient(to left, #ed68ff, #be0ee1)",
+  },
+];
+
+const headCells = [
+  {
+    id: "name",
+    numeric: false,
+    disablePadding: true,
+    label: "Product",
+  },
+  {
+    id: "calories",
+    numeric: true,
+    disablePadding: false,
+    label: "Calories",
+  },
+  {
+    id: "fat",
+    numeric: true,
+    disablePadding: false,
+    label: "Fat (g)",
+  },
+  {
+    id: "carbs",
+    numeric: true,
+    disablePadding: false,
+    label: "Carbs (g)",
+  },
+  {
+    id: "carbs",
+    numeric: true,
+    disablePadding: false,
+    label: "Carbs (g)",
+  },
+  {
+    id: "protein",
+    numeric: true,
+    disablePadding: false,
+    label: "Protein (g)",
   },
 ];

@@ -17,6 +17,7 @@ export default function EnhancedTableHead(props) {
     numSelected,
     rowCount,
     onRequestSort,
+    headCells,
   } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -42,7 +43,7 @@ export default function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {headCells.map((headCell) => (
+        {headCells?.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}
@@ -83,41 +84,42 @@ EnhancedTableHead.propTypes = {
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
-const headCells = [
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: true,
-    label: "Product",
-  },
-  {
-    id: "calories",
-    numeric: true,
-    disablePadding: false,
-    label: "Calories",
-  },
-  {
-    id: "fat",
-    numeric: true,
-    disablePadding: false,
-    label: "Fat (g)",
-  },
-  {
-    id: "carbs",
-    numeric: true,
-    disablePadding: false,
-    label: "Carbs (g)",
-  },
-  {
-    id: "carbs",
-    numeric: true,
-    disablePadding: false,
-    label: "Carbs (g)",
-  },
-  {
-    id: "protein",
-    numeric: true,
-    disablePadding: false,
-    label: "Protein (g)",
-  },
-];
+
+// const headCells = [
+//   {
+//     id: "name",
+//     numeric: false,
+//     disablePadding: true,
+//     label: "Product",
+//   },
+//   {
+//     id: "calories",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Calories",
+//   },
+//   {
+//     id: "fat",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Fat (g)",
+//   },
+//   {
+//     id: "carbs",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Carbs (g)",
+//   },
+//   {
+//     id: "carbs",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Carbs (g)",
+//   },
+//   {
+//     id: "protein",
+//     numeric: true,
+//     disablePadding: false,
+//     label: "Protein (g)",
+//   },
+// ];
