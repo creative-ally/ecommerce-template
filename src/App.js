@@ -5,7 +5,6 @@ import SubCategory from './Categories/SubCategory';
 import Interior from './Categories/Interior/Interior';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
-import Chat from './Components/ChatBot/Chat';
 import AllDining from './Pages/DiningCategories/AllDining';
 import DiningCategories from './Pages/DiningCategories/DiningCategories';
 import Home from './Pages/Home/Home';
@@ -41,7 +40,7 @@ function App() {
   return (
     <>
       {loading ? <Loader></Loader> :
-        <div className='bg-white'>
+        <div className=''>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -73,8 +72,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/forgotpass' element={<ForgetPass/>}/>
             <Route path='/cart' element={<Cart />} />
-
-            {/* dashboard routes  */}
+            {/* dashboard routes */}
             <Route path='/dashboard' element={<DashboardHome />}>
               <Route index element={<Dashboard />}></Route>
               <Route path='products' element={<Products />}></Route>
@@ -84,8 +82,8 @@ function App() {
 
           </Routes>
           <Footer />
-          {/* <BacktoTop/> */}
-          <Chat></Chat>
+          <BacktoTop/>
+          {/* <Chat></Chat> */}
         </div>
       }
     </>

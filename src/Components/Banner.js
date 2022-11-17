@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./components.css";
+// import "./components.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Box from '@mui/material/Box';
@@ -74,7 +74,7 @@ const Banner = () => {
                           justifyContent: 'left',
                         }}
                       >
-                        <button className="btn btn-primary border-0 rounded-full text-base-100">
+                        <button className="btn button">
                           Explore More
                           <NavigateNextIcon />
                         </button>

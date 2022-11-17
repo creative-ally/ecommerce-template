@@ -50,8 +50,8 @@ const SignIn = () => {
 
 
   return (
-    <div className="flex lg:justify-center py-20 px-20 text-white authentication">
-      <div className="w-2/4 px-10 py-10 text-center shadow-2xl shadow-black">
+    <div className="authentication">
+      <div className="authentication-content">
         <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
         <p className="mb-4">Sign in using social networks</p>
      

@@ -46,7 +46,7 @@ export default function ProductCarousel() {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper"
+                className="mySwiper Thumbnail"
             >
                 {
                     slides.map((slide, index) =>
