@@ -109,7 +109,7 @@ const Navbar = () => {
                   <button type="submit" className="">
                     <label
                       htmlFor="my-modal-5"
-                      className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral  "
+                      className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral  "
                     >
                       {" "}
                       <HiOutlineSearch className="icon" />
@@ -117,22 +117,22 @@ const Navbar = () => {
                   </button>
                 </div>
               </form>
-              <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+              <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                 <div className="indicator">
                   <HiOutlineShoppingCart className="icon" />
-                  <span className="badge badge-xs badge-warning indicator-item"></span>
+                  <span className="badge badge-xs badge-error indicator-item"></span>
                 </div>
               </button>
-              <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+              <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                 <div className="indicator">
                   <HiOutlineBellAlert className="icon" />
-                  <span className="badge badge-xs badge-warning indicator-item"></span>
+                  <span className="badge badge-xs badge-error indicator-item"></span>
                 </div>
               </button>
-              <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+              <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                 <div className="indicator">
                   <BsBookmarkHeart className="icon" />
-                  <span className="badge badge-xs badge-warning indicator-item"></span>
+                  <span className="badge badge-xs badge-error indicator-item"></span>
                 </div>
               </button>
             </div>

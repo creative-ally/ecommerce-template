@@ -11,7 +11,7 @@ import ProductCarousel from './ProductCarousel';
 const Product = () => {
     
     const { id } = useParams();
-    const [product, setProduct] = useState('');
+    const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1)
     const [value, setValue] = React.useState(5);
 
@@ -33,13 +33,15 @@ const Product = () => {
         })()
     }, [id]);
 
+    console.log(product[0]?.price);
+
     return (
         <div>
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
                 <div className=' w-full'><ProductCarousel/></div>
                 <div className=''>
-                    <p>{product.price} Taka</p>
-                    <h2>{product.name}</h2>
+                    <p>{product[0]?.price} Taka</p>
+                    <h2>{product[0]?.name}</h2>
                     <div className='flex justify-between'>
                         <Box
                             sx={{
@@ -50,9 +52,9 @@ const Product = () => {
                         </Box>
                         <button className='btn button'>Write Review</button>
                     </div>
-                    <p> <span className='text-sm text-success'><CircleIcon style={{fontSize: '15px'}}/></span> In Stack</p>
-                    <p>Material: {product.material}</p>
-                    <p>{product.description}</p>
+                    <p className='py-4'> <span className='text-sm text-success'><CircleIcon style={{fontSize: '15px'}}/></span> In Stock</p>
+                    <p><span className='text-lg font-bold'>Material:</span> {product[0]?.material}</p>
+                    <p>{product[0]?.description}</p>
                     <div className='flex justify-start items-center bg-[#F5F7FA] w-32 my-5'>
                         <p className='text-md text-[#252525] p-2 '>Qty <span className='mx-5'>{quantity}</span></p>
                         <ul>
@@ -60,7 +62,7 @@ const Product = () => {
                             <li onClick={() => handleDecrement()} className='cursor-pointer'><ArrowDropDownIcon /></li>
                         </ul>
                     </div>
-                    <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Add To Cart</Link>
+                    <Link to='/cart' className='btn button'>Add To Cart</Link>
                 </div>
             </div>
         </div>
