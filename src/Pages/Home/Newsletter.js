@@ -8,25 +8,14 @@ const Newsletter = () => {
   };
   return (
     <div className="mt-7 sm:mt-10 newsletter">
-      <div
-        
-        className="h-[300px]  sm:h-[400px] text-center bg-center bg-cover  w-full px-2 rounded-md sm:rounded-none sm:px-0  flex justify-center items-center text-white Container"
-      >
+      <div className="h-[300px]  sm:h-[400px] text-center bg-center bg-cover  w-full px-2 rounded-md sm:rounded-none sm:px-0  flex justify-center items-center text-white Container">
         <div>
           <Fade top duration={2000}>
-            <h3 className="text-lg my-2 sm:text-2xl uppercase text-white tracking-wider">
-              SPECIAL OFFER FOR
-              SUBSCRIPTION
-            </h3>
-            <h2
-              style={{ fontFamily: "" }}
-              className=" text-2xl sm:text-3xl font-semibold  sm:font-bold"
-            >
+            <h3 className="uppercase text-white">SPECIAL OFFER FOR SUBSCRIPTION</h3>
+            <h2 className="text-white">
               GET INSTANT DISCOUNT FOR MEMBERSHIP
             </h2>
-            <p
-              className="italic text-white sm:text-base text-sm py-2"
-            >
+            <p className="italic text-white">
               Subscribe our newsletter and all latest news of our latest
               product, promotion and offers{" "}
             </p>
