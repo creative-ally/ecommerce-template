@@ -87,19 +87,19 @@ const Navbar = () => {
                             <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <HiOutlineShoppingCart className='icon' />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
                             <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <HiOutlineBellAlert className='icon' />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
                             <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <BsBookmarkHeart className='icon' />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
                         </div>
