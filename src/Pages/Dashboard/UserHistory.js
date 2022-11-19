@@ -7,13 +7,13 @@ import ProductTable from "../../Components/Dashboard/Table/ProductTable";
 const UserHistory = () => {
   return (
     <RouteHeader title={"History"}>
-      <Grid container spacing={2} sx={{ m: "0 !important" }}>
+      {/* <Grid container spacing={2} sx={{ m: "0 !important" }}>
         <Grid container spacing={2} xs={12} md={12} lg={12}>
           {dashboardCardItem.map((card) => (
             <ProductCard key={card} card={card} />
           ))}
         </Grid>
-      </Grid>
+      </Grid> */}
       <Box sx={{ my: 2, P: 2 }}>
         <Grid
           container
@@ -27,6 +27,7 @@ const UserHistory = () => {
             rows={rows}
             headCells={headCells}
             component={"orders"}
+            listTitle={"My History"}
           />
         </Grid>
       </Box>

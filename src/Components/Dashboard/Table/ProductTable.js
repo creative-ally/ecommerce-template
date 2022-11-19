@@ -42,7 +42,12 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function EnhancedTable({ rows, headCells, component }) {
+export default function EnhancedTable({
+  rows,
+  headCells,
+  component,
+  listTitle,
+}) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -54,7 +59,6 @@ export default function EnhancedTable({ rows, headCells, component }) {
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
-  console.log(component);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -106,6 +110,7 @@ export default function EnhancedTable({ rows, headCells, component }) {
         <EnhancedTableToolbar
           numSelected={selected.length}
           component={component}
+          listTitle={listTitle}
         />
         <TableContainer>
           <Table

@@ -27,6 +27,7 @@ const Orders = () => {
             rows={rows}
             headCells={headCells}
             component={"orders"}
+            listTitle={"All Order"}
           />
         </Grid>
       </Box>

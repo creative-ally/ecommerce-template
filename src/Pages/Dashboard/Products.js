@@ -23,7 +23,11 @@ const Products = () => {
           lg={12}
           sx={{ m: "0 !important" }}
         >
-          <ProductTable rows={rows} headCells={headCells} />
+          <ProductTable
+            rows={rows}
+            headCells={headCells}
+            listTitle={"Best Selling Products"}
+          />
         </Grid>
       </Box>
     </RouteHeader>
