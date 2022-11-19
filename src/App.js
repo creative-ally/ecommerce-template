@@ -103,7 +103,7 @@ function App() {
           </Routes>
           <Footer />
           <BacktoTop />
-          <Chat></Chat>
+          {/* <Chat></Chat> */}
         </div>
       )}
     </>

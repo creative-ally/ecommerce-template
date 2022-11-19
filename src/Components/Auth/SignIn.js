@@ -1,7 +1,8 @@
 import React from "react";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GoogleIcon from "@mui/icons-material/Google";
+// import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import GoogleIcon from "@mui/icons-material/Google";
+import { ImFacebook2, ImGoogle2, ImLinkedin } from "react-icons/im";
 import { Divider } from "@mui/material";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -15,20 +16,23 @@ const SignIn = () => {
   return (
     <div className="authentication">
       <div className="authentication-content">
-        <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
-        <p className="mb-4">Sign in using social networks</p>
-        <div className="mb-4 text-black">
-          <span className="mx-1">
+        <h1 className="text-white">Sign in to Your Account</h1>
+        <p className="text-center text-white">Sign in using social networks</p>
+        <div className="my-4 justify-center text-white flex">
+          <span className="mx-2 hover:text-primary">
             {" "}
-            <FacebookOutlinedIcon />
+            <ImFacebook2 className="w-6 h-6"/>
+            {/* <FacebookOutlinedIcon /> */}
           </span>
-          <span className="mx-2">
+          <span className="mx-2 hover:text-primary">
             {" "}
-            <GoogleIcon />
+            <ImGoogle2 className="w-6 h-6"/>
+            {/* <GoogleIcon /> */}
           </span>
-          <span className="mx-2">
+          <span className="mx-2 hover:text-primary">
             {" "}
-            <LinkedInIcon />
+            <ImLinkedin className="w-6 h-6"/>
+            {/* <LinkedInIcon /> */}
           </span>
         </div>
         <Divider />
@@ -64,8 +68,8 @@ const SignIn = () => {
           </button>
         </form>
         <div className="mt-6">
-          <h1 className="text-[35px] font-bold">New Here?</h1>
-          <p>Sign up and discover a great amount of new opportunities!</p>
+          <h1 className="text-white">New Here?</h1>
+          <p className="text-center text-white">Sign up and discover a great amount of new opportunities!</p>
           <Link to='/signup'><button className="btn w-1/3 mt-4 button">
             Sign Up
           </button></Link>
