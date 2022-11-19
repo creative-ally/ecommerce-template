@@ -13,7 +13,10 @@ import Badge from "@mui/material/Badge";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { ListItems, secondaryListItems } from "./ListItems";
+import {
+  ListItems,
+  secondaryListItems,
+} from "../../Components/Dashboard/ListItems";
 import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;

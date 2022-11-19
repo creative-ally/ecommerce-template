@@ -1,10 +1,7 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
-import {
-  DashboardCard,
-  SalesCard,
-} from "../../Components/Dashboard/DashboardCard";
+import { DashboardCard, SalesCard } from "./DashboardCard";
 
 const Dashboard = () => {
   return (
@@ -46,7 +43,7 @@ const Dashboard = () => {
                   fontWeight: "700",
                 }}
               >
-                Dashboard2
+                Dashboard
               </Typography>
             </Paper>
           </Grid>
