@@ -27,7 +27,7 @@ import DashboardHome from "./Pages/Dashboard/DashboardHome";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import Orders from "./Pages/Dashboard/Orders";
 import Products from "./Pages/Dashboard/Products";
-import Dashboard from "./Components/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import SearchProdductsDetail from "./SearchProdductsDetail/SearchProdductsDetail";
 import Payment from "./Pages/Dashboard/Payment";
