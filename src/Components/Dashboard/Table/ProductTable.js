@@ -187,7 +187,7 @@ export default function EnhancedTable({
                             </Button>
                           </>
                         ) : (
-                          "products"
+                          component
                         )}
                       </TableCell>
                     </TableRow>

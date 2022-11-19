@@ -1,19 +1,11 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
-import ProductCard from "../../Components/Dashboard/ProductCard";
 import RouteHeader from "../../Components/Dashboard/RouteHeader";
 import ProductTable from "../../Components/Dashboard/Table/ProductTable";
 
 const UserHistory = () => {
   return (
     <RouteHeader title={"History"}>
-      {/* <Grid container spacing={2} sx={{ m: "0 !important" }}>
-        <Grid container spacing={2} xs={12} md={12} lg={12}>
-          {dashboardCardItem.map((card) => (
-            <ProductCard key={card} card={card} />
-          ))}
-        </Grid>
-      </Grid> */}
       <Box sx={{ my: 2, P: 2 }}>
         <Grid
           container
@@ -61,27 +53,6 @@ const rows = [
   createData("Marshmallow", 318, 0, 81, 2.0),
   createData("Nougat", 360, 19.0, 9, 37.0),
   createData("Oreo", 437, 18.0, 63, 4.0),
-];
-
-const dashboardCardItem = [
-  {
-    title: "Total Order",
-    user: 634,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#64b3f6, #2b77e5)",
-  },
-  {
-    title: "Shipped Orders",
-    user: 433,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#4eda89, #1a9f53)",
-  },
-  {
-    title: "Pending Orders",
-    user: 384,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(to left, #ed68ff, #be0ee1)",
-  },
 ];
 
 const headCells = [

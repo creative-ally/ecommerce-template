@@ -26,6 +26,7 @@ const Products = () => {
           <ProductTable
             rows={rows}
             headCells={headCells}
+            component={"products"}
             listTitle={"Best Selling Products"}
           />
         </Grid>
