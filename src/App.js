@@ -1,3 +1,4 @@
+
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './css/styles.css';
 import AllDoor from './Categories/Door/AllDoor';
@@ -29,39 +30,35 @@ import Orders from './Pages/Dashboard/Orders';
 import Products from './Pages/Dashboard/Products';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Checkout from './Components/ShoppingCart/Checkout';
+import SearchProducts from './SearchProducts/SearchProducts';
+import SearchProdductsDetail from "./SearchProdductsDetail/SearchProdductsDetail";
+import Payment from "./Pages/Dashboard/Payment";
 <link href="/dist/output.css" rel="stylesheet"></link>
 
+
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-    }, [2000])
+      setLoading(false);
+    }, [2000]);
   }, []);
 
   const location = useLocation();
 
   return (
     <>
-      {loading ? <Loader></Loader> :
-        <div className='bg-white'>
-
+      {loading ? (
+        <Loader></Loader>
+      ) : (
+        <div className="bg-white">
           {/* dynamically load navbar. when user goes /dashboard will see only dashboard navbar  */}
-          {
-            location.pathname.includes('/dashboard') 
-            ?
-            null
-            : 
-            <Navbar />
-          }
-          
+          {location.pathname.includes("/dashboard") ? null : <Navbar />}
+
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/categorylist/:category"
-              element={<CategoryList />}
-            />
+            <Route path="/categorylist/:category" element={<CategoryList />} />
             <Route
               path="/furnitureSingleProduct/:id"
               element={<FsingleProduct />}
@@ -74,6 +71,11 @@ function App() {
         <Route path="/interior" element={<Interior />} /> */}
             <Route path="/doors" element={<AllDoor />} />
             <Route path="/doors/:id" element={<SubCategory />} />
+            <Route
+              path="/searchPrducts/:id"
+              element={<SearchProdductsDetail />}
+            />
+
             <Route path="/dining" element={<AllDining />} />
             <Route path="/interior" element={<Interior />} />
             <Route path="/showroomLocator" element={<ShowroomLocator />} />
@@ -82,24 +84,26 @@ function App() {
             <Route path="/addBlogs" element={<AddBlogs />} />
             <Route path="/dining/:id" element={<DiningCategories />} />
 
+
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path="/searchProducts" element={<SearchProducts />} />
             {/* dashboard routes */}
-            <Route path='/dashboard' element={<DashboardHome />}>
+            <Route path="/dashboard" element={<DashboardHome />}>
               <Route index element={<Dashboard />}></Route>
-              <Route path='products' element={<Products />}></Route>
-              <Route path='addproducts' element={<AddProduct />}></Route>
-              <Route path='orders' element={<Orders />}></Route>
+              <Route path="products" element={<Products />}></Route>
+              <Route path="addproducts" element={<AddProduct />}></Route>
+              <Route path="orders" element={<Orders />}></Route>
+              <Route path="payment/:id" element={<Payment />} />
             </Route>
-
           </Routes>
           <Footer />
-          <BacktoTop/>
+          <BacktoTop />
           {/* <Chat></Chat> */}
         </div>
-      }
+      )}
     </>
   );
 }

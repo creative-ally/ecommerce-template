@@ -6,7 +6,6 @@ import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import ProductCarousel from './ProductCarousel';
 
-
 const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
