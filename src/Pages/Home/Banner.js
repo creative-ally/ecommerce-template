@@ -11,6 +11,10 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import Box from '@mui/material/Box';
 import { Container, Typography } from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import image1 from '../../assets/image1.jpg'
+import image2 from '../../assets/image2.jpg'
+import image3 from '../../assets/image3.jpg'
+
 
 const Banner = () => {
   const swiperRef = React.useRef();
@@ -27,15 +31,15 @@ const Banner = () => {
   const banner = [
     {
       "title": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia hic est cupiditate necessitatibus incidunt, minima tempore doloribus! Ducimus, libero sapiente!",
-      "image": "https://i.ibb.co/d75pqB1/image2.jpg"
+      "image": `${image1}`
     },
     {
       "title": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia hic est cupiditate necessitatibus incidunt, minima tempore doloribus! Ducimus, libero sapiente!",
-      "image": "https://i.ibb.co/XJhhtz6/image3.jpg"
+      "image": `${image2}`
     },
     {
       "title": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia hic est cupiditate necessitatibus incidunt, minima tempore doloribus! Ducimus, libero sapiente!",
-      "image": "https://i.ibb.co/CWK0qkP/image1.jpg"
+      "image": `${image3}`
     },
   ]
 

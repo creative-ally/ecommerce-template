@@ -1,42 +1,165 @@
-import React from "react";
-// import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import GoogleIcon from "@mui/icons-material/Google";
-import { ImFacebook2, ImGoogle2, ImLinkedin } from "react-icons/im";
-import { Divider } from "@mui/material";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import React, { useState } from "react";
+import { Divider, IconButton, InputAdornment, TextField } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import HttpsIcon from "@mui/icons-material/Https";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import SocialIcons from "./SocialIcons";
+import { Controller, useForm } from 'react-hook-form';
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { loginSchema } from "./utils/Validation";
+import Loader from "../../Shared/Loader/Loader";
 
 const SignIn = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const defaultValues = {
+    email: '',
+    password: '',
   };
+
+  const navigate = useNavigate()
+  const { control, formState, handleSubmit, reset } = useForm({
+    mode: 'onChange',
+    defaultValues,
+    resolver: yupResolver(loginSchema),
+  });
+  const [email, setEmail] = useState('');
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  const { isValid, dirtyFields, errors } = formState;
+  if (loading) {
+    return <Loader />
+  }
+  if (user) {
+
+    navigate('/')
+  }
+
+  const onSubmit = (values) => {
+    console.log(values)
+    signInWithEmailAndPassword(values.email, values.password)
+
+  }
+
+
   return (
     <div className="authentication">
       <div className="authentication-content">
-        <h1 className="text-white">Sign in to Your Account</h1>
-        <p className="text-center text-white">Sign in using social networks</p>
-        <div className="my-4 justify-center text-white flex">
-          <span className="mx-2 hover:text-primary">
-            {" "}
-            <ImFacebook2 className="w-6 h-6"/>
-            {/* <FacebookOutlinedIcon /> */}
-          </span>
-          <span className="mx-2 hover:text-primary">
-            {" "}
-            <ImGoogle2 className="w-6 h-6"/>
-            {/* <GoogleIcon /> */}
-          </span>
-          <span className="mx-2 hover:text-primary">
-            {" "}
-            <ImLinkedin className="w-6 h-6"/>
-            {/* <LinkedInIcon /> */}
-          </span>
-        </div>
+        <h1 className="text-[40px] font-bold">Sign in to Your Account</h1>
+        <p className="mb-4">Sign in using social networks</p>
+     
+        <SocialIcons />
         <Divider />
-        <form onSubmit={handleSubmit} className="mt-5 ">
+
+        <form
+          name="SigninForm"
+          noValidate
+          autoComplete="off"
+          onSubmit={handleSubmit(onSubmit)}
+          className="mt-5">
+
+          <div className="flex  w-3/4 py-2 rounded-2xl px-2 mb-5 bg-slate-100 mx-auto ">
+            <span className="mr-2 text-gray-500 my-auto">
+              {" "}
+              <MailOutlineIcon />
+            </span>
+
+            <Controller
+              name="email"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  label="Email"
+                  type="email"
+                  className=" formEmailField bg-transparent"
+                  autoFocus={true}
+                  placeholder="Email"
+                  helpertext={errors?.email?.message}
+                  variant="outlined"
+                  error={!!errors?.email}
+                  required
+                  fullWidth
+                />
+              )}
+            />
+          </div>
+
+
+          <div className="flex justify-between w-3/4 py-2 rounded-2xl px-2 mx-auto bg-slate-100 ">
+            <span className="mr-2 text-gray-500 my-auto">
+              <HttpsIcon />
+            </span>
+
+            <Controller
+              name="password"
+              control={control}
+              rules={{
+                required: true,
+                validate: (value) => {
+                  if (value === '') {
+                    return 'Please provide input name';
+                  }
+                },
+              }}
+              render={({ field, formState }) => (
+                <TextField
+                  {...field}
+                  label="Password"
+                  placeholder="Password"
+                  className="formEmailField bg-transparent"
+                  autoFocus={true}
+                  autoComplete="new-password"
+                  type={showPassword ? 'text' : 'password'}
+                  error={!!errors?.password}
+                  helpertext={errors?.password?.message}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="start">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={() => setShowPassword(!showPassword)}
+                          edge="end"
+                        >
+                          {!showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              )}
+            />
+          </div>
+
+
+          <div className="flex flex-col my-5 mx-auto ">
+            <Link to="/forgotpass">
+              <span className="mx-auto text-white cursor-pointer mb-5">
+                Forget Password?
+              </span>
+            </Link>
+            <button className="btn w-1/3 my-4 button mx-auto ">
+              Sign In
+            </button>
+
+          </div>
+
+
+
+
+        </form>
+
+        {/* <form onSubmit={handleSubmit} className="mt-5 ">
           <div className="flex  w-3/4 py-2 rounded-2xl px-2 mb-5 bg-slate-100 mx-auto ">
             <span className="mr-2 text-gray-500">
               {" "}
@@ -66,7 +189,7 @@ const SignIn = () => {
           <button className="btn w-1/3 my-4 button">
             Sign In
           </button>
-        </form>
+        </form> */}
         <div className="mt-6">
           <h1 className="text-white">New Here?</h1>
           <p className="text-center text-white">Sign up and discover a great amount of new opportunities!</p>
