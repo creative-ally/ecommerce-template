@@ -1,37 +1,35 @@
-
-import { Route, Routes, useLocation } from 'react-router-dom';
-import './css/styles.css';
-import SubCategory from './Categories/SubCategory';
-import Interior from './Categories/Interior/Interior';
-import SignIn from './Components/Auth/SignIn';
-import SignUp from './Components/Auth/SignUp';
-import Chat from './Components/ChatBot/Chat';
-import Home from './Pages/Home/Home';
+import { Route, Routes, useLocation } from "react-router-dom";
+import "./css/styles.css";
+import SubCategory from "./Categories/SubCategory";
+import Interior from "./Categories/Interior/Interior";
+import SignIn from "./Components/Auth/SignIn";
+import SignUp from "./Components/Auth/SignUp";
+import Chat from "./Components/ChatBot/Chat";
+import Home from "./Pages/Home/Home";
 // import CategoryList from './Pages/OfficeCategory/CategoryList';
 // import FsingleProduct from './Pages/OfficeCategory/FsingleProduct';
-import Footer from './Shared/Footer/Footer';
-import Navbar from './Shared/Navbar/Navbar';
-import Blog from './Categories/Blog/Blog';
-import Category from './Categories/Category';
-import BacktoTop from './Shared/BacktoTop/BacktoTop';
-import Product from './Categories/Product';
-import { useEffect, useState } from 'react';
-import Loader from './Shared/Loader/Loader';
-import Cart from './Components/ShoppingCart/Cart';
-import AddBlogs from './Categories/Blog/AddBlogs';
-import ShowroomLocator from './Pages/ShowroomLocator/ShowroomLocator';
-import Help from './Pages/Help';
-import DashboardHome from './Pages/Dashboard/DashboardHome';
-import AddProduct from './Pages/Dashboard/AddProduct';
-import Orders from './Pages/Dashboard/Orders';
-import Products from './Pages/Dashboard/Products';
-import Dashboard from './Pages/Dashboard/Dashboard';
-import Checkout from './Components/ShoppingCart/Checkout';
-import SearchProducts from './SearchProducts/SearchProducts';
+import Footer from "./Shared/Footer/Footer";
+import Navbar from "./Shared/Navbar/Navbar";
+import Blog from "./Categories/Blog/Blog";
+import Category from "./Categories/Category";
+import BacktoTop from "./Shared/BacktoTop/BacktoTop";
+import Product from "./Categories/Product";
+import { useEffect, useState } from "react";
+import Loader from "./Shared/Loader/Loader";
+import Cart from "./Components/ShoppingCart/Cart";
+import AddBlogs from "./Categories/Blog/AddBlogs";
+import ShowroomLocator from "./Pages/ShowroomLocator/ShowroomLocator";
+import Help from "./Pages/Help";
+import DashboardHome from "./Pages/Dashboard/DashboardHome";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import Orders from "./Pages/Dashboard/Orders";
+import Products from "./Pages/Dashboard/Products";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Checkout from "./Components/ShoppingCart/Checkout";
+import SearchProducts from "./SearchProducts/SearchProducts";
 import SearchProdductsDetail from "./SearchProdductsDetail/SearchProdductsDetail";
 import Payment from "./Pages/Dashboard/Payment";
-<link href="/dist/output.css" rel="stylesheet"></link>
-
+<link href="/dist/output.css" rel="stylesheet"></link>;
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -66,18 +64,17 @@ function App() {
             />
 
             {/* <Route path="/dining" element={<AllDining />} /> */}
-            <Route path="/interior" element={<Interior />} /> 
+            <Route path="/interior" element={<Interior />} />
             <Route path="/showroomLocator" element={<ShowroomLocator />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/help" element={<Help />} />
             <Route path="/addBlogs" element={<AddBlogs />} />
             {/* <Route path="/dining/:id" element={<DiningCategories />} /> */}
 
-
-            <Route path='/signin' element={<SignIn />} />
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/searchProducts" element={<SearchProducts />} />
             {/* dashboard routes */}
             <Route path="/dashboard" element={<DashboardHome />}>
@@ -90,7 +87,7 @@ function App() {
           </Routes>
           <Footer />
           <BacktoTop />
-          {/* <Chat></Chat> */}
+          <Chat></Chat>
         </div>
       )}
     </>
