@@ -42,7 +42,6 @@ const SearchProdductsDetail = () => {
           </div>
         </div>
       </div>
-      s
     </div>
   );
 };
