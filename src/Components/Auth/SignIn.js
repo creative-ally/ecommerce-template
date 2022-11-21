@@ -191,8 +191,8 @@ const SignIn = () => {
           </button>
         </form> */}
         <div className="mt-6">
-          <h1 className="text-[35px] font-bold">New Here?</h1>
-          <p>Sign up and discover a great amount of new opportunities!</p>
+          <h1 className="text-white">New Here?</h1>
+          <p className="text-center text-white">Sign up and discover a great amount of new opportunities!</p>
           <Link to='/signup'><button className="btn w-1/3 mt-4 button">
             Sign Up
           </button></Link>

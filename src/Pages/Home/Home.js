@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../../Components/Banner';
+import Banner from './Banner';
 import Categories from '../../Components/Categories';
 import Newsletter from './Newsletter';
 // import OfficeFurnitures from './OfficeCategory/OfficeFurnitures';

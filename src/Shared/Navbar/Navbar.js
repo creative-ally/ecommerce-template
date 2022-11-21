@@ -15,7 +15,6 @@ import SearchProducts from "../../SearchProducts/SearchProducts";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
-import LockPersonIcon from '@mui/icons-material/LockPerson';
 import { LockPersonOutlined } from "@mui/icons-material";
 
 const Navbar = () => {
@@ -48,7 +47,6 @@ const Navbar = () => {
         { name: "Interior" },
     ];
 
-
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
 
@@ -58,11 +56,14 @@ const Navbar = () => {
 
 
 
+
+
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
 
     const [user] = useAuthState(auth);
+    console.log(user)
 
     const logout = () => {
         signOut(auth);
@@ -134,7 +135,7 @@ const Navbar = () => {
                                     <button type="submit" className="">
                                         <label
                                             htmlFor="my-modal-5"
-                                            className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral  "
+                                            className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral  "
                                         >
                                             {" "}
                                             <HiOutlineSearch className="icon" />
@@ -142,22 +143,22 @@ const Navbar = () => {
                                     </button>
                                 </div>
                             </form>
-                            <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+                            <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <HiOutlineShoppingCart className="icon" />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
-                            <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+                            <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <HiOutlineBellAlert className="icon" />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
-                            <button className="btn btn-ghost btn-circle hover:shadow-md hover:shadow-neutral">
+                            <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <BsBookmarkHeart className="icon" />
-                                    <span className="badge badge-xs badge-warning indicator-item"></span>
+                                    <span className="badge badge-xs badge-error indicator-item"></span>
                                 </div>
                             </button>
                             <div className="flex flex-center items-center">
@@ -191,7 +192,7 @@ const Navbar = () => {
                                                     <h6>Dashboard</h6>
                                                     <h6 onClick={logout}>Logout</h6>
                                                 </Typography>
-                                              
+
                                             </MenuItem>
 
                                         </Menu>
@@ -199,15 +200,18 @@ const Navbar = () => {
                                 ) : (
                                     <Link className=" px-2" to="/signin">
                                        <LockPersonOutlined/>
+                     
 
                                     </Link>
                                 )}
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
             <Divider />
+
             {/* third nav */}
             <div className=" bg-gray-50 text-center py-2">
                 <div className="container flex justify-evenly">

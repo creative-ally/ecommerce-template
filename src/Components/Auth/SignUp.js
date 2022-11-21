@@ -47,7 +47,7 @@ const SignUp = () => {
     return (
         <div className=" text-white authentication">
             <div className="authentication-content">
-                <h1 className="text-[40px] font-bold">Create Account</h1>
+                <h1 className="text-white">Create Account</h1>
 
                 <SocialIcons />
                 <p className="mb-4">or use your email for registration</p>
@@ -219,8 +219,8 @@ const SignUp = () => {
 
                 </form>
                 <div className="mt-6">
-                    <h1 className="text-[35px] font-bold">Welcome Back!</h1>
-                    <p>To keep connected with us please sign in with your personal info</p>
+                    <h1 className="text-white">Welcome Back!</h1>
+                    <p className="text-center text-white">To keep connected with us please sign in with your personal info</p>
                     <Link to='/signin'> <button className="btn w-1/3 my-4 button">
                         Sign In
                     </button></Link>

@@ -2,17 +2,15 @@ import React from 'react';
 import { ImLocation2 } from "react-icons/im";
 import { HiMail, HiPhone } from "react-icons/hi";
 import { FaHouzz, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Logo from "../../assets/logo.png";
 
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 justify-evenly items-center bg-gray-200 text-zinc-500">
+            <footer className="footer justify-evenly items-center bg-gray-200 text-zinc-500">
                 {/* logo */}
                 <div>
-                    <FaHouzz className="h-10 w-10 text-zinc-700" />
-                    <p>HATIL Furnitures
-                        <br />
-                        Providing reliable furnitures</p>
+                    <img src={Logo} alt="" className="h-1/2 m-auto" />
                 </div>
                 {/* contact us */}
                 <div>
