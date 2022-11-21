@@ -11,7 +11,6 @@ const SubCategory = () => {
         (async () => {
           const {data} = await axios.get(`http://localhost:5000/api/product/category/${category}/${code}`)
                 .then(res => {
-                    console.log(res)
                     // setTitle(res.data.name)
                     setProducts(res.data.data)
                 })
