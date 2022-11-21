@@ -18,7 +18,7 @@ const UserHistory = () => {
           <ProductTable
             rows={rows}
             headCells={headCells}
-            component={"orders"}
+            component={"user-history"}
             listTitle={"My History"}
           />
         </Grid>
@@ -81,7 +81,7 @@ const headCells = [
     label: "Sells",
   },
   {
-    id: "carbs",
+    id: "carbs2",
     numeric: true,
     disablePadding: false,
     label: "Pending",

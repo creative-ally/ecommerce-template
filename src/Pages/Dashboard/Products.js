@@ -110,7 +110,7 @@ const headCells = [
     label: "Carbs (g)",
   },
   {
-    id: "carbs",
+    id: "carbs2",
     numeric: true,
     disablePadding: false,
     label: "Carbs (g)",

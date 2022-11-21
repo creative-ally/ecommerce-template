@@ -35,6 +35,8 @@ const Orders = () => {
   );
 };
 
+export default Orders;
+
 function createData(name, calories, fat, carbs, protein) {
   return {
     name,
@@ -61,7 +63,6 @@ const rows = [
   createData("Oreo", 437, 18.0, 63, 4.0),
 ];
 
-export default Orders;
 const dashboardCardItem = [
   {
     title: "Total Order",
@@ -109,7 +110,7 @@ const headCells = [
     label: "Sells",
   },
   {
-    id: "carbs",
+    id: "carbs2",
     numeric: true,
     disablePadding: false,
     label: "Pending",

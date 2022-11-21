@@ -104,6 +104,7 @@ export default function EnhancedTable({
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
+  console.log(component);
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2, px: 3 }}>
@@ -169,7 +170,7 @@ export default function EnhancedTable({
                       <TableCell align="right">{row.fat}</TableCell>
                       {/* <TableCell align="right">{row.protein} hello</TableCell> */}
                       <TableCell align="right">
-                        {component === "orders" ? (
+                        {component === "orders" && (
                           <>
                             <Button
                               variant="outlined"
@@ -186,8 +187,53 @@ export default function EnhancedTable({
                               cancel
                             </Button>
                           </>
-                        ) : (
-                          component
+                        )}
+                        {component === "products" && (
+                          <>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="success"
+                            >
+                              update
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="error"
+                            >
+                              delete
+                            </Button>
+                          </>
+                        )}
+                        {component === "User Order" && (
+                          <>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="success"
+                            >
+                              status
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="error"
+                            >
+                              cancel
+                            </Button>
+                          </>
+                        )}
+                        {component === "user-history" && (
+                          <>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              color="success"
+                            >
+                              status
+                            </Button>
+                          </>
                         )}
                       </TableCell>
                     </TableRow>

@@ -81,7 +81,7 @@ const headCells = [
     label: "Sells",
   },
   {
-    id: "carbs",
+    id: "carbs2",
     numeric: true,
     disablePadding: false,
     label: "Pending",
