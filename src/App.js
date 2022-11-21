@@ -28,6 +28,9 @@ import Checkout from "./Components/ShoppingCart/Checkout";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import SearchProdductsDetail from "./SearchProdductsDetail/SearchProdductsDetail";
 import Payment from "./Pages/Dashboard/Payment";
+import UserProfile from "./Pages/Dashboard/UserProfile";
+import UserOrders from "./Pages/Dashboard/UserOrders";
+import UserHistory from "./Pages/Dashboard/UserHistory";
 <link href="/dist/output.css" rel="stylesheet"></link>;
 
 function App() {
@@ -81,6 +84,11 @@ function App() {
               <Route path="products" element={<Products />}></Route>
               <Route path="addproducts" element={<AddProduct />}></Route>
               <Route path="orders" element={<Orders />}></Route>
+              {/* User Routes */}
+              <Route path="userProfile" element={<UserProfile />}></Route>
+              <Route path="userOrders" element={<UserOrders />}></Route>
+              <Route path="UserHistory" element={<UserHistory />}></Route>
+
               <Route path="payment/:id" element={<Payment />} />
             </Route>
           </Routes>
