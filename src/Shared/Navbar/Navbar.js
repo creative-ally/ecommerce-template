@@ -16,6 +16,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 import LockPersonIcon from '@mui/icons-material/LockPerson';
+import { LockPersonOutlined } from "@mui/icons-material";
 
 const Navbar = () => {
     const [searchProducts, setSearchProducts] = useState([]);
@@ -197,7 +198,7 @@ const Navbar = () => {
                                     </Box>
                                 ) : (
                                     <Link className=" px-2" to="/signin">
-                                       <LockPersonIcon/>
+                                       <LockPersonOutlined/>
 
                                     </Link>
                                 )}
