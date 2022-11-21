@@ -195,14 +195,14 @@ export default function EnhancedTable({
                               size="small"
                               color="success"
                             >
-                              update
+                              In Stock
                             </Button>
                             <Button
                               variant="outlined"
                               size="small"
                               color="error"
                             >
-                              delete
+                              Out of Stock
                             </Button>
                           </>
                         )}
