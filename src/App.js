@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./css/styles.css";
 import SubCategory from "./Categories/SubCategory";
-import Interior from "./Categories/Interior/Interior";
 import SignIn from "./Components/Auth/SignIn";
 import SignUp from "./Components/Auth/SignUp";
 import Chat from "./Components/ChatBot/Chat";
@@ -64,7 +63,7 @@ function App() {
             />
 
             {/* <Route path="/dining" element={<AllDining />} /> */}
-            <Route path="/interior" element={<Interior />} />
+            {/* <Route path="/category/:category/:code" element={<SubCategory />} /> */}
             <Route path="/showroomLocator" element={<ShowroomLocator />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/help" element={<Help />} />
