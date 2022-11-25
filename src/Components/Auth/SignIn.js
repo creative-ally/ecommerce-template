@@ -38,7 +38,6 @@ const SignIn = () => {
     return <Loader />
   }
   if (user) {
-
     navigate('/')
   }
 

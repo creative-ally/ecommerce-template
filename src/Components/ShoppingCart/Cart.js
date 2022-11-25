@@ -9,24 +9,32 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import axios from 'axios';
+import Itemtable from './Itemtable';
 
 const Cart = () => {
-    const [items, setItems] = useState([])
+    const [cartItems, setCartItems] = useState([]);
 
     const [quantity1, setQuantity1] = useState(1);
     const [quantity2, setQuantity2] = useState(1);
     const [quantity3, setQuantity3] = useState(1);
 
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get('')
-                .then(res =>
-                    setItems(res.data.data)
-                );
-        }
-        )()
+            const { data } = await axios.get('http://localhost:5000/api/cart')
+                .then(res => {
+                    console.log(res.data.data)
+                    setCartItems(res.data.data)
+                })
+        })()
     }, [])
+
+    console.log(cartItems)
 
 
 
@@ -71,24 +79,11 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity1} <span onClick={() => setQuantity1(quantity1 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement2()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity2} <span onClick={() => setQuantity2(quantity2 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className=' text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement3()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity3} <span onClick={() => setQuantity3(quantity3 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
+                            {
+                                cartItems.map((item) =>
+                                    <Itemtable key={item.id} item={item}></Itemtable>
+                                )
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -99,7 +94,7 @@ const Cart = () => {
 
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>{}Taka</ListItemText>
+                                    <ListItemText>{ }Taka</ListItemText>
                                 }
                             >
                                 <ListItemText>Subtotal:</ListItemText>

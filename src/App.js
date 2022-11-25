@@ -5,8 +5,6 @@ import SignIn from "./Components/Auth/SignIn";
 import SignUp from "./Components/Auth/SignUp";
 import Chat from "./Components/ChatBot/Chat";
 import Home from "./Pages/Home/Home";
-// import CategoryList from './Pages/OfficeCategory/CategoryList';
-// import FsingleProduct from './Pages/OfficeCategory/FsingleProduct';
 import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
 import Blog from "./Categories/Blog/Blog";
@@ -58,20 +56,15 @@ function App() {
             <Route path="/:category" element={<Category />} />
             <Route path="/category/:category/:code" element={<SubCategory />} />
             <Route path="/product/:id" element={<Product />} />
-            {/* <Route path="/doors" element={<AllDoor />} />
-            <Route path="/doors/:id" element={<SubCategory />} /> */}
             <Route
               path="/searchPrducts/:id"
               element={<SearchProdductsDetail />}
             />
-
-            {/* <Route path="/dining" element={<AllDining />} /> */}
-            {/* <Route path="/category/:category/:code" element={<SubCategory />} /> */}
             <Route path="/showroomLocator" element={<ShowroomLocator />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/help" element={<Help />} />
             <Route path="/addBlogs" element={<AddBlogs />} />
-            {/* <Route path="/dining/:id" element={<DiningCategories />} /> */}
+
 
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
@@ -88,7 +81,6 @@ function App() {
               <Route path="userProfile" element={<UserProfile />}></Route>
               <Route path="userOrders" element={<UserOrders />}></Route>
               <Route path="UserHistory" element={<UserHistory />}></Route>
-
               <Route path="payment/:id" element={<Payment />} />
             </Route>
           </Routes>

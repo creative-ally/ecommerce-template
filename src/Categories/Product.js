@@ -5,11 +5,13 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import ProductCarousel from './ProductCarousel';
+import OpenCart from '../Components/ShoppingCart/OpenCart';
 
 const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [value, setValue] = React.useState(5);
+    const [openCart, setOpenCart] = useState(false)
 
     useEffect(() => {
         (async () => {
@@ -19,14 +21,14 @@ const Product = () => {
                 })
         })()
     }, [id]);
- 
-    console.log(product)
-    
+
+
+
     const handleAddCart = (e) => {
         e.preventDefault();
-        if(!product){
+        if (!product) {
             console.log('Product did not match')
-        }else{
+        } else {
             const price = product?.price * e.target.count.value;
             const cartData = {
                 category: product?.category,
@@ -41,13 +43,17 @@ const Product = () => {
             }
             console.log(cartData)
             axios.post('http://localhost:5000/api/cart', cartData)
-            .then(function (response) {
-             if (response.status === 200) {
-               console.log('Product updated to cart Successfully ');
-             }
-           });
+                .then(function (response) {
+                    if (response.status === 200) {
+                        console.log('Product updated to cart Successfully ');
+                    }
+                });
         }
     }
+
+    const handleClickOpen = () => {
+        setOpenCart(true);
+    };
 
     return (
         <div>
@@ -71,14 +77,15 @@ const Product = () => {
                     <p>{product.description}</p>
                     <form onSubmit={handleAddCart} action="">
                         <div className='block w-32 my-5'>
-                           <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' defaultValue='1'/>
-                           <input className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
+                            <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' defaultValue='1' />
+                            <input onClick={handleClickOpen} className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
                         </div>
                     </form>
-                    {/* <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Go to Cart</Link> */}
                 </div>
             </div>
-
+            {
+                openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
+            }
         </div>
     );
 };
