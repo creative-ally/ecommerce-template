@@ -6,55 +6,52 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import CommentIcon from '@mui/icons-material/Comment';
 import IconButton from '@mui/material/IconButton';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import axios from 'axios';
+import Itemtable from './Itemtable';
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Cart = () => {
-    const [items, setItems] = useState([])
+    const [cartItems, setCartItems] = useState([]);
+    const [user] = useAuthState(auth);
 
-    const [quantity1, setQuantity1] = useState(1);
-    const [quantity2, setQuantity2] = useState(1);
-    const [quantity3, setQuantity3] = useState(1);
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get('')
-                .then(res =>
-                    setItems(res.data.data)
-                );
-        }
-        )()
+            const { data } = await axios.get(`http://localhost:5000/api/cart/${user?.email}`)
+                .then(res => {
+                    setCartItems(res.data.data)
+                })
+        })()
     }, [])
 
+   let total = 0;
+   let delivery = 0 ;
+   let vat = 1;
+   let grandTotal  = 0
+   cartItems.forEach( item => {
+      total = total + (item.price * item.quantity);
+      delivery = delivery + (200 * item.quantity);
+      vat = +(total * 0.05).toFixed(2);
+      grandTotal = total + delivery + vat
+    });
 
 
-    const handleDecrement = () => {
-        if (quantity1 > 1) {
-            setQuantity1(quantity1 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-    const handleDecrement2 = () => {
-        if (quantity2 > 1) {
-            setQuantity2(quantity2 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-    const handleDecrement3 = () => {
-        if (quantity3 > 1) {
-            setQuantity3(quantity3 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-
-
-
-
+    const StyledBadge = styled(Badge)(({ theme }) => ({
+        '& .MuiBadge-badge': {
+          right: -12,
+          top: -10,
+          border: `2px solid ${theme.primary}`,
+          padding: '0 4px',
+        },
+      }));
 
     return (
         <div className='lg:p-20 md:-10 p-5'>
@@ -71,24 +68,11 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity1} <span onClick={() => setQuantity1(quantity1 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement2()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity2} <span onClick={() => setQuantity2(quantity2 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
-                            <tr className=''>
-                                <td class="mr-3 w-20"><img src="https://i.ibb.co/R9KwLhc/24.png" alt="" /></td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">White Modern Chair</td>
-                                <td class="pl-5 text-lg font-medium text-[#252525] bg[]">20000 Taka</td>
-                                <td class="pl-5"> <p className=' text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => handleDecrement3()} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity3} <span onClick={() => setQuantity3(quantity3 + 1)} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
-                            </tr>
+                            {
+                                cartItems.map((item) =>
+                                    <Itemtable key={item.id} item={item}></Itemtable>
+                                )
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -99,21 +83,28 @@ const Cart = () => {
 
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>{}Taka</ListItemText>
+                                    <ListItemText>{total}Tk</ListItemText>
                                 }
                             >
-                                <ListItemText>Subtotal:</ListItemText>
+                                <ListItemText>Subtotal: </ListItemText>
                             </ListItem>
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>Taka</ListItemText>
+                                    <ListItemText>{vat}Tk</ListItemText>
+                                }
+                            >
+                                <ListItemText>VAT<StyledBadge badgeContent={'5%'} color="primary"></StyledBadge></ListItemText>
+                            </ListItem>
+                            <ListItem disableGutters
+                                secondaryAction={
+                                    <ListItemText>{delivery}Tk</ListItemText>
                                 }
                             >
                                 <ListItemText>Delivery:</ListItemText>
                             </ListItem>
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>Taka</ListItemText>
+                                    <ListItemText>{grandTotal}Tk</ListItemText>
                                 }
                             >
                                 <ListItemText>Total:</ListItemText>

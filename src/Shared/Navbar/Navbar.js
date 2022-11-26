@@ -7,7 +7,6 @@ import {
     HiOutlineSearch,
 } from "react-icons/hi";
 import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
-import LockPersonIcon from '@mui/icons-material/LockPerson';
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -16,10 +15,22 @@ import SearchProducts from "../../SearchProducts/SearchProducts";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import OpenCart from "../../Components/ShoppingCart/OpenCart";
+import { LockPersonOutlined } from "@mui/icons-material";
 
 const Navbar = () => {
     const [searchProducts, setSearchProducts] = useState([]);
     const [inputValue, setInputValue] = useState("");
+
+    const [openCart, setOpenCart] = useState(false);
+
+    const open = Boolean(openCart);
+    const handleClick = (event) => {
+        setOpenCart(event.currentTarget);
+    };
+
+
+
     const handleInputValue = (event) => {
         setInputValue(event.target.value);
     };
@@ -38,7 +49,7 @@ const Navbar = () => {
                 .then((data) => setSearchProducts(data.data));
         }
     };
-    console.log(searchProducts);
+
     const categories = [
         { name: "Bedroom" },
         { name: "Dining" },
@@ -63,7 +74,7 @@ const Navbar = () => {
     };
 
     const [user] = useAuthState(auth);
-    console.log(user)
+  
 
     const logout = () => {
         signOut(auth);
@@ -143,12 +154,23 @@ const Navbar = () => {
                                     </button>
                                 </div>
                             </form>
-                            <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
-                                <div className="indicator">
-                                    <HiOutlineShoppingCart className="icon" />
-                                    <span className="badge badge-xs badge-error indicator-item"></span>
-                                </div>
-                            </button>
+                            <div>
+                                <button
+                                    id="demo-positioned-button"
+                                    aria-controls={open ? 'demo-positioned-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? 'true' : undefined}
+                                    onClick={handleClick}
+                                    className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
+                                    <div className="indicator">
+                                        <HiOutlineShoppingCart className="icon" />
+                                        <span className="badge badge-xs badge-error indicator-item"></span>
+                                    </div>
+                                </button>
+                                {
+                                    openCart && <OpenCart className='top-0 left-0' openCart={openCart} setOpenCart={setOpenCart} ></OpenCart>
+                                }
+                            </div>
                             <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
                                 <div className="indicator">
                                     <HiOutlineBellAlert className="icon" />
@@ -199,7 +221,8 @@ const Navbar = () => {
                                     </Box>
                                 ) : (
                                     <Link className=" px-2" to="/signin">
-                                        <LockPersonIcon />
+                                       <LockPersonOutlined/>
+                     
 
                                     </Link>
                                 )}

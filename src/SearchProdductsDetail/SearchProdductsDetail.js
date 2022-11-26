@@ -20,7 +20,7 @@ const SearchProdductsDetail = () => {
           <img
             src={products.image}
             className="max-w-sm rounded-lg shadow-2xl "
-          />
+          alt=""/>
           <div className=" w-8/12 md:w-10/12 lg:w-6/12 lg:ml-6">
             <h1 className="text-2xl font-bold">{products.name}</h1>
             <hr className="bg-slate-400 w-100 h-[1px]"></hr>

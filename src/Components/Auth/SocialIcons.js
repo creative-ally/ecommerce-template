@@ -6,6 +6,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 const SocialIcons = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    
 
     return (
         <div className="my-4 text-black">
@@ -13,7 +14,7 @@ const SocialIcons = () => {
             {" "}
             <FacebookOutlinedIcon />
         </span>
-        <span onClick={() => signInWithGoogle()} className="mx-2">
+        <span onClick={() => signInWithGoogle()} className="mx-2 cursor-pointer">
             {" "}
             <GoogleIcon />
         </span>
