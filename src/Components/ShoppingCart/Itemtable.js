@@ -3,21 +3,29 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
-const Itemtable = ({item}) => {
-    const {_id, name, image, price, quantity} = item;
-    const [count, setCount] = useState('')
+const Itemtable = ({ item }) => {
+    const { _id, name, image, price, quantity } = item;
+    const [count, setCount] = useState(quantity)
+
 
     const handleDecrement = () => {
-        setCount(quantity - 1)
+        if (count > 1) {
+            setCount(count - 1)
+        }
+    }
+    const handleIncrement = () => {
+        setCount(count + 1)
     }
 
-    console.log(count)
     return (
         <tr className=''>
-            <td class="mr-3 w-20"><img src={image} alt="" /></td>
+            <td class="mr-3 w-24 h-24"><img className='h-24' src={image} alt="" /></td>
             <td class="pl-5 text-lg font-medium text-[#252525] bg[]">{name}</td>
             <td class="pl-5 text-lg font-medium text-[#252525] bg[]">{price} Taka</td>
-            <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={() => setCount(quantity -1)} className='px-2 cursor-pointer'><RemoveIcon /></span> {quantity} <span className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
+            {
+                _id &&
+                <td class="pl-5"> <p className='text-lg text-center text-[#252525] bg-[#F5F7FA] p-2'>Qty <span onClick={handleDecrement} className='px-2 cursor-pointer'><RemoveIcon /></span> {count} <span onClick={handleIncrement} className='px-2 cursor-pointer'><AddIcon /></span><HighlightOffIcon className='text-primary cursor-pointer text-right' /></p></td>
+            }
         </tr>
     );
 };

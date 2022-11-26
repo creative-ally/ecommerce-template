@@ -6,19 +6,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import CommentIcon from '@mui/icons-material/Comment';
 import IconButton from '@mui/material/IconButton';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import axios from 'axios';
 import Itemtable from './Itemtable';
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
-
-    const [quantity1, setQuantity1] = useState(1);
-    const [quantity2, setQuantity2] = useState(1);
-    const [quantity3, setQuantity3] = useState(1);
-
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -28,7 +24,6 @@ const Cart = () => {
         (async () => {
             const { data } = await axios.get('http://localhost:5000/api/cart')
                 .then(res => {
-                    console.log(res.data.data)
                     setCartItems(res.data.data)
                 })
         })()
@@ -36,33 +31,26 @@ const Cart = () => {
 
     console.log(cartItems)
 
+   let total = 0;
+   let delivery = 0 ;
+   let vat = 1;
+   let grandTotal  = 0
+   cartItems.forEach( item => {
+      total = total + (item.price * item.quantity);
+      delivery = delivery + (200 * item.quantity);
+      vat = +(total * 0.05).toFixed(2);
+      grandTotal = total + delivery + vat
+    });
 
 
-    const handleDecrement = () => {
-        if (quantity1 > 1) {
-            setQuantity1(quantity1 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-    const handleDecrement2 = () => {
-        if (quantity2 > 1) {
-            setQuantity2(quantity2 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-    const handleDecrement3 = () => {
-        if (quantity3 > 1) {
-            setQuantity3(quantity3 - 1)
-        } else {
-            alert('Product must be at least one.')
-        }
-    }
-
-
-
-
+    const StyledBadge = styled(Badge)(({ theme }) => ({
+        '& .MuiBadge-badge': {
+          right: -12,
+          top: -10,
+          border: `2px solid ${theme.primary}`,
+          padding: '0 4px',
+        },
+      }));
 
     return (
         <div className='lg:p-20 md:-10 p-5'>
@@ -94,21 +82,28 @@ const Cart = () => {
 
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>{ }Taka</ListItemText>
+                                    <ListItemText>{total}Tk</ListItemText>
                                 }
                             >
-                                <ListItemText>Subtotal:</ListItemText>
+                                <ListItemText>Subtotal: </ListItemText>
                             </ListItem>
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>Taka</ListItemText>
+                                    <ListItemText>{vat}Tk</ListItemText>
+                                }
+                            >
+                                <ListItemText>VAT<StyledBadge badgeContent={'5%'} color="primary"></StyledBadge></ListItemText>
+                            </ListItem>
+                            <ListItem disableGutters
+                                secondaryAction={
+                                    <ListItemText>{delivery}Tk</ListItemText>
                                 }
                             >
                                 <ListItemText>Delivery:</ListItemText>
                             </ListItem>
                             <ListItem disableGutters
                                 secondaryAction={
-                                    <ListItemText>Taka</ListItemText>
+                                    <ListItemText>{grandTotal}Tk</ListItemText>
                                 }
                             >
                                 <ListItemText>Total:</ListItemText>

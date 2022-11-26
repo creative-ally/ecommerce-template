@@ -1,14 +1,42 @@
 import { List, ListItem, ListItemText } from '@mui/material';
 import axios from 'axios';
-import { Link, } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, } from 'react-router-dom';
 import paymentImage from '../../assets/payment2.png'
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+
+
+
 const Checkout = () => {
 
+    const navigate = useNavigate()
+
+    const [cartItems, setCartItems] = useState([]);
+    useEffect(() => {
+        (async () => {
+            const { data } = await axios.get('http://localhost:5000/api/cart')
+                .then(res => {
+                    setCartItems(res.data.data)
+                })
+        })()
+    }, [])
+
+    let total = 0;
+    let delivery = 0;
+    let vat = 1;
+    let grandTotal = 0
+    cartItems.forEach(item => {
+        total = total + (item.price * item.quantity);
+        delivery = delivery + (200 * item.quantity);
+        vat = +(total * 0.05).toFixed(2);
+        grandTotal = total + delivery + vat
+    });
 
     const handleInput = (e) => {
         e.preventDefault();
         const inputValue = {
-            firstName : e.target.firstname.value,
+            firstName: e.target.firstname.value,
             lastName: e.target.lastname.value,
             email: e.target.email.value,
             country: e.target.country.value,
@@ -17,18 +45,27 @@ const Checkout = () => {
             zip: e.target.zip.value,
             phone: e.target.phone.value,
             comment: e.target.comment.value,
-            totalCost: '115000',
+            totalCost: grandTotal,
             paymentMethod: e.target.value,
         }
-       axios.post('http://localhost:5000/api/orders', inputValue)
-       .then(function (response) {
-        if (response.status === 200) {
-          console.log('Product updated to orders Successfully ');
-        }
-      });
-       
+        axios.post('http://localhost:5000/api/orders', inputValue)
+            .then(function (response) {
+                if (response.status === 200) {
+                    console.log('Product updated to orders Successfully ');
+                    navigate('/')
+                }
+            });
+
     }
 
+    const StyledBadge = styled(Badge)(({ theme }) => ({
+        '& .MuiBadge-badge': {
+          right: -12,
+          top: -10,
+          border: `2px solid ${theme.primary}`,
+          padding: '0 4px',
+        },
+      }));
 
     return (
         <div className='lg:p-20 md:p-10 p-5'>
@@ -37,16 +74,16 @@ const Checkout = () => {
                 <div className='lg:grid grid-cols-3 gap-5'>
                     <div className='col-span-2'>
                         <div className='lg:flex mb-5'>
-                            <input className='p-3 bg-slate-100 mr-5 w-full' type="text" name="firstname" id="" placeholder='*First Name' required/>
+                            <input className='p-3 bg-slate-100 mr-5 w-full' type="text" name="firstname" id="" placeholder='*First Name' required />
                             <input className='p-3 bg-slate-100 w-full' type="text" name="lastname" id="" placeholder='Last Name' />
                         </div>
-                        <input className='p-3 bg-slate-100 w-full mb-5' type="email" name="email" id="" placeholder='*Email' required/>
-                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="country" id="" placeholder='*Country' required/>
-                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="address" id="" placeholder='*Address' required/>
-                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="town" id="" placeholder='*Town' required/>
+                        <input className='p-3 bg-slate-100 w-full mb-5' type="email" name="email" id="" placeholder='*Email' required />
+                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="country" id="" placeholder='*Country' required />
+                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="address" id="" placeholder='*Address' required />
+                        <input className='p-3 bg-slate-100 w-full mb-5' type="text" name="town" id="" placeholder='*Town' required />
                         <div className='lg:flex mb-5'>
                             <input className='p-3 bg-slate-100 mr-5 w-full' type="text" name="zip" id="" placeholder='Zip Code' />
-                            <input className='p-3 bg-slate-100 w-full' type="text" name="phone" id="" placeholder='*Phone Number' required/>
+                            <input className='p-3 bg-slate-100 w-full' type="text" name="phone" id="" placeholder='*Phone Number' required />
                         </div>
                         <textarea className='p-3 bg-slate-100 w-full mb-5' type="text" name="comment" id="" placeholder='Leave a comment about your order.' />
                         <div className='flex '>
@@ -66,24 +103,31 @@ const Checkout = () => {
 
                                 <ListItem disableGutters
                                     secondaryAction={
-                                        <ListItemText>Taka</ListItemText>
+                                        <ListItemText>{total}Tk</ListItemText>
                                     }
                                 >
-                                    <ListItemText>Subtotal:</ListItemText>
+                                    <ListItemText>Subtotal: </ListItemText>
                                 </ListItem>
                                 <ListItem disableGutters
                                     secondaryAction={
-                                        <ListItemText>Taka</ListItemText>
+                                        <ListItemText>{vat}Tk</ListItemText>
+                                    }
+                                >
+                                    <ListItemText>VAT<StyledBadge badgeContent={'5%'} color="primary"></StyledBadge></ListItemText>
+                                </ListItem>
+                                <ListItem disableGutters
+                                    secondaryAction={
+                                        <ListItemText>{delivery}Tk</ListItemText>
                                     }
                                 >
                                     <ListItemText>Delivery:</ListItemText>
                                 </ListItem>
                                 <ListItem disableGutters
                                     secondaryAction={
-                                        <ListItemText>Taka</ListItemText>
+                                        <ListItemText>{grandTotal}Tk</ListItemText>
                                     }
                                 >
-                                    <ListItemText>Total: </ListItemText>
+                                    <ListItemText>Total:</ListItemText>
                                 </ListItem>
                             </List>
                             <div className='flex '>
@@ -97,7 +141,7 @@ const Checkout = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center mt-5'>
-                               <input className='w-full btn btn-primary rounded-none text-white' type="submit" value="MAKE PAYMENT" />
+                                <input className='w-full btn btn-primary rounded-none text-white' type="submit" value="MAKE PAYMENT" />
                             </div>
                         </div>
                     </div>
