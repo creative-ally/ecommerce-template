@@ -7,7 +7,6 @@ import {
     HiOutlineSearch,
 } from "react-icons/hi";
 import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
-import LockPersonIcon from '@mui/icons-material/LockPerson';
 import { HiOutlineBellAlert } from "react-icons/hi2";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -17,6 +16,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 import OpenCart from "../../Components/ShoppingCart/OpenCart";
+import { LockPersonOutlined } from "@mui/icons-material";
 
 const Navbar = () => {
     const [searchProducts, setSearchProducts] = useState([]);
@@ -221,7 +221,9 @@ const Navbar = () => {
                                     </Box>
                                 ) : (
                                     <Link className=" px-2" to="/signin">
-                                        <LockPersonIcon />
+                                       <LockPersonOutlined/>
+                     
+
                                     </Link>
                                 )}
                             </div>
