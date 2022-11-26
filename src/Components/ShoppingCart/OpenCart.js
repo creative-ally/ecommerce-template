@@ -3,10 +3,13 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-export default function PositionedMenu({ openCart, setOpenCart, close, setClose}) {
+export default function PositionedMenu({ openCart, setOpenCart}) {
 
   const [cartItems, setCartItems] = useState([]);
+  const [user] = useAuthState(auth);
 
 
   useEffect(() => {
@@ -15,7 +18,7 @@ export default function PositionedMenu({ openCart, setOpenCart, close, setClose}
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get('http://localhost:5000/api/cart')
+      const { data } = await axios.get(`http://localhost:5000/api/cart/${user?.email}`)
         .then(res => {
           console.log(res.data.data)
           setCartItems(res.data.data)
@@ -27,7 +30,7 @@ export default function PositionedMenu({ openCart, setOpenCart, close, setClose}
     setOpenCart(null);
   };
 
-  console.log({setClose, close})
+  // console.log({setClose, close})
 
   return (
     <div className='z-50'>
@@ -70,7 +73,7 @@ export default function PositionedMenu({ openCart, setOpenCart, close, setClose}
                 }
               </tbody>
             </table>
-            <Link onClick={() => setClose(!close)} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5'>CheckOut</Link>
+            <Link to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5'>CheckOut</Link>
           </div>
       </Menu>
     </div>

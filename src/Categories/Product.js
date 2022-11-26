@@ -1,13 +1,19 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import ProductCarousel from './ProductCarousel';
 import OpenCart from '../Components/ShoppingCart/OpenCart';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const Product = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate()
+
+
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [value, setValue] = React.useState(5);
@@ -22,7 +28,7 @@ const Product = () => {
         })()
     }, [id]);
 
-
+console.log(user?.email)
 
     const handleAddCart = (e) => {
         e.preventDefault();
@@ -39,7 +45,7 @@ const Product = () => {
                 price: product?.price,
                 totalPrice: price,
                 quantity: e.target.count.value,
-                email: "mahbub4noyon96@gmail.com"
+                email: user?.email
             }
             console.log(cartData)
             axios.post('http://localhost:5000/api/cart', cartData)
@@ -77,8 +83,13 @@ const Product = () => {
                     <p>{product.description}</p>
                     <form onSubmit={handleAddCart} action="">
                         <div className='block w-32 my-5'>
-                            <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' defaultValue='1' />
-                            <input onClick={handleClickOpen} className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
+                            <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' min="1" />
+                            {
+                                user ? 
+                                <input onClick={handleClickOpen} className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
+                                :
+                                navigate('/signin')
+                            }
                         </div>
                     </form>
                 </div>

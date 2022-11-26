@@ -12,9 +12,12 @@ import axios from 'axios';
 import Itemtable from './Itemtable';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -22,14 +25,12 @@ const Cart = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get('http://localhost:5000/api/cart')
+            const { data } = await axios.get(`http://localhost:5000/api/cart/${user?.email}`)
                 .then(res => {
                     setCartItems(res.data.data)
                 })
         })()
     }, [])
-
-    console.log(cartItems)
 
    let total = 0;
    let delivery = 0 ;

@@ -23,7 +23,6 @@ const Navbar = () => {
     const [inputValue, setInputValue] = useState("");
 
     const [openCart, setOpenCart] = useState(false);
-    const [close, setClose] = useState(true)
 
     const open = Boolean(openCart);
     const handleClick = (event) => {
@@ -169,7 +168,7 @@ const Navbar = () => {
                                     </div>
                                 </button>
                                 {
-                                    (openCart && close) && <OpenCart className='top-0 left-0' openCart={openCart} setOpenCart={setOpenCart} close={close} setClose={setClose}></OpenCart>
+                                    openCart && <OpenCart className='top-0 left-0' openCart={openCart} setOpenCart={setOpenCart} ></OpenCart>
                                 }
                             </div>
                             <button className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral">
