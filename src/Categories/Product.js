@@ -40,12 +40,12 @@ const Product = () => {
                 email: "mahbub4noyon96@gmail.com"
             }
             console.log(cartData)
-        //     axios.post('http://localhost:5000/api/cart', cartData)
-        //     .then(function (response) {
-        //      if (response.status === 200) {
-        //        console.log('Product updated to cart Successfully ');
-        //      }
-        //    });
+            axios.post('http://localhost:5000/api/cart', cartData)
+            .then(function (response) {
+             if (response.status === 200) {
+               console.log('Product updated to cart Successfully ');
+             }
+           });
         }
     }
 
@@ -70,12 +70,12 @@ const Product = () => {
                     <p>Material: {product.material}</p>
                     <p>{product.description}</p>
                     <form onSubmit={handleAddCart} action="">
-                        <div className='flex justify-between items-center w-32 my-5'>
+                        <div className='block w-32 my-5'>
                            <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' defaultValue='1'/>
                            <input className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
                         </div>
                     </form>
-                    <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Go to Cart</Link>
+                    {/* <Link to='/cart' className='btn bg-primary text-white rounded-none hover:bg-secondary my-5'>Go to Cart</Link> */}
                 </div>
             </div>
 

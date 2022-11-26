@@ -1,58 +1,25 @@
-import { Box, Grid, Paper, TextareaAutosize, TextField, Typography } from '@material-ui/core';
-import React from 'react';
+import { Grid } from "@material-ui/core";
+import React from "react";
+import BasicInfoForm from "./BasicInfoForm";
+import OrganizationInfoForm from "./OrganizationInfoForm";
 
 const AddProductForm = () => {
-    return (
-        <Grid container spacing={3} gap={3}>
-            <Grid item xs={7} md={7} sm={12} >
-                <Paper>
-                    <Box sx={{
-                        p: 3
-                    }}>
-                        <Typography component={'p'} style={{
-                            lineHeight: "27px",
-                            fontSize: "17px",
-                            fontWeight: 600,
-                            textTransform: "capitalize"
-                        }}>
-                            Basic Information
-                        </Typography>
-                        <Box component={'form'}>
-                            <Box
-                                sx={{
-                                    width: '100%',
-                                    my: 2
-                                }}>
-                                <TextField
-                                    id="outlined"
-                                    label="TITLE"
-                                    placeholder='Type Here...'
-                                    variant="outlined"
-                                    style={{
-                                        width: '100%'
-                                    }}
-                                />
-                                <TextareaAutosize
-                                    variant='outlined'
-                                    aria-label="minimum height"
-                                    minRows={3}
-                                    placeholder="Minimum 3 rows"
-                                    style={{ width: 200, border: '1px solid black', width: '100%' }}
-                                />
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Grid>
-            <Grid item xs={5} md={5} sm={12}>
-                <Paper>
-                    <Box sx={{
-                        p: 2
-                    }}>hello</Box>
-                </Paper>
-            </Grid>
-        </Grid>
-    );
+  return (
+    <Grid
+      container
+      spacing={2}
+      gap={3}
+      style={{ margin: "0.1rem !important", width: "100%" }}
+    >
+      <Grid item xs={12} md={7}>
+        <BasicInfoForm />
+      </Grid>
+
+      <Grid item xs={12} md={5}>
+        <OrganizationInfoForm />
+      </Grid>
+    </Grid>
+  );
 };
 
 export default AddProductForm;
