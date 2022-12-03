@@ -31,7 +31,6 @@ import Payment from "./Pages/Dashboard/Payment";
 import UserProfile from "./Pages/Dashboard/UserProfile";
 import UserOrders from "./Pages/Dashboard/UserOrders";
 import UserHistory from "./Pages/Dashboard/UserHistory";
-<link href="/dist/output.css" rel="stylesheet"></link>;
 
 function App() {
   const [loading, setLoading] = useState(false);
