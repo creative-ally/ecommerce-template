@@ -17,7 +17,7 @@ const SearchProducts = ({ searchProduct }) => {
       name : {name}; category : {category}; subcategory: {subcategory}; */}
       <div className="card w-72 bg-base-100 shadow-xl mx-auto mb-8">
         <figure>
-          <img className="w-32" src={image} />
+          <img className="w-32" src={image} alt=''/>
         </figure>
         <div className="card-body ">
           <h2 className="card-title ">{name}</h2>
