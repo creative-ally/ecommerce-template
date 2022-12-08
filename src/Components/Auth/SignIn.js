@@ -41,10 +41,9 @@ const SignIn = () => {
 
   useEffect(() => {
     if (signInToken) {
-      console.log(user);
       navigate(from, { replace: true });
     }
-  }, [signInToken, user, navigate, from]);
+  }, [signInToken, navigate, from]);
 
   useEffect(() => {
     if (signInError) {
@@ -56,27 +55,33 @@ const SignIn = () => {
   if (loading) return <Loader />;
 
   const onSubmit = async (values) => {
-    const email = values?.email;
-    const password = values?.password;
+    const email = values.email;
+    const password = values.password;
+
     await signInWithEmailAndPassword(email, password);
 
     const oldUser = {
       email: email,
       password: password,
     };
+
+    // console.log(oldUser);
+
     // sign in method
-    fetch(`http://localhost:5000/api/auth/sign-in`, {
+    await fetch(`http://localhost:5000/api/auth/sign-in`, {
       method: 'POST',
       headers: {
-        authorization: `Bearer ${localStorage?.getItem('accessToken')}`,
+        // authorization: `Bearer ${localStorage?.getItem('accessToken')}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify(oldUser),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        // console.log('res ', res);
+        return res.json();
+      })
       .then((data) => {
-        console.log(data);
-        if (data?.insertedId) {
+        if (data) {
           // console.log('data inside user token ', data);
           const accessToken = data?.accessToken;
           localStorage?.setItem('accessToken', accessToken);

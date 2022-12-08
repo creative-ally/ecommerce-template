@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   HiMail,
   HiPhone,
@@ -65,7 +64,7 @@ const Navbar = () => {
     { name: 'Interior' },
   ];
 
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -75,15 +74,20 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const logout = () => {
     signOut(auth);
     localStorage?.removeItem('accessToken');
   };
 
+  if (loading) {
+    return;
+  }
+
   return (
     <div>
+      {console.log(user)}
       {/* first nav */}
       <div className=" bg-gray-200 text-end py-1">
         <div className="container">
@@ -96,12 +100,22 @@ const Navbar = () => {
           <Link to={'/help'} className="px-2 text-zinc-500">
             Help
           </Link>
-          <Link to="/signin" className="px-2 text-zinc-500">
-            SignIn
-          </Link>
-          <Link to="/signup" className="px-2 text-zinc-500">
-            SignUp
-          </Link>
+          {user ? (
+            <>
+              {console.log(user)}
+              <h6 onClick={logout}>Logout</h6>
+            </>
+          ) : (
+            <>
+              {console.log(user)}
+              <Link to="/signin" className="px-2 text-zinc-500">
+                SignIn
+              </Link>
+              <Link to="/signup" className="px-2 text-zinc-500">
+                SignUp
+              </Link>
+            </>
+          )}
         </div>
       </div>
       {/* second nav */}
@@ -237,7 +251,6 @@ const Navbar = () => {
         </div>
       </div>
       <Divider />
-
       {/* third nav */}
       <div className=" bg-gray-50 text-center py-2">
         <div className="container flex justify-evenly">
