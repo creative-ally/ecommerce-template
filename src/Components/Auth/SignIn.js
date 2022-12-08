@@ -10,7 +10,6 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from './utils/Validation';
-import Loader from '../../Shared/Loader/Loader';
 import { toast } from 'react-toastify';
 
 const SignIn = () => {
@@ -52,7 +51,7 @@ const SignIn = () => {
     return;
   }, [signInError]);
 
-  if (loading) return <Loader />;
+  if (loading) return;
 
   const onSubmit = async (values) => {
     const email = values.email;
