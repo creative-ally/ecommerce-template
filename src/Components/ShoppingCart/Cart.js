@@ -18,6 +18,7 @@ import auth from '../../firebase.init';
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
     const [user] = useAuthState(auth);
+    console.log(user.email)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,23 +26,28 @@ const Cart = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`http://localhost:5000/api/cart/${user?.email}`)
+             await axios.get(`http://localhost:5000/api/cart`)
                 .then(res => {
                     setCartItems(res.data.data)
                 })
         })()
     }, [])
 
+    const carts = cartItems.filter( (item) => item.email === user?.email)
+
+
    let total = 0;
    let delivery = 0 ;
    let vat = 1;
    let grandTotal  = 0
-   cartItems.forEach( item => {
+   carts.forEach( item => {
+    console.log( item.quantity)
       total = total + (item.price * item.quantity);
       delivery = delivery + (200 * item.quantity);
       vat = +(total * 0.05).toFixed(2);
       grandTotal = total + delivery + vat
     });
+    console.log(carts)
 
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -69,7 +75,7 @@ const Cart = () => {
                         </thead>
                         <tbody>
                             {
-                                cartItems.map((item) =>
+                                carts.map((item) =>
                                     <Itemtable key={item.id} item={item}></Itemtable>
                                 )
                             }

@@ -15,20 +15,20 @@ const Product = () => {
 
 
     const { id } = useParams();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState('');
     const [value, setValue] = React.useState(5);
     const [openCart, setOpenCart] = useState(false)
 
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`http://localhost:5000/api/product/${id}`)
+             await axios.get(`http://localhost:5000/api/product/${id}`)
                 .then(res => {
-                    setProduct(res.data.data)
+                    setProduct(res.data.data[0])
                 })
         })()
     }, [id]);
 
-console.log(user?.email)
+console.log({id, product})
 
     const handleAddCart = (e) => {
         e.preventDefault();
