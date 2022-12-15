@@ -87,7 +87,6 @@ const Navbar = () => {
 
   return (
     <div>
-      {console.log(user)}
       {/* first nav */}
       <div className=" bg-gray-200 text-end py-1">
         <div className="container">
@@ -101,13 +100,9 @@ const Navbar = () => {
             Help
           </Link>
           {user ? (
-            <>
-              {console.log(user)}
-              <h6 onClick={logout}>Logout</h6>
-            </>
+            <Link to='#' onClick={logout}>Logout</Link>
           ) : (
             <>
-              {console.log(user)}
               <Link to="/signin" className="px-2 text-zinc-500">
                 SignIn
               </Link>
@@ -268,6 +263,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+      
       <div>
         <input type="checkbox" id="my-modal-5" className="modal-toggle" />
         <div className="modal">

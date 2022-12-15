@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import axios from 'axios';
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -40,7 +41,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-export default function PositionedMenu({ openCart, setOpenCart }) {
+export default function PositionedMenu({ openCart, setOpenCart}) {
+
 
   const [cartItems, setCartItems] = useState([]);
   const [user] = useAuthState(auth);
@@ -50,23 +52,34 @@ export default function PositionedMenu({ openCart, setOpenCart }) {
     window.scrollTo(0, 0);
   }, [])
 
-  useEffect(() => {
-    (async () => {
-      await axios.get(`http://localhost:5000/api/cart/`)
-        .then(res => {
-          console.log(res.data.data)
-          setCartItems(res.data.data)
-        })
-    })()
-  }, [])
+  const cartShow = async () => {
+    await axios.get(`http://localhost:5000/api/cart`)
+    .then(res => {
+        setCartItems(res.data.data)
+    })
+}
+const carts = cartItems.filter((item) => item.email === user?.email)
 
-  const carts = cartItems.filter((item) => item.email === user?.email)
+useEffect(() => {
+    cartShow()
+}, [])
 
   const handleClose = () => {
     setOpenCart(null);
   };
 
-  // console.log({setClose, close})
+  const handleDelete = (row) => {
+
+    ( async () => {
+        await axios.delete(`http://localhost:5000/api/cart/item/${row._id}`)
+        .then( res => {
+            console.log(res)
+            if(res.status === 200){
+                console.log('data deleted')
+            }
+        })
+    })()
+}
 
   return (
     <div className='z-50'>
@@ -92,7 +105,7 @@ export default function PositionedMenu({ openCart, setOpenCart }) {
               <TableHead>
                 <TableRow>
                   <StyledTableCell>Product</StyledTableCell>
-                  <StyledTableCell align="right">Product Name</StyledTableCell>
+                  <StyledTableCell align="right">Name</StyledTableCell>
                   <StyledTableCell align="right">Quantity</StyledTableCell>
                   <StyledTableCell align="right">Price</StyledTableCell>
                   <StyledTableCell align="right">Action</StyledTableCell>
@@ -101,21 +114,21 @@ export default function PositionedMenu({ openCart, setOpenCart }) {
               <TableBody>
                 {carts.map((row) => (
                   <StyledTableRow key=''>
-                    <StyledTableCell component="th" scope="row" sx={{width: '70px'}}>
-                       <img src={row.image} alt="" />
+                    <StyledTableCell component="th" scope="row" sx={{ width: '70px' }}>
+                      <img src={row.image} alt="" />
                     </StyledTableCell>
                     <StyledTableCell align="right">{row.name}</StyledTableCell>
                     <StyledTableCell align="right">{row.quantity}</StyledTableCell>
-                    <StyledTableCell align="right">{row.price * row.quantity} <TbCurrencyTaka/></StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">{row.price * row.quantity} <TbCurrencyTaka /></StyledTableCell>
+                    <StyledTableCell align="right" className='cursor-pointer' onClick={() => handleDelete(row)}><FaTrashAlt className='text-error'/></StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
-         <div className='flex justify-center'>
-          <Link to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'>CheckOut</Link>
-         </div>
+          <div className='flex justify-center'>
+            <Link onClick={handleClose} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'>CheckOut</Link>
+          </div>
         </div>
       </Menu>
     </div>

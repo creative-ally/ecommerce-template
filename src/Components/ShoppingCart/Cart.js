@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import CommentIcon from '@mui/icons-material/Comment';
-import IconButton from '@mui/material/IconButton';
-import { json, Link } from 'react-router-dom';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Itemtable from './Itemtable';
 import Badge from '@mui/material/Badge';
@@ -24,31 +19,28 @@ const Cart = () => {
         window.scrollTo(0, 0);
     }, [])
 
-    useEffect(() => {
-        (async () => {
-             await axios.get(`http://localhost:5000/api/cart`)
-                .then(res => {
-                    setCartItems(res.data.data)
-                })
-        })()
-    }, [])
-
+    const cartShow = async () => {
+        await axios.get(`http://localhost:5000/api/cart`)
+        .then(res => {
+            setCartItems(res.data.data)
+        })
+    }
     const carts = cartItems.filter( (item) => item.email === user?.email)
 
+    useEffect(() => {
+        cartShow()
+    }, [])
 
    let total = 0;
    let delivery = 0 ;
    let vat = 1;
    let grandTotal  = 0
    carts.forEach( item => {
-    console.log( item.quantity)
       total = total + (item.price * item.quantity);
       delivery = delivery + (200 * item.quantity);
       vat = +(total * 0.05).toFixed(2);
       grandTotal = total + delivery + vat
     });
-    console.log(carts)
-
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
