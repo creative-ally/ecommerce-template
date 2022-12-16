@@ -17,6 +17,7 @@ import {
 } from '@mui/material';
 import { HiOutlineBellAlert } from 'react-icons/hi2';
 import { BsBookmarkHeart } from 'react-icons/bs';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import SearchProducts from '../../SearchProducts/SearchProducts';
@@ -154,13 +155,13 @@ const Navbar = () => {
 
                   {/* Search Input End */}
 
-                  <button type="submit" className="">
+                  <button className="">
                     <label
+                      type="submit"
                       htmlFor="my-modal-5"
-                      className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral  "
+                      className="btn btn-ghost btn-circle hover:bg-transparent hover:shadow-md hover:shadow-neutral"
                     >
-                      {' '}
-                      <HiOutlineSearch className="icon" />
+                        <HiOutlineSearch className="icon cursor-pointer" />
                     </label>
                   </button>
                 </div>
@@ -263,11 +264,19 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      
+
       <div>
         <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-        <div className="modal">
+        <div className="modal bg-transparent">
           <div className="modal-box w-11/12 max-w-5xl">
+            <div className="modal-action">
+              <label
+                htmlFor="my-modal-5"
+                className="cursor-pointer"
+              >
+                <AiOutlineCloseCircle size={30} color='#ff0000' />
+              </label>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {inputValue === '' ? (
                 <p>
@@ -282,17 +291,10 @@ const Navbar = () => {
                   <SearchProducts
                     key={searchProduct._id}
                     searchProduct={searchProduct}
+                    setSearchProducts={setSearchProducts}
                   ></SearchProducts>
                 ))
               )}
-            </div>
-            <div className="modal-action">
-              <label
-                htmlFor="my-modal-5"
-                className="btn bg-[#ff0000] border-none text-white font-bold"
-              >
-                Exit
-              </label>
             </div>
           </div>
         </div>

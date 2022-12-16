@@ -46,11 +46,10 @@ const Product = () => {
                 quantity: e.target.count.value,
                 email: user?.email
             }
+            console.log(cartData)
             axios.post('http://localhost:5000/api/cart', cartData)
                 .then(function (response) {
-                    if (response.status === 200) {
-                        console.log('Product added to cart Successfully ');
-                    }
+                    console.log(response)
                 });
         }
     }
