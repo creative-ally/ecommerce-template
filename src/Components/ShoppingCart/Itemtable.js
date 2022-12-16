@@ -11,7 +11,7 @@ const Itemtable = ({ item }) => {
 
     const handledelete = () => {
         ( async () => {
-            await axios.delete(`http://localhost:5000/api/cart/${_id}`)
+            await axios.delete(`http://localhost:5000/api/cart/item/${_id}`)
             .then( res => {
                 console.log(res)
                 if(res.status === 200){

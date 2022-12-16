@@ -1,7 +1,7 @@
 import React from "react";
 
 const HotProduct = ({product }) => {
-  const {subcategory, image } = product;
+  const {_id, subcategory, image } = product;
   return (
     <div className="product-card">
         <div>

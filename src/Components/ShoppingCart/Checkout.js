@@ -22,18 +22,20 @@ const Checkout = () => {
     const [cartItems, setCartItems] = useState([]);
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`http://localhost:5000/api/cart/${user?.email}`)
+            await axios.get(`http://localhost:5000/api/cart`)
                 .then(res => {
                     setCartItems(res.data.data)
                 })
         })()
-    }, [user?.email])
+    }, [])
+
+    const carts = cartItems.filter((item) => item.email === user?.email)
 
     let total = 0;
     let delivery = 0;
     let vat = 1;
     let grandTotal = 0
-    cartItems.forEach(item => {
+    carts.forEach(item => {
         total = total + (item.price * item.quantity);
         delivery = delivery + (200 * item.quantity);
         vat = +(total * 0.05).toFixed(2);
