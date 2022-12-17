@@ -31,26 +31,44 @@ const Product = () => {
 
     const handleAddCart = (e) => {
         e.preventDefault();
+
         if (!product) {
             console.log('Product did not match')
         } else {
-            const price = product?.price * e.target.count.value;
-            const cartData = {
+            const costPrice = product?.price * e.target.count.value;
+            let totalPrice = 0;
+            let products = [];
+            const cartItem = {
+                productId: product._id,
                 category: product?.category,
                 subcategory: product?.subcategory,
                 code: product?.code,
                 image: product?.image,
                 name: product?.name,
                 price: product?.price,
-                totalPrice: price,
-                quantity: e.target.count.value,
-                email: user?.email
+                quantity: +(e.target.count.value),
+                costPrice
             }
-            console.log(cartData)
-            axios.post('http://localhost:5000/api/cart', cartData)
-                .then(function (response) {
-                    console.log(response)
-                });
+            const cartData = {
+                email: user?.email,
+                products: products.push({...cartItem}),
+                // totalPrice: products.forEach( (item) => console.log(item)),
+            }
+          console.log(cartItem)
+            // axios.post('http://localhost:5000/api/cart', cartData)
+            //     .then(function (response) {
+            //         console.log(response)
+            //     });
+                fetch('http://localhost:5000/api/cart', {
+                    method: 'POST',
+                    headers: {
+                    //   authorization: `Bearer ${localStorage?.getItem('accessToken')}`,
+                      'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(cartData),
+                })
+                .then(res => res.json())
+                .then( data => console.log(data))
         }
     }
 
@@ -61,7 +79,7 @@ const Product = () => {
     return (
         <div>
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
-                <div className=' w-full'><ProductCarousel /></div>
+                <div className=' w-full'><ProductCarousel product={product}/></div>
                 <div className=''>
                     <p>{product?.price} Taka</p>
                     <h2>{product?.name}</h2>

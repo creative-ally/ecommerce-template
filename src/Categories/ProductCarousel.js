@@ -7,7 +7,8 @@ import "swiper/css/thumbs";
 import "../Components/components.css";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-export default function ProductCarousel() {
+export default function ProductCarousel({product}) {
+    // console.log(product)
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const slides = [
         { image: "https://i.ibb.co/xY2btD9/Solid-Engineered-Wooden-Door.png" },
@@ -33,7 +34,7 @@ export default function ProductCarousel() {
                 {
                     slides.map((slide, index) =>
                         <SwiperSlide key={index}>
-                            <img src={slide.image} alt='' />
+                            <img src={product.image} alt='' />
                         </SwiperSlide>
                     )
                 }
@@ -51,7 +52,7 @@ export default function ProductCarousel() {
                 {
                     slides.map((slide, index) =>
                         <SwiperSlide key={index}>
-                            <img src={slide.image} alt='' />
+                            <img src={product.image} alt='' />
                         </SwiperSlide>
                     )
                 }

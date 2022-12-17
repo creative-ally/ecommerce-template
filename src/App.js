@@ -30,6 +30,7 @@ import UserProfile from './Pages/Dashboard/UserProfile';
 import UserOrders from './Pages/Dashboard/UserOrders';
 import UserHistory from './Pages/Dashboard/UserHistory';
 import { ToastContainer } from 'react-toastify';
+import MakePayment from './Components/ShoppingCart/MakePayment';
 <link href="/dist/output.css" rel="stylesheet"></link>;
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/makepayment" element={<MakePayment />} />
             <Route path="/searchProducts" element={<SearchProducts />} />
             {/* dashboard routes */}
             <Route path="/dashboard" element={<DashboardHome />}>
