@@ -164,10 +164,12 @@ export default function EnhancedTable({
                       >
                         {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
+                      <TableCell align="right">{row.price}</TableCell>
+                      <TableCell align="right">{row.quantity}</TableCell>
+                      <TableCell align="right">
+                        {row.carbs ? row.carbs : "none"}
+                      </TableCell>
+                      <TableCell align="right">{row.category}</TableCell>
                       {/* <TableCell align="right">{row.protein} hello</TableCell> */}
                       <TableCell align="right">
                         {component === "orders" && (
@@ -190,20 +192,23 @@ export default function EnhancedTable({
                         )}
                         {component === "products" && (
                           <>
-                            <Button
-                              variant="outlined"
-                              size="small"
-                              color="success"
-                            >
-                              In Stock
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              size="small"
-                              color="error"
-                            >
-                              Out of Stock
-                            </Button>
+                            {row.status === "in-stock" ? (
+                              <Button
+                                variant="outlined"
+                                size="small"
+                                color="success"
+                              >
+                                In Stock
+                              </Button>
+                            ) : (
+                              <Button
+                                variant="outlined"
+                                size="small"
+                                color="error"
+                              >
+                                Out of Stock
+                              </Button>
+                            )}
                           </>
                         )}
                         {component === "User Order" && (
