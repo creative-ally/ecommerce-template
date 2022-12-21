@@ -1,20 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const InCategory = ({ c }) => {
-  const { category, code, subcategory, image } = c;
+const HotProduct = ({product }) => {
+  const {_id, subcategory, image } = product;
   return (
     <div className="product-card">
-      <Link to={`/category/${category}/${code}`}>
         <div>
+        <span className="badge badge-sm indicator-item">Hot Products</span>
           <img src={image} alt="" />
         </div>
         <div className="flex justify-center">
           <h3>{subcategory}</h3>
         </div>
-      </Link>
     </div>
   );
 };
 
-export default InCategory;
+export default HotProduct;

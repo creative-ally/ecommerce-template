@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from './Banner';
 import Categories from '../../Components/Categories';
 import Newsletter from './Newsletter';
+import LogoSlider from './LogoSlider';
+import HotProducts from './HotProducts';
 // import OfficeFurnitures from './OfficeCategory/OfficeFurnitures';
 
 const Home = () => {
@@ -10,6 +12,8 @@ const Home = () => {
             <Banner/>
             {/* <OfficeFurnitures/> */}
             <Categories />
+            <HotProducts/>
+            <LogoSlider/>
             <Newsletter/>
         </div>
     );
