@@ -12,19 +12,24 @@ const Products = () => {
   useEffect(() => {
     fetch("http://localhost:5000/api/product")
       .then((res) => res.json())
-      .then((data) => setProducts(data.data));
+      .then((data) => {
+        setProducts(data.data);
+        localStorage.setItem("products", data.data.length);
+      });
   }, []);
+  const users = localStorage.getItem("allUsers");
+  const orders = localStorage.getItem("allOrder");
 
   const dashboardCardItem = [
     {
       title: "Total Users",
-      user: 222,
+      user: users,
       icon: "<FaUserCircle />",
       background: "linear-gradient(#64b3f6, #2b77e5)",
     },
     {
       title: "Total Orders",
-      user: 338,
+      user: orders,
       icon: "<FaUserCircle />",
       background: "linear-gradient(#4eda89, #1a9f53)",
     },

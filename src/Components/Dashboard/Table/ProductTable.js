@@ -62,7 +62,7 @@ export default function EnhancedTable({
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
+      const newSelected = rows.map((n) => n.name || n.firstName);
       setSelected(newSelected);
       return;
     }
@@ -134,13 +134,15 @@ export default function EnhancedTable({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.name || row.firstName);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) =>
+                        handleClick(event, row.name || row.firstName)
+                      }
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
@@ -162,32 +164,41 @@ export default function EnhancedTable({
                         scope="row"
                         padding="none"
                       >
-                        {row.name}
+                        {row.name || row.firstName + " " + row.lastName}
                       </TableCell>
-                      <TableCell align="right">{row.price}</TableCell>
-                      <TableCell align="right">{row.quantity}</TableCell>
                       <TableCell align="right">
-                        {row.carbs ? row.carbs : "none"}
+                        {row.price || row.totalCost}
                       </TableCell>
-                      <TableCell align="right">{row.category}</TableCell>
+                      <TableCell align="right">
+                        {row.quantity || row.country}
+                      </TableCell>
+                      <TableCell align="right">
+                        {row.carbs || row.email}
+                      </TableCell>
+                      <TableCell align="right">
+                        {row.category || row.phone}
+                      </TableCell>
                       {/* <TableCell align="right">{row.protein} hello</TableCell> */}
                       <TableCell align="right">
                         {component === "orders" && (
                           <>
-                            <Button
-                              variant="outlined"
-                              size="small"
-                              color="success"
-                            >
-                              ship
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              size="small"
-                              color="error"
-                            >
-                              cancel
-                            </Button>
+                            {row.status === "Pending" ? (
+                              <Button
+                                variant="outlined"
+                                size="small"
+                                color="success"
+                              >
+                                Pending
+                              </Button>
+                            ) : (
+                              <Button
+                                variant="outlined"
+                                size="small"
+                                color="error"
+                              >
+                                ship
+                              </Button>
+                            )}
                           </>
                         )}
                         {component === "products" && (
