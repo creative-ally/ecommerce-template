@@ -1,4 +1,4 @@
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
 import React from "react";
 import AddProductForm from "../../Components/Dashboard/AddProductForm";
 import RouteHeader from "../../Components/Dashboard/RouteHeader";

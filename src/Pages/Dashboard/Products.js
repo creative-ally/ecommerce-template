@@ -1,10 +1,46 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import ProductCard from "../../Components/Dashboard/ProductCard";
 import RouteHeader from "../../Components/Dashboard/RouteHeader";
 import ProductTable from "../../Components/Dashboard/Table/ProductTable";
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/product")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data.data);
+        localStorage.setItem("products", data.data.length);
+      });
+  }, []);
+  const users = localStorage.getItem("allUsers");
+  const orders = localStorage.getItem("allOrder");
+
+  const dashboardCardItem = [
+    {
+      title: "Total Users",
+      user: users,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(#64b3f6, #2b77e5)",
+    },
+    {
+      title: "Total Orders",
+      user: orders,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(#4eda89, #1a9f53)",
+    },
+    {
+      title: "Total Products",
+      user: products.length,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(to left, #ed68ff, #be0ee1)",
+    },
+  ];
+
   return (
     <RouteHeader title={"Products"}>
       <Grid container spacing={2} sx={{ m: "0 !important" }}>
@@ -24,7 +60,7 @@ const Products = () => {
           sx={{ m: "0 !important" }}
         >
           <ProductTable
-            rows={rows}
+            rows={products}
             headCells={headCells}
             component={"products"}
             listTitle={"Best Selling Products"}
@@ -36,53 +72,6 @@ const Products = () => {
 };
 
 export default Products;
-
-function createData(name, calories, fat, carbs, protein) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-  };
-}
-
-const rows = [
-  createData("products", 305, 3.7, 67, 4.3),
-  createData("Donut", 452, 25.0, 51, 4.9),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-  createData("Honeycomb", 408, 3.2, 87, 6.5),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Jelly Bean", 375, 0.0, 94, 0.0),
-  createData("KitKat", 518, 26.0, 65, 7.0),
-  createData("Lollipop", 392, 0.2, 98, 0.0),
-  createData("Marshmallow", 318, 0, 81, 2.0),
-  createData("Nougat", 360, 19.0, 9, 37.0),
-  createData("Oreo", 437, 18.0, 63, 4.0),
-];
-
-const dashboardCardItem = [
-  {
-    title: "Total Users",
-    user: 222,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#64b3f6, #2b77e5)",
-  },
-  {
-    title: "Total Orders",
-    user: 338,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#4eda89, #1a9f53)",
-  },
-  {
-    title: "Total Orders",
-    user: 338,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(to left, #ed68ff, #be0ee1)",
-  },
-];
 
 const headCells = [
   {
@@ -113,7 +102,7 @@ const headCells = [
     id: "carbs2",
     numeric: true,
     disablePadding: false,
-    label: "Carbs (g)",
+    label: "Category",
   },
   {
     id: "Status",

@@ -1,10 +1,49 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../Components/Dashboard/ProductCard";
 import RouteHeader from "../../Components/Dashboard/RouteHeader";
 import ProductTable from "../../Components/Dashboard/Table/ProductTable";
 
 const Orders = () => {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/order", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage?.getItem("accessToken")}`,
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data);
+        setOrders(data.data);
+        localStorage.setItem("allOrder", data.data.length);
+      });
+  }, []);
+
+  const dashboardCardItem = [
+    {
+      title: "Total Order",
+      user: orders.length,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(#64b3f6, #2b77e5)",
+    },
+    {
+      title: "Shipped Orders",
+      user: 433,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(#4eda89, #1a9f53)",
+    },
+    {
+      title: "Pending Orders",
+      user: 384,
+      icon: "<FaUserCircle />",
+      background: "linear-gradient(to left, #ed68ff, #be0ee1)",
+    },
+  ];
+
   return (
     <RouteHeader title={"Orders"}>
       <Grid container spacing={2} sx={{ m: "0 !important" }}>
@@ -24,7 +63,7 @@ const Orders = () => {
           sx={{ m: "0 !important" }}
         >
           <ProductTable
-            rows={rows}
+            rows={orders}
             headCells={headCells}
             component={"orders"}
             listTitle={"All Order"}
@@ -63,27 +102,6 @@ const rows = [
   createData("Oreo", 437, 18.0, 63, 4.0),
 ];
 
-const dashboardCardItem = [
-  {
-    title: "Total Order",
-    user: 634,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#64b3f6, #2b77e5)",
-  },
-  {
-    title: "Shipped Orders",
-    user: 433,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(#4eda89, #1a9f53)",
-  },
-  {
-    title: "Pending Orders",
-    user: 384,
-    icon: "<FaUserCircle />",
-    background: "linear-gradient(to left, #ed68ff, #be0ee1)",
-  },
-];
-
 const headCells = [
   {
     id: "name",
@@ -95,25 +113,25 @@ const headCells = [
     id: "calories",
     numeric: true,
     disablePadding: false,
-    label: "Total",
+    label: "Total Cost",
   },
   {
     id: "fat",
     numeric: true,
     disablePadding: false,
-    label: "Stock",
+    label: "Country",
   },
   {
     id: "carbs",
     numeric: true,
     disablePadding: false,
-    label: "Sells",
+    label: "Email",
   },
   {
     id: "carbs2",
     numeric: true,
     disablePadding: false,
-    label: "Pending",
+    label: "Phone",
   },
   {
     id: "protein",
